@@ -1,0 +1,13 @@
+
+
+{% block content %}
+  <h2>Live Ballon d'Or Results</h2>
+
+  <ul>
+  {% for player, points in results %}
+    <li>{{ player.name }} - {{ points }} points</li>
+  {% empty %}
+    <li>No votes yet.</li>
+  {% endfor %}
+  </ul>
+{% endblock %}
