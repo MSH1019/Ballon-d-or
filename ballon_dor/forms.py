@@ -26,7 +26,7 @@ class VoteForm(forms.ModelForm):
         "Declan Rice",
         "Florian Wirtz",
         "Erling Haaland",
-        "Rodri",
+        "Michael Olise",
         "Jamal Musiala",
         "Lautaro Martínez",
         "Alessandro Bastoni",
