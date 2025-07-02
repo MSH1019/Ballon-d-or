@@ -1,0 +1,11 @@
+
+
+{% block content %}
+  <h2>Vote for Ballon d'Or 2024</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit your vote</button>
+  </form>
+{% endblock %}
