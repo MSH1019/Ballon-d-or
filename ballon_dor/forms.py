@@ -3,38 +3,6 @@ from .models import Player, Vote
 
 
 class VoteForm(forms.ModelForm):
-    CANDIDATE_NAMES_2025 = [
-        "Ousmane Dembélé",
-        "Lamine Yamal",
-        "Raphinha",
-        "Mohamed Salah",
-        "Kylian Mbappé",
-        "Vitinha",
-        "Nuno Mendes",
-        "Désiré Doué",
-        "Khvicha Kvaratskhelia",
-        "Achraf Hakimi",
-        "Pedri",
-        "Harry Kane",
-        "Robert Lewandowski",
-        "Gianluigi Donnarumma",
-        "João Neves",
-        "Viktor Gyökeres",
-        "Vinícius Júnior",
-        "Jude Bellingham",
-        "Marquinhos",
-        "Declan Rice",
-        "Florian Wirtz",
-        "Erling Haaland",
-        "Michael Olise",
-        "Jamal Musiala",
-        "Lautaro Martínez",
-        "Alessandro Bastoni",
-        "Alisson Becker",
-        "Virgil van Dijk",
-        "Pau Cubarsí",
-        "Willian Pacho",
-    ]
 
     class Meta:
         model = Vote
@@ -48,10 +16,10 @@ class VoteForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        allowed_qs = Player.objects.filter(candidate__year=2025).order_by("name")
         for field in ["player_1st", "player_2nd", "player_3rd"]:
-            self.fields[field].queryset = Player.objects.filter(
-                name__in=self.CANDIDATE_NAMES_2025
-            ).order_by("name")
+            self.fields[field].queryset = allowed_qs
+            self.fields[field].label = field.replace("_", " ").capitalize()
 
     def clean(self):
         cleaned_data = super().clean()
