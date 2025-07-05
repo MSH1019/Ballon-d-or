@@ -1,11 +1,20 @@
-
+{% extends "ballon_dor/base.html" %}
+{% block title %}Vote Now{% endblock %}
 
 {% block content %}
-  <h2>Vote for Ballon d'Or 2024</h2>
+  <h1>Vote for Your Ballon d'Or Picks</h1>
+
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
 
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Submit your vote</button>
+    <button type="submit" class="btn btn-primary">Submit Vote</button>
   </form>
+
+  <a href="{% url 'live_results' %}" class="btn btn-link mt-3">Check Live Results</a>
 {% endblock %}
