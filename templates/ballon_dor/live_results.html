@@ -1,13 +1,33 @@
-
+{% extends "ballon_dor/base.html" %}
+{% block title %}Live Results{% endblock %}
 
 {% block content %}
-  <h2>Live Ballon d'Or Results</h2>
+  <h1>Live Ballon d'Or Voting Results</h1>
 
-  <ul>
-  {% for player, points in results %}
-    <li>{{ player.name }} - {{ points }} points</li>
-  {% empty %}
-    <li>No votes yet.</li>
-  {% endfor %}
-  </ul>
+  <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>Rank</th>
+        <th>Player</th>
+        <th>Points</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for player, points in results %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ player.name }}</td>
+          <td>{{ points }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="3">No votes yet!</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+
+  <a href="{% url 'home' %}" class="btn btn-link">Back to Voting</a>
 {% endblock %}

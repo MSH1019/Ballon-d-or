@@ -1,3 +1,20 @@
-<h1>Welcome to the Ballon d'Or Voting App!</h1>
-<p><a href="{% url 'vote' %}">Vote Now</a></p>
-<p><a href="{% url 'live_results' %}">View Live Results</a></p>
+{% extends "ballon_dor/base.html" %}
+{% load static %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<div class="text-center mt-5">
+  <h1 class="display-4 mb-3">🏆 People's Ballon d'Or</h1>
+  <p class="lead mb-4">Pick your top 3 players and see how the world is voting!</p>
+
+  <a href="{% url 'vote' %}" class="btn btn-lg btn-primary me-2">Vote Now</a>
+  <a href="{% url 'live_results' %}" class="btn btn-lg btn-outline-secondary">See Live Results</a>
+
+  <img src="{% static 'images/hero.jpg' %}" alt="Ballon d'Or" class="img-fluid mt-4 rounded shadow">
+  <footer class="text-center text-muted mt-5 mb-3">
+    © 2025 People's Ballon d'Or — Made by Mohamed
+  </footer>
+
+</div>
+{% endblock %}
