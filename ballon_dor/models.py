@@ -41,7 +41,7 @@ class BallonDorResult(models.Model):
     points = models.IntegerField()
 
     class Meta:
-        unique_together = (("year", "rank", "player"),)
+        unique_together = (("year", "rank"), ("year", "player"))
 
     def __str__(self):
         return f"{self.player.name} - {self.year} - Rank {self.rank}"
