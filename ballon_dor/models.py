@@ -1,9 +1,10 @@
 from django.db import models
 
-
+# TODO: Add media field to the db
 class Player(models.Model):
     name = models.CharField(max_length=100)
     country = models.CharField(max_length=50, blank=True)
+    # FIXME: Make a relationship with the club
     club = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
@@ -12,6 +13,7 @@ class Player(models.Model):
 
 class Candidate(models.Model):
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
+    # FIXME: Change this to DateField
     year = models.IntegerField()
 
     def __str__(self):
@@ -33,13 +35,21 @@ class NationalTeam(models.Model):
 
 
 class BallonDorResult(models.Model):
+    RANK_CHOICES = [
+        ("", "UNRANKED")("1", "First"),
+        ("2", "Second"),
+        ("3", "Third"),
+    ]
+
+    # FIXME: Change this to DateField
     year = models.IntegerField()
-    rank = models.IntegerField()  # 1, 2, 3, etc.
+    rank = models.CharField(max_length=2, choices=RANK_CHOICES, default="")
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
     club_at_award = models.ForeignKey(Club, on_delete=models.CASCADE)
     nationality_at_award = models.ForeignKey(NationalTeam, on_delete=models.CASCADE)
     points = models.IntegerField()
 
+    # COMMENT: Rethink about this concept
     class Meta:
         unique_together = (("year", "rank"), ("year", "player"))
 
@@ -61,6 +71,7 @@ class Vote(models.Model):
     voter_name = models.CharField(max_length=100, blank=True)
     voter_country = models.CharField(max_length=100, blank=True)
     ip_address = models.GenericIPAddressField(blank=True, null=True)
+    # FIXME: Change this to DateField
     year = models.IntegerField(default=2025)
 
     def __str__(self):
