@@ -36,7 +36,7 @@ class NationalTeam(models.Model):
 
 class BallonDorResult(models.Model):
     RANK_CHOICES = [
-        ("", "UNRANKED")("1", "First"),
+        ("1", "First"),
         ("2", "Second"),
         ("3", "Third"),
     ]
