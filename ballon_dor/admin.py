@@ -4,8 +4,8 @@ from .models import Player, Vote, BallonDorResult, Club, NationalTeam, Candidate
 
 @admin.register(Player)
 class PlayerAdmin(admin.ModelAdmin):
-    list_display = ("name", "country", "club")
-    search_fields = ("name", "country", "club")
+    list_display = ("name", "country")
+    search_fields = ("name", "country")
 
 
 @admin.register(Vote)
