@@ -9,7 +9,6 @@ from django.utils import timezone
 from datetime import datetime
 from datetime import timezone as dt_timezone
 from django.db.models import Max
-import pytz
 from .utils import get_active_year, get_voting_deadline
 
 
