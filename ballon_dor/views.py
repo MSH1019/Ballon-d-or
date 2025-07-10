@@ -3,14 +3,14 @@ from django.views.generic import TemplateView
 from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.shortcuts import redirect, render
-from .models import Vote, Player
+from .models import Vote, Player, Candidate
 from .forms import VoteForm
 from django.utils import timezone
 from datetime import datetime
 from datetime import timezone as dt_timezone
-
-
-VOTING_DEADLINE = datetime(2025, 9, 21, 23, 59, 59, tzinfo=dt_timezone.utc)
+from django.db.models import Max
+import pytz
+from .utils import get_active_year, get_voting_deadline
 
 
 class VoteCreateView(CreateView):
@@ -20,21 +20,21 @@ class VoteCreateView(CreateView):
     success_url = reverse_lazy("live_results")
 
     def dispatch(self, request, *args, **kwargs):
-        if timezone.now() > VOTING_DEADLINE:
-            return HttpResponse("⚠️ Voting has closed. Thank you for your interest!")
+        active_year = get_active_year()
+        deadline = get_voting_deadline(active_year)
+        if timezone.now() > deadline:
+            return HttpResponse("Voting has closed. Thank you for your interest!")
         return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
+        active_year = get_active_year()
         ip = self.get_client_ip()
         print(f"DEBUG: IP detected: {ip}")
-        existing_count = Vote.objects.filter(ip_address=ip, year=2025).count()
-        print(f"DEBUG: Existing votes for this IP in 2025: {existing_count}")
-
-        if Vote.objects.filter(ip_address=ip, year=2025).exists():
+        if Vote.objects.filter(ip_address=ip, year=active_year).exists():
             return redirect("already_voted")
 
         form.instance.ip_address = ip
-        form.instance.year = 2025
+        form.instance.year = active_year
         return super().form_valid(form)
 
     def form_invalid(self, form):
@@ -50,12 +50,18 @@ class VoteCreateView(CreateView):
             ip = self.request.META.get("REMOTE_ADDR")
         return ip
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs["year"] = get_active_year()
+        return kwargs
+
 
 class LiveResultsView(TemplateView):
     template_name = "ballon_dor/live_results.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        active_year = get_active_year()
         points_map = {
             "player_1st": 5,
             "player_2nd": 3,
@@ -63,7 +69,7 @@ class LiveResultsView(TemplateView):
         }
         tally = {}
 
-        for vote in Vote.objects.filter(year=2025):
+        for vote in Vote.objects.filter(year=active_year):
             for field, points in points_map.items():
                 player = getattr(
                     vote, field

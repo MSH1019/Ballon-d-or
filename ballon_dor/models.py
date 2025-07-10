@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # TODO: Add media field to the db
 class Player(models.Model):
     name = models.CharField(max_length=100)
@@ -72,7 +73,7 @@ class Vote(models.Model):
     voter_country = models.CharField(max_length=100, blank=True)
     ip_address = models.GenericIPAddressField(blank=True, null=True)
     # FIXME: Change this to DateField
-    year = models.IntegerField(default=2025)
+    year = models.PositiveIntegerField()
 
     def __str__(self):
         return f"Vote: 1st-{self.player_1st.name}, 2nd-{self.player_2nd.name}, 3rd-{self.player_3rd.name}"

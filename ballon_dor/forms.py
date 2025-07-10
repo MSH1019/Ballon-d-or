@@ -1,5 +1,6 @@
 from django import forms
 from .models import Player, Vote
+from .utils import get_active_year
 
 
 class VoteForm(forms.ModelForm):
@@ -14,9 +15,11 @@ class VoteForm(forms.ModelForm):
             "voter_country",
         ]
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, year=None, **kwargs):
         super().__init__(*args, **kwargs)
-        allowed_qs = Player.objects.filter(candidate__year=2025).order_by("name")
+        if year is None:
+            year = get_active_year()  # helper
+        allowed_qs = Player.objects.filter(candidate__year=year).order_by("name")
         for field in ["player_1st", "player_2nd", "player_3rd"]:
             self.fields[field].queryset = allowed_qs
             self.fields[field].label = field.replace("_", " ").capitalize()
