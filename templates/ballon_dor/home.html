@@ -1,20 +1,39 @@
-{% extends "ballon_dor/base.html" %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ballon d'Or Voting</title>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
 
-{% block title %}Welcome{% endblock %}
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="{% url 'home' %}" class="logo">🏆 Ballon d'Or</a>
+      <div class="nav-links">
+        <a href="{% url 'vote' %}">Vote</a>
+        <a href="{% url 'live_results' %}">Live Results</a>
+      </div>
+    </div>
+  </nav>
 
-{% block content %}
-<div class="text-center mt-5">
-  <h1 class="display-4 mb-3">🏆 People's Ballon D'or</h1>
-  <p class="lead mb-4">Pick your top 3 players and see how the world is voting!</p>
+  <header class="hero">
+    <h1 class="hero-title">People's Ballon d'Or</h1>
+    <p class="hero-subtitle">Pick your top 3 players and see how the world is voting!</p>
+    <div class="hero-buttons">
+      <a href="{% url 'vote' %}" class="btn gold-btn">Vote Now</a>
+      <a href="{% url 'live_results' %}" class="btn outline-btn">See Live Results</a>
+    </div>
+  </header>
 
-  <a href="{% url 'vote' %}" class="btn btn-lg btn-primary me-2">Vote Now</a>
-  <a href="{% url 'live_results' %}" class="btn btn-lg btn-outline-secondary">See Live Results</a>
+  <section class="image-section">
+    <img src="{% static 'images/hero.jpg' %}" alt="Ballon d'Or Trophy" class="main-image">
+  </section>
 
-  <img src="{% static 'images/hero.jpg' %}" alt="Ballon d'Or" class="img-fluid mt-4 rounded shadow">
-  <footer class="text-center text-muted mt-5 mb-3">
+  <footer class="footer">
     © 2025 People's Ballon d'Or — Made by Mohamed
   </footer>
 
-</div>
-{% endblock %}
+</body>
+</html>
