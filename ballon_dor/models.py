@@ -1,7 +1,6 @@
 from django.db import models
 
 
-# TODO: Add media field to the db
 class Player(models.Model):
     name = models.CharField(max_length=100)
     country = models.CharField(max_length=50, blank=True)
@@ -81,6 +80,9 @@ class Vote(models.Model):
     voter_country = models.CharField(max_length=100, blank=True)
     ip_address = models.GenericIPAddressField(blank=True, null=True)
     year = models.PositiveIntegerField()
+    email = models.EmailField(blank=True)
+    is_verified = models.BooleanField(default=False)
+    token = models.CharField(max_length=36, blank=True)
 
     def __str__(self):
         return f"Vote: 1st-{self.player_1st.name}, 2nd-{self.player_2nd.name}, 3rd-{self.player_3rd.name}"

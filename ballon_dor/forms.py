@@ -13,10 +13,12 @@ class VoteForm(forms.ModelForm):
             "player_3rd",
             "voter_name",
             "voter_country",
+            "email",
         ]
 
     def __init__(self, *args, year=None, **kwargs):
         super().__init__(*args, **kwargs)
+        self.fields["email"].required = True
         if year is None:
             year = get_active_year()  # helper
         allowed_qs = Player.objects.filter(candidate__year=year).order_by("name")
