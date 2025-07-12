@@ -1,15 +1,14 @@
 from django.views.generic.edit import CreateView
 from django.views.generic import TemplateView
 from django.http import HttpResponse
-from django.urls import reverse_lazy
-from django.shortcuts import redirect, render
-from .models import Vote, Player, Candidate
+from django.urls import reverse_lazy, reverse
+from django.shortcuts import redirect
+from .models import Vote
 from .forms import VoteForm
 from django.utils import timezone
-from datetime import datetime
-from datetime import timezone as dt_timezone
-from django.db.models import Max
 from .utils import get_active_year, get_voting_deadline
+import uuid
+from django.core.mail import EmailMessage
 
 
 class VoteCreateView(CreateView):
@@ -27,27 +26,44 @@ class VoteCreateView(CreateView):
 
     def form_valid(self, form):
         active_year = get_active_year()
-        ip = self.get_client_ip()
-        print(f"DEBUG: IP detected: {ip}")
-        if Vote.objects.filter(ip_address=ip, year=active_year).exists():
+        email = form.cleaned_data["email"]
+        if Vote.objects.filter(
+            email=email, year=active_year, is_verified=True
+        ).exists():
             return redirect("already_voted")
-
-        form.instance.ip_address = ip
-        form.instance.year = active_year
-        return super().form_valid(form)
+        vote = form.save(commit=False)
+        vote.year = active_year
+        vote.token = str(uuid.uuid4())
+        vote.save()
+        verify_url = self.request.build_absolute_uri(
+            reverse("verify", args=[vote.token])
+        )
+        # HTML email body
+        html_body = f"""
+        <html>
+        <body>
+        <h2>Confirm Your Ballon D'or Vote</h2>
+        <p>Thanks for voting! Click the button below to verify:</p>
+        <a href="{verify_url}" style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none;">Verify Vote</a>
+        <p>If the button doesn't work, copy this link: {verify_url}</p>
+        <p>Best,</p>
+        </body>
+        </html>
+        """
+        msg = EmailMessage(
+            "Confirm Your Vote",
+            html_body,
+            "Ballon D'or App <shabahmohamed01@gmail.com>",  # Sender name + email
+            [email],
+        )
+        msg.content_subtype = "html"  # For HTML rendering
+        msg.send()
+        return redirect("vote_pending")
 
     def form_invalid(self, form):
         print("DEBUG: form_invalid called")
         print(f"DEBUG: Form errors: {form.errors}")
         return super().form_invalid(form)
-
-    def get_client_ip(self):
-        x_forwarded_for = self.request.META.get("HTTP_X_FORWARDED_FOR")
-        if x_forwarded_for:
-            ip = x_forwarded_for.split(",")[0]
-        else:
-            ip = self.request.META.get("REMOTE_ADDR")
-        return ip
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
@@ -68,7 +84,7 @@ class LiveResultsView(TemplateView):
         }
         tally = {}
 
-        for vote in Vote.objects.filter(year=active_year):
+        for vote in Vote.objects.filter(year=active_year, is_verified=True):
             for field, points in points_map.items():
                 player = getattr(
                     vote, field
@@ -94,3 +110,23 @@ class AlreadyVotedView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["message"] = "⚠️ You have already voted. Thank you!"
         return context
+
+
+class VotePendingView(TemplateView):
+    template_name = "ballon_dor/vote_pending.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["message"] = "Please check your email to confirm your vote!"
+        return context
+
+
+class VerifyView(TemplateView):
+    def get(self, request, token):
+        vote = Vote.objects.filter(token=token, is_verified=False).first()
+        if vote:
+            vote.is_verified = True
+            vote.token = ""
+            vote.save()
+            return redirect("live_results")
+        return HttpResponse("Invalid or already verified link.")

@@ -1,0 +1,10 @@
+{% extends "ballon_dor/base.html" %}  <!-- If no base, remove -->
+
+{% block title %}Vote Pending{% endblock %}
+
+{% block content %}
+<h2>{{ message }}</h2>
+<p>We sent a confirmation link to your email. Click it to make your vote count!</p>
+<p>Didn't get it? Check spam or resubmit your vote.</p>
+<a href="{% url 'vote' %}">Try Again</a>
+{% endblock %}
