@@ -1,9 +1,13 @@
 from django import forms
 from .models import Player, Vote
 from .utils import get_active_year
+from django_countries.fields import CountryField
 
 
 class VoteForm(forms.ModelForm):
+    voter_country = CountryField(blank_label="(select country)").formfield(
+        required=False
+    )
 
     class Meta:
         model = Vote
