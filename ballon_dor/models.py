@@ -77,7 +77,7 @@ class Vote(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True)
     voter_name = models.CharField(max_length=100, blank=True)
-    voter_country = models.CharField(max_length=100, blank=True)
+    voter_country = models.CharField(max_length=2, blank=True)
     ip_address = models.GenericIPAddressField(blank=True, null=True)
     year = models.PositiveIntegerField()
     email = models.EmailField(blank=True)
