@@ -3,12 +3,14 @@ from django.views.generic import TemplateView
 from django.http import HttpResponse
 from django.urls import reverse_lazy, reverse
 from django.shortcuts import redirect
-from .models import Vote
+from .models import BallonDorResult, Vote
 from .forms import VoteForm
 from django.utils import timezone
 from .utils import get_active_year, get_voting_deadline
 import uuid
 from django.core.mail import EmailMessage
+from django.conf import settings
+from django.views.generic import ListView
 
 
 class VoteCreateView(CreateView):
@@ -50,14 +52,20 @@ class VoteCreateView(CreateView):
         </body>
         </html>
         """
-        msg = EmailMessage(
-            "Confirm Your Vote",
-            html_body,
-            "Ballon D'or App <shabahmohamed01@gmail.com>",  # Sender name + email
-            [email],
-        )
-        msg.content_subtype = "html"  # For HTML rendering
-        msg.send()
+
+        try:
+            msg = EmailMessage(
+                "Confirm Your Vote",
+                html_body,
+                f"Ballon D'or App <{settings.EMAIL_HOST_USER}>",  # Sender name + email
+                [email],
+            )
+            msg.content_subtype = "html"  # For HTML rendering
+            msg.send()
+        except Exception as e:
+            print(f"Email send failed: {e}")
+            return HttpResponse("Error sending verification email. Please try again.")
+
         return redirect("vote_pending")
 
     def form_invalid(self, form):
@@ -130,3 +138,10 @@ class VerifyView(TemplateView):
             vote.save()
             return redirect("live_results")
         return HttpResponse("Invalid or already verified link.")
+
+
+class HistoryView(ListView):
+    model = BallonDorResult
+    template_name = "ballon_dor/history.html"
+    context_object_name = "results"
+    ordering = ["-year"]  # Newest first

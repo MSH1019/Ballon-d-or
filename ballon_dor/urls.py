@@ -6,6 +6,7 @@ from .views import (
     AlreadyVotedView,
     VerifyView,
     VotePendingView,
+    HistoryView,
 )
 
 urlpatterns = [

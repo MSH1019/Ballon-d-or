@@ -14,7 +14,11 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
       <div class="container">
-        <a class="navbar-brand" href="{% url 'home' %}">Ballon d'Or</a>
+        <a class="navbar-brand d-flex align-items-center gap-2" href="{% url 'home' %}">
+          <img src="{% static 'images/trophy.png' %}" alt="Trophy Icon" width="24" height="24">
+          Ballon d'Or
+        </a>
+
         <div class="navbar-nav">
           <a class="nav-link" href="{% url 'vote' %}">Vote</a>
           <a class="nav-link" href="{% url 'live_results' %}">Live Results</a>

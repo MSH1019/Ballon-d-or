@@ -84,5 +84,12 @@ class Vote(models.Model):
     is_verified = models.BooleanField(default=False)
     token = models.CharField(max_length=36, blank=True)
 
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["year", "email"], name="unique_email_per_year"
+            )
+        ]
+
     def __str__(self):
         return f"Vote: 1st-{self.player_1st.name}, 2nd-{self.player_2nd.name}, 3rd-{self.player_3rd.name}"
