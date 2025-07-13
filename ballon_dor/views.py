@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from django.http import HttpResponse
 from django.urls import reverse_lazy, reverse
 from django.shortcuts import redirect
-from .models import BallonDorResult, Vote
+from .models import BallonDorResult, Candidate, Vote
 from .forms import VoteForm
 from django.utils import timezone
 from .utils import get_active_year, get_voting_deadline
@@ -109,6 +109,15 @@ class LiveResultsView(TemplateView):
 
 class HomePageView(TemplateView):
     template_name = "ballon_dor/home.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["contenders"] = (
+            Candidate.objects.filter(year=2025)
+            .select_related("player", "club")
+            .order_by("?")
+        )  # All, randomized for variety
+        return context
 
 
 class AlreadyVotedView(TemplateView):
