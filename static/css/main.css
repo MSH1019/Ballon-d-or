@@ -4,7 +4,6 @@ body {
   background-color: #0b1c2c;  /* deep, dark navy */
   color: #f0f0f0;
   background: linear-gradient(to bottom, #000000, #0b1c2c);
-
 }
 
 .navbar {
@@ -41,7 +40,10 @@ body {
   padding: 4rem 2rem;
   background: linear-gradient(to bottom, #000000, #0b1c2c);
   animation: fadeIn 1s ease-in-out;
+  max-width: 800px;  /* Added: Center hero content */
+  margin: 0 auto;
 }
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
@@ -59,22 +61,53 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Hero buttons: Ensure full styling */
 .hero-buttons .btn {
-  padding: 0.8rem 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  margin: 0 0.5rem;
+  opacity: 1 !important;
+  filter: none !important;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
 }
 
+
 .gold-btn {
-  background: gold;
-  color: black;
+  background: linear-gradient(90deg, #ffd700, #e6c200);
+  color: #181d2a;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px 0 rgba(255, 215, 0, 0.09);
+  transition: filter 0.12s;
+}
+
+.gold-btn:hover {
+  filter: brightness(1.08);
+}
+
+.gold-btn, #see-more {
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.16);
+  font-weight: 600;
 }
 
 .outline-btn {
-  border: 2px solid gold;
-  color: gold;
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  background: transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.5rem 1.6rem;
+  margin-left: 0.5rem;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.08);
+  opacity: 1;
+  transition: background 0.12s, color 0.12s;
+}
+
+.outline-btn:hover {
+  background: #ffd700;
+  color: #181d2a;
 }
 
 .image-section {
@@ -98,18 +131,14 @@ body {
   border-top: 1px solid gold;
 }
 
-
- /* vote.html */
-
-
+/* General button hover (applies to all .btn) */
 .btn:hover {
   opacity: 0.85;
   transform: scale(1.02);
   transition: all 0.2s ease;
 }
 
-
-
+/* Vote page styles */
 .vote-container {
   max-width: 600px;
   margin: 0 auto;
@@ -182,10 +211,12 @@ body {
   transition: all 0.2s ease;
   width: 100%;
 }
+
 .submit-btn:hover {
   background: linear-gradient(to right, #f5c518, gold);
   transform: scale(1.02);
 }
+
 .back-link {
   text-align: center;
   margin-top: 2rem;
@@ -200,5 +231,96 @@ body {
   text-decoration: underline;
 }
 
+/* Contenders section: Dark cards, grid layout */
+.contenders { 
+  max-width: 1200px; 
+  margin: 2rem auto; 
+  text-align: center; 
+}
 
-/* dropdown styling */
+.contenders h2 {
+  color: gold;
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.02em;
+}
+
+
+.card-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 1rem; 
+  justify-items: center; 
+}
+
+.card {
+  background: linear-gradient(145deg, #191919 80%, #1e1e10 100%);
+  color: #eee;
+  border: 1.5px solid #27251f;
+}
+
+
+.card img { 
+  width: 100%; 
+  height: 140px; 
+  object-fit: cover; 
+  border-radius: 7px; 
+  margin-bottom: 0.8rem;
+  border: none;
+}
+
+.card h3 {
+  color: gold;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0.4rem 0 0.15rem 0;
+}
+
+.card p {
+  color: #d4d6dd;
+  font-size: 1rem;
+  margin-bottom: 0.1rem;
+}
+
+.card:hover {
+  box-shadow: 0 6px 40px 0 rgba(255, 215, 0, 0.16), 0 0px 0 0 gold;
+  transform: translateY(-3px) scale(1.03);
+}
+
+
+.card.hidden { 
+  display: none;  /* Hide extras initially */
+}
+
+#see-more { 
+  margin: 1rem auto; 
+  display: block; 
+  width: fit-content;  /* Center button */
+}
+
+
+/* Strongest fix for the outline-btn (overrides Bootstrap) */
+.hero-buttons .outline-btn,
+.hero-buttons .outline-btn:visited {
+  border: 2px solid #ffd700 !important;
+  color: #ffd700 !important;
+  background: transparent !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  padding: 0.5rem 1.6rem !important;
+  margin-left: 0.5rem !important;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.08) !important;
+  opacity: 1 !important;
+  transition: background 0.12s, color 0.12s !important;
+  filter: none !important;
+}
+
+.hero-buttons .outline-btn:hover,
+.hero-buttons .outline-btn:focus {
+  background: #ffd700 !important;
+  color: #181d2a !important;
+  text-decoration: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+}

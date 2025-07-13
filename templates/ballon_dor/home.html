@@ -4,25 +4,62 @@
 {% block title %}Welcome{% endblock %}
 
 {% block content %}
-<div class="d-flex justify-content-center align-items-center mt-5">
-  <div class="p-5 rounded" style="max-width: 700px; width: 100%; background-color: #0b0c10; border: 1px solid gold; box-shadow: 0 0 30px gold;">
 
-    <h1 class="text-center mb-3" style="color: gold;">🏆 People's Ballon d'Or</h1>
-    <p class="text-center text-muted mb-4">Pick your top 3 players and see how the world is voting!</p>
+  <div class="hero">
+    <h1 class="hero-title">
+      <img src="{% static 'images/main.jpg' %}" alt="Ballon d'Or Trophy" class="hero-icon">
+      People's Ballon d'Or
+    </h1>
 
-    <div class="d-flex justify-content-center gap-3">
-      <a href="{% url 'vote' %}" class="btn btn-warning btn-lg text-dark fw-bold">Vote Now</a>
-      <a href="{% url 'live_results' %}" class="btn btn-outline-light btn-lg">See Live Results</a>
+    <p class="hero-subtitle">Pick your top 3 players and see how the world is voting!</p>
+    <div class="hero-buttons">
+      <a href="{% url 'vote' %}" class="btn gold-btn">Vote Now</a>
+      <a href="{% url 'live_results' %}" class="btn outline-btn">See Live Results</a>
     </div>
-
   </div>
-</div>
 
-<div class="text-center mt-5">
-  <img src="{% static 'images/hero.jpg' %}" alt="Ballon d'Or" class="img-fluid rounded shadow">
-</div>
+  <div class="contenders">
+    <h2>Top 2025 Contenders</h2>
+    <div class="card-grid">
+      {% for contender in contenders %}
+        <div class="card {% if forloop.counter > 5 %}hidden{% endif %}">
+          <img src="{{ contender.image.url|default:'{% static "players/default.jpg" %}' }}" alt="{{ contender.player.name }}">
+          <h3>{{ contender.player.name }}</h3>
+          <p>{{ contender.club.name|default:'N/A' }} ({{ contender.player.country }})</p>
+        </div>
+      {% empty %}
+        <p>No contenders yet.</p>
+      {% endfor %}
+    </div>
+    {% if contenders|length > 5 %}
+      <button id="see-more" class="btn gold-btn">See More</button>
+    {% endif %}
+  </div>
 
-<footer class="text-center text-muted mt-5 mb-3">
-  © 2025 People's Ballon d'Or — Made by Mohamed
-</footer>
+  <div class="image-section">
+    <img src="{% static 'images/main.jpg' %}" alt="Ballon d'Or Trophy" class="main-image">
+  </div>
+
+  <footer class="footer">
+    © 2025 People's Ballon d'Or — Made by Mohamed
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.card.hidden');
+    let visibleCount = 5;
+    const batchSize = 5;
+
+    document.getElementById('see-more')?.addEventListener('click', () => {
+      for (let i = 0; i < batchSize; i++) {
+        if (cards[visibleCount - 5 + i]) {
+          cards[visibleCount - 5 + i].classList.remove('hidden');
+        }
+      }
+      visibleCount += batchSize;
+      if (visibleCount >= cards.length + 5) {
+        document.getElementById('see-more').style.display = 'none';
+      }
+    });
+  </script>
+
 {% endblock %}
