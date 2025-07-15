@@ -1,10 +1,36 @@
-{% extends "ballon_dor/base.html" %}  <!-- If no base, remove -->
-
-{% block title %}Vote Pending{% endblock %}
+{% extends "ballon_dor/base.html" %}
+{% load static %}
+{% block title %}Vote Submitted{% endblock %}
 
 {% block content %}
-<h2>{{ message }}</h2>
-<p>We sent a confirmation link to your email. Click it to make your vote count!</p>
-<p>Didn't get it? Check spam or resubmit your vote.</p>
-<a href="{% url 'vote' %}">Try Again</a>
+<div class="success-container">
+  <div class="success-content">
+    <!-- Success Icon -->
+    <div class="success-icon">
+      <div class="checkmark">✓</div>
+    </div>
+    
+    <!-- Main Message -->
+    <h1 class="success-title">Vote Submitted Successfully!</h1>
+    <p class="success-subtitle">{{ message }}</p>
+    
+    <!-- Email Instructions -->
+    <div class="email-info">
+      <h3>📧 Check Your Email</h3>
+      <p>We've sent a confirmation link to your email address.</p>
+      <p><strong>Click the link to make your vote count!</strong></p>
+    </div>
+    
+    <!-- Helpful Tips -->
+    <div class="tips">
+      <p><small>💡 Didn't receive it? Check your spam folder or try voting again.</small></p>
+    </div>
+    
+    <!-- Action Buttons -->
+    <div class="success-buttons">
+      <a href="{% url 'home' %}" class="btn gold-btn">Back to Home</a>
+      <a href="{% url 'live_results' %}" class="btn outline-btn">View Live Results</a>
+    </div>
+  </div>
+</div>
 {% endblock %}

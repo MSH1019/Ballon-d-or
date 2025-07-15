@@ -69,8 +69,6 @@ class VoteCreateView(CreateView):
         return redirect("vote_pending")
 
     def form_invalid(self, form):
-        print("DEBUG: form_invalid called")
-        print(f"DEBUG: Form errors: {form.errors}")
         return super().form_invalid(form)
 
     def get_form_kwargs(self):
@@ -125,7 +123,7 @@ class AlreadyVotedView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["message"] = "⚠️ You have already voted. Thank you!"
+        context["message"] = "You have already voted. Thank you!"
         return context
 
 

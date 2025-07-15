@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Already Voted</title>
-</head>
-<body>
-    <h1>{{ message }}</h1>
-    <a href="{% url 'home' %}">Return to home</a>
-</body>
-</html>
+{% extends "ballon_dor/base.html" %}
+{% load static %}
+{% block title %}Already Voted{% endblock %}
+
+{% block content %}
+<div class="already-voted-container">
+  <div class="already-voted-content">
+    <!-- Icon -->
+    <div class="voted-icon">
+      <div class="ballot-box">🗳️</div>
+    </div>
+    
+    <!-- Main Message -->
+    <h1 class="already-voted-title">{{ message }}</h1>
+    <p class="already-voted-subtitle">Your vote has already been submitted and verified!</p>
+    
+    <!-- Info Box -->
+    <div class="vote-info">
+      <p><strong>Thank you for participating!</strong></p>
+      <p>Each email address can only vote once to ensure fairness.</p>
+    </div>
+    
+    <!-- Action Buttons -->
+    <div class="already-voted-buttons">
+      <a href="{% url 'home' %}" class="btn gold-btn">Back to Home</a>
+      <a href="{% url 'live_results' %}" class="btn outline-btn">View Live Results</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

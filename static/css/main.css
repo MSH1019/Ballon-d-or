@@ -1,46 +1,38 @@
+/* ===== GLOBAL STYLES ===== */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #0b1c2c;  /* deep, dark navy */
+  background-color: #0b1c2c;
   color: #f0f0f0;
   background: linear-gradient(to bottom, #000000, #0b1c2c);
 }
 
+/* ===== NAVIGATION ===== */
 .navbar {
   background-color: #000;
   padding: 1rem 2rem;
   border-bottom: 1px solid gold;
 }
 
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.navbar-nav .nav-link {
+  color: #fff !important;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-left: 2rem;
+  transition: color 0.2s ease;
 }
 
-.logo {
-  font-weight: bold;
-  color: gold;
-  text-decoration: none;
-  font-size: 1.2rem;
+.navbar-nav .nav-link:hover {
+  color: #ffd700 !important;
 }
 
-.nav-links a {
-  color: #ccc;
-  margin-left: 1.5rem;
-  text-decoration: none;
-}
-
-.nav-links a:hover {
-  color: gold;
-}
-
+/* ===== HOMEPAGE STYLES ===== */
 .hero {
   text-align: center;
   padding: 4rem 2rem;
   background: linear-gradient(to bottom, #000000, #0b1c2c);
   animation: fadeIn 1s ease-in-out;
-  max-width: 800px;  /* Added: Center hero content */
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -61,27 +53,13 @@ body {
   margin-bottom: 2rem;
 }
 
-.navbar-nav .nav-link {
-  color: #fff !important;
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-left: 2rem;
-  transition: color 0.2s ease;
-}
-
-.navbar-nav .nav-link:hover {
-  color: #ffd700 !important;
-}
-
-
-/* Container for the buttons */
+/* Hero Buttons */
 .hero-buttons {
   display: flex;
   justify-content: center;
   gap: 1rem;
 }
 
-/* Gold "Vote Now" button */
 .hero-buttons .gold-btn {
   background: linear-gradient(90deg, #ffd700, #e6c200);
   color: #181d2a;
@@ -102,15 +80,14 @@ body {
   filter: brightness(1.08);
 }
 
-/* Outline "See Live Results" button */
 .hero-buttons .outline-btn {
-  border: 2px solid #ffd700;
-  color: #ffd700;
-  background: transparent;
-  border-radius: 8px;
-  font-weight: 600;
-  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.08);
-  transition: background 0.12s, color 0.12s;
+  border: 2px solid #ffd700 !important;
+  color: #ffd700 !important;
+  background: transparent !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.08) !important;
+  transition: background 0.12s, color 0.12s !important;
   width: 200px;
   height: 50px;
   display: flex;
@@ -120,132 +97,12 @@ body {
 }
 
 .hero-buttons .outline-btn:hover {
-  background: #ffd700;
-  color: #181d2a;
+  background: #ffd700 !important;
+  color: #181d2a !important;
+  text-decoration: none !important;
 }
 
-.image-section {
-  text-align: center;
-  margin-top: 3rem;
-}
-
-.main-image {
-  max-width: 90%;
-  height: auto;
-  border: 2px solid gold;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
-}
-
-.footer {
-  background-color: #0b1c2c;
-  color: #bbb;
-  text-align: center;
-  padding: 1.5rem 0;
-  border-top: 1px solid gold;
-}
-
-/* General button hover (applies to all .btn) */
-.btn:hover {
-  opacity: 0.85;
-  transform: scale(1.02);
-  transition: all 0.2s ease;
-}
-
-/* Vote page styles */
-.vote-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
-  background-color: rgba(0, 0, 0, 0.6);
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-}
-
-.vote-title {
-  font-size: 2rem;
-  font-family: 'Cinzel', serif;
-  color: gold;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.vote-subtext {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #ccc;
-}
-
-.vote-form .form-group {
-  margin-bottom: 1.5rem;
-}
-
-.vote-form label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: gold;
-}
-
-.vote-form select,
-.vote-form input[type="text"],
-.vote-form input[type="email"] {
-  background-color: #121a2b;
-  color: #fff;
-  border: 1px solid #444;
-  border-radius: 6px;
-  font-size: 1rem;
-  padding: 0.6rem;
-  appearance: none;
-  transition: all 0.2s ease;
-}
-
-.vote-form select:hover,
-.vote-form input:hover {
-  border-color: gold;
-  box-shadow: 0 0 5px gold;
-}
-
-.form-error {
-  color: red;
-  font-size: 0.9rem;
-  margin-top: 0.3rem;
-}
-
-.submit-btn {
-  background: linear-gradient(to right, gold, #e0c100);
-  color: black;
-  font-weight: bold;
-  border: none;
-  padding: 0.65rem 1rem;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  width: 100%;
-}
-
-.submit-btn:hover {
-  background: linear-gradient(to right, #f5c518, gold);
-  transform: scale(1.02);
-}
-
-.back-link {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.back-link a {
-  color: gold;
-  text-decoration: none;
-}
-
-.back-link a:hover {
-  text-decoration: underline;
-}
-
-/* Contenders section: Dark cards, grid layout */
+/* ===== CONTENDERS SECTION ===== */
 .contenders { 
   max-width: 1200px; 
   margin: 2rem auto; 
@@ -260,7 +117,6 @@ body {
   letter-spacing: 0.02em;
 }
 
-
 .card-grid { 
   display: grid; 
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
@@ -273,7 +129,6 @@ body {
   color: #eee;
   border: 1.5px solid #27251f;
 }
-
 
 .card img { 
   width: 100%; 
@@ -302,11 +157,11 @@ body {
   transform: translateY(-3px) scale(1.03);
 }
 
-
 .card.hidden { 
-  display: none;  /* Hide extras initially */
+  display: none;
 }
 
+/* See More Button */
 #see-more {
   background: linear-gradient(90deg, #ffd700, #e6c200);
   color: #181d2a;
@@ -329,28 +184,426 @@ body {
   filter: brightness(1.08);
 }
 
+/* ===== MAIN IMAGE & FOOTER ===== */
+.image-section {
+  text-align: center;
+  margin-top: 3rem;
+}
 
-/* Strongest fix for the outline-btn (overrides Bootstrap) */
-.hero-buttons .outline-btn,
-.hero-buttons .outline-btn:visited {
+.main-image {
+  max-width: 90%;
+  height: auto;
+  border: 2px solid gold;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+}
+
+.footer {
+  background-color: #0b1c2c;
+  color: #bbb;
+  text-align: center;
+  padding: 1.5rem 0;
+  border-top: 1px solid gold;
+}
+
+/* ===== VOTING PAGE STYLES ===== */
+.vote-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.vote-title {
+  font-size: 2rem;
+  font-family: 'Cinzel', serif;
+  color: gold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.vote-subtext {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ccc;
+}
+
+/* Form Groups */
+.vote-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.vote-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #ffd700;
+}
+
+/* Form Fields */
+.vote-form select,
+.vote-form input[type="text"],
+.vote-form input[type="email"],
+.choices__inner,
+.choices__input,
+.choices__list--dropdown {
+  background-color: #121a2b !important;
+  color: #fff !important;
+  border: 1px solid #444 !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  padding: 0.75rem !important;
+  width: 100% !important;
+}
+
+.vote-form select:hover,
+.vote-form input:hover {
+  border-color: #ffd700 !important;
+  box-shadow: 0 0 5px rgba(255, 215, 0, 0.3) !important;
+}
+
+/* Choices.js Dropdown Styling */
+.choices__item--selectable {
+  background-color: #121a2b !important;
+  color: #fff !important;
+}
+
+.choices__item--selectable:hover {
+  background-color: #1a2332 !important;
+  color: #ffd700 !important;
+}
+
+.choices__placeholder {
+  color: #999 !important;
+}
+
+/* Submit Button */
+.submit-btn {
+  background: linear-gradient(90deg, #ffd700, #e6c200);
+  color: #181d2a;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: filter 0.12s;
+  width: 200px;
+  height: 50px;
+  display: block;
+  margin: 3rem auto 0 auto;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.16);
+  text-align: center;
+  line-height: 50px;
+}
+
+.submit-btn:hover {
+  filter: brightness(1.08);
+}
+
+/* Back Link */
+.back-link {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.back-link a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.back-link a:hover {
+  color: #e6c200;
+  text-decoration: none;
+}
+
+/* ===== ERROR MESSAGES - CLEAN STYLED BOXES ===== */
+/* ===== ERROR MESSAGES - POLISHED STYLING ===== */
+/* Remove all default error styling */
+.errorlist,
+.form-error {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Hide any empty or unwanted error elements */
+.errorlist:empty,
+.form-error:empty {
+  display: none !important;
+}
+
+/* Style the main form-level errors (like duplicate players) */
+.errorlist li {
+  background: rgba(255, 107, 107, 0.08);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  color: #ff8a8a;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  margin: 0.8rem auto;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-align: center;
+  display: block;
+  max-width: 350px;
+  border-left: 3px solid #ff6b6b;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.1);
+}
+
+.errorlist.nonfield {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Style field-specific errors (smaller and subtler) */
+.form-error {
+  background: rgba(255, 107, 107, 0.06);
+  border: 1px solid rgba(255, 107, 107, 0.25);
+  color: #ff9999;
+  font-size: 0.8rem;
+  margin: 0.4rem auto;
+  font-weight: 500;
+  display: block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  text-align: center;
+  max-width: 280px;
+  border-left: 2px solid #ff8a8a;
+  box-shadow: 0 1px 4px rgba(255, 107, 107, 0.08);
+}
+
+
+/* =================================================================== */
+
+/* ===== SUCCESS PAGE STYLES ===== */
+.success-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 3rem 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+  text-align: center;
+}
+
+.success-icon {
+  margin-bottom: 2rem;
+}
+
+.checkmark {
+  background: linear-gradient(90deg, #ffd700, #e6c200);
+  color: #181d2a;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0 auto;
+  animation: checkmarkPop 0.6s ease-out;
+}
+
+@keyframes checkmarkPop {
+  0% { transform: scale(0); }
+  60% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.success-title {
+  color: #ffd700;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.success-subtitle {
+  color: #ccc;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.email-info {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.email-info h3 {
+  color: #ffd700;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.email-info p {
+  color: #eee;
+  margin-bottom: 0.5rem;
+}
+
+.tips {
+  margin: 1.5rem 0;
+}
+
+.tips small {
+  color: #999;
+}
+
+.success-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.success-buttons .btn {
+  opacity: 1 !important;
+  filter: none !important;
+  font-size: 1rem;
+  font-weight: 600;
+  min-width: 150px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.success-buttons .gold-btn {
+  background: linear-gradient(90deg, #ffd700, #e6c200) !important;
+  color: #181d2a !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.16);
+}
+
+.success-buttons .gold-btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.success-buttons .outline-btn {
   border: 2px solid #ffd700 !important;
   color: #ffd700 !important;
   background: transparent !important;
-  border-radius: 8px !important;
-  font-weight: 600 !important;
-  padding: 0.5rem 1.6rem !important;
-  margin-left: 0.5rem !important;
-  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.08) !important;
-  opacity: 1 !important;
-  transition: background 0.12s, color 0.12s !important;
-  filter: none !important;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.08);
 }
 
-.hero-buttons .outline-btn:hover,
-.hero-buttons .outline-btn:focus {
+.success-buttons .outline-btn:hover {
   background: #ffd700 !important;
   color: #181d2a !important;
-  text-decoration: none !important;
+  transform: translateY(-1px);
+}
+
+/* Override any Bootstrap dimming */
+.success-buttons .btn:link,
+.success-buttons .btn:visited,
+.success-buttons .btn:active {
+  opacity: 1 !important;
+  filter: none !important;
+}
+/* ===== ALREADY VOTED PAGE ===== */
+.already-voted-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 3rem 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+  text-align: center;
+}
+
+.voted-icon {
+  margin-bottom: 2rem;
+}
+
+.ballot-box {
+  font-size: 4rem;
+  margin: 0 auto;
+}
+
+.already-voted-title {
+  color: #ffd700;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.already-voted-subtitle {
+  color: #ccc;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.vote-info {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  color: #eee;
+}
+
+.already-voted-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.already-voted-buttons .btn {
+  opacity: 1 !important;
+  filter: none !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  min-width: 130px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  padding: 0.4rem 1rem;
+}
+
+.already-voted-buttons .gold-btn {
+  background: linear-gradient(90deg, #ffd700, #e6c200) !important;
+  color: #181d2a !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.16);
+}
+
+.already-voted-buttons .gold-btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.already-voted-buttons .outline-btn {
+  border: 2px solid #ffd700 !important;
+  color: #ffd700 !important;
+  background: transparent !important;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.08);
+}
+
+.already-voted-buttons .outline-btn:hover {
+  background: #ffd700 !important;
+  color: #181d2a !important;
+  transform: translateY(-1px);
+}
+
+.already-voted-buttons .btn:link,
+.already-voted-buttons .btn:visited,
+.already-voted-buttons .btn:active {
   opacity: 1 !important;
   filter: none !important;
 }
