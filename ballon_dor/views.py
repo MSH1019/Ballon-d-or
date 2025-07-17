@@ -29,18 +29,31 @@ class VoteCreateView(CreateView):
     def form_valid(self, form):
         active_year = get_active_year()
         email = form.cleaned_data["email"]
+
+        # Check if user already has a verified vote
         if Vote.objects.filter(
             email=email, year=active_year, is_verified=True
         ).exists():
             return redirect("already_voted")
+
+        # Check if user has an unverified vote - delete it and create new one
+        existing_vote = Vote.objects.filter(
+            email=email, year=active_year, is_verified=False
+        ).first()
+        if existing_vote:
+            existing_vote.delete()  # Delete the old unverified vote
+
+        # Now create the new vote
         vote = form.save(commit=False)
         vote.year = active_year
         vote.token = str(uuid.uuid4())
         vote.save()
+
         verify_url = self.request.build_absolute_uri(
             reverse("verify", args=[vote.token])
         )
-        # HTML email body
+
+        # Rest of your email code stays the same...
         html_body = f"""
         <html>
         <body>
@@ -57,10 +70,10 @@ class VoteCreateView(CreateView):
             msg = EmailMessage(
                 "Confirm Your Vote",
                 html_body,
-                f"Ballon D'or App <{settings.EMAIL_HOST_USER}>",  # Sender name + email
+                f"Ballon D'or App <{settings.EMAIL_HOST_USER}>",
                 [email],
             )
-            msg.content_subtype = "html"  # For HTML rendering
+            msg.content_subtype = "html"
             msg.send()
         except Exception as e:
             print(f"Email send failed: {e}")
@@ -90,6 +103,9 @@ class LiveResultsView(TemplateView):
         }
         tally = {}
 
+        # Get all verified votes for this year
+        verified_votes = Vote.objects.filter(year=active_year, is_verified=True)
+
         for vote in Vote.objects.filter(year=active_year, is_verified=True):
             for field, points in points_map.items():
                 player = getattr(
@@ -99,9 +115,25 @@ class LiveResultsView(TemplateView):
                     tally.get(player, 0) + points
                 )  # If player is already in tally, add points to their total. If player isn’t in tally yet, start at 0 and add points.
 
+        # Handle ties - assign proper ranks
+        ranked_results = []  # Empty list to store our final results
+        current_rank = 1  # Start at rank 1
+
         # Sort and get top 20
-        results = sorted(tally.items(), key=lambda x: x[1], reverse=True)[:20]
-        context["results"] = results
+        sorted_results = sorted(tally.items(), key=lambda x: x[1], reverse=True)[
+            :30
+        ]  # This gives us: [(PlayerA, 8), (PlayerB, 5), (PlayerC, 5), (PlayerD, 3)]
+
+        for i, (player, points) in enumerate(sorted_results):
+            if i > 0 and points < sorted_results[i - 1][1]:  # Only change rank if:
+                # - We're not on the first player (i > 0)
+                # - AND current points are less than previous player's points
+                # If points are different from previous, update rank
+                current_rank = i + 1
+            ranked_results.append((current_rank, player, points))
+
+        context["results"] = ranked_results
+        context["total_votes"] = verified_votes.count()
         return context
 
 
