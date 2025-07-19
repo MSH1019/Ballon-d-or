@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils.text import slugify
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class Player(models.Model):
@@ -27,13 +29,87 @@ class NationalTeam(models.Model):
 
 
 class Candidate(models.Model):
+    # Basic Information
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
     year = models.PositiveIntegerField()
     image = models.ImageField(upload_to="players/", blank=True)
     club = models.ForeignKey(Club, on_delete=models.SET_NULL, null=True, blank=True)
+    slug = models.SlugField(max_length=100, blank=True)
+
+    # Essential Stats
+    goals = models.PositiveIntegerField(default=0, help_text="Goals scored this season")
+    assists = models.PositiveIntegerField(default=0, help_text="Assists this season")
+    appearances = models.PositiveIntegerField(
+        default=0, help_text="Games played this season"
+    )
+    avg_match_rating = models.DecimalField(
+        max_digits=3,
+        decimal_places=1,
+        default=0.0,
+        validators=[MinValueValidator(0.0), MaxValueValidator(10.0)],
+        help_text="Average match rating (0.0-10.0)",
+    )
+
+    # Trophies & Recognition
+    trophies_won = models.TextField(
+        blank=True,
+        help_text="Major trophies won this season (e.g., Champions League, Premier League)",
+    )
+
+    # Optional: Why they deserve it (brief)
+    why_contender = models.TextField(
+        blank=True, help_text="Brief explanation of why they deserve the Ballon d'Or"
+    )
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["year", "slug"], name="unique_candidate_slug_per_year"
+            ),
+            models.UniqueConstraint(
+                fields=["year", "player"], name="unique_candidate_player_per_year"
+            ),
+        ]
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            base_slug = slugify(self.player.name)
+            self.slug = base_slug
+
+            # Handle duplicate slugs within the same year
+            counter = 1
+            while (
+                Candidate.objects.filter(year=self.year, slug=self.slug)
+                .exclude(pk=self.pk)
+                .exists()
+            ):
+                self.slug = f"{base_slug}-{counter}"
+                counter += 1
+
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.player.name} ({self.year})"
+
+    # Helper properties
+    @property
+    def goal_contribution(self):
+        """Total goals + assists"""
+        return self.goals + self.assists
+
+    @property
+    def goals_per_game(self):
+        """Goals per appearance"""
+        if self.appearances > 0:
+            return round(self.goals / self.appearances, 2)
+        return 0.0
+
+    @property
+    def assists_per_game(self):
+        """Assists per appearance"""
+        if self.appearances > 0:
+            return round(self.assists / self.appearances, 2)
+        return 0.0
 
 
 class BallonDorResult(models.Model):
@@ -50,8 +126,8 @@ class BallonDorResult(models.Model):
     nationality_at_award = models.ForeignKey(NationalTeam, on_delete=models.CASCADE)
     points = models.IntegerField()
 
-    # COMMENT: Better way of implementing it in django
     class Meta:
+        # COMMENT: Better way of implementing it in django
         constraints = [
             models.UniqueConstraint(
                 fields=["year", "rank"], name="unique_rank_per_year"

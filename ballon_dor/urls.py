@@ -1,4 +1,5 @@
 from django.urls import path
+from . import views
 from .views import (
     HomePageView,
     LiveResultsView,
@@ -7,6 +8,7 @@ from .views import (
     VerifyView,
     VotePendingView,
     HistoryView,
+    CandidateDetailView,
 )
 
 urlpatterns = [
@@ -16,4 +18,11 @@ urlpatterns = [
     path("already-voted/", AlreadyVotedView.as_view(), name="already_voted"),
     path("vote-pending/", VotePendingView.as_view(), name="vote_pending"),
     path("verify/<str:token>/", VerifyView.as_view(), name="verify"),
+    path("history/", HistoryView.as_view(), name="history"),
+    # Candidate pages (year-specific)
+    path(
+        "candidate/<int:year>/<slug:slug>/",
+        CandidateDetailView.as_view(),
+        name="candidate_detail",
+    ),
 ]

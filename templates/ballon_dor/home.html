@@ -23,12 +23,12 @@
     <div class="card-grid">
       {% for contender in contenders %}
         <div class="card {% if forloop.counter > 5 %}hidden{% endif %}">
-          <img src="{{ contender.image.url|default:'{% static "players/default.jpg" %}' }}" alt="{{ contender.player.name }}">
-          <h3>{{ contender.player.name }}</h3>
-          <p>{{ contender.club.name|default:'N/A' }} ({{ contender.player.country }})</p>
+          <a href="{% url 'candidate_detail' contender.year contender.slug %}" style="text-decoration: none; color: inherit;">
+            <img src="{{ contender.image.url|default:'{% static "players/default.jpg" %}' }}" alt="{{ contender.player.name }}">
+            <h3>{{ contender.player.name }}</h3>
+            <p>{{ contender.club.name|default:'N/A' }} ({{ contender.player.country }})</p>
+          </a>
         </div>
-      {% empty %}
-        <p>No contenders yet.</p>
       {% endfor %}
     </div>
     {% if contenders|length > 5 %}
