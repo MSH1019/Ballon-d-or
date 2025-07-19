@@ -1,0 +1,38 @@
+{% extends "ballon_dor/base.html" %}
+{% load static %}
+{% block title %}{{ country_name }}{% endblock %}
+
+{% block content %}
+<div class="country-detail-container">
+  <div class="country-header">
+    <h1 class="country-name">🌍 {{ country_name }}</h1>
+  </div>
+
+  <div class="country-candidates">
+    <h3>2025 Ballon d'Or Candidates from {{ country_name }}</h3>
+    {% if country_candidates %}
+      <div class="players-grid">
+        {% for candidate in country_candidates %}
+          <div class="player-card">
+            <a href="{% url 'player_detail' candidate.player.id %}">
+              {% if candidate.image %}
+                <img src="{{ candidate.image.url }}" alt="{{ candidate.player.name }}">
+              {% else %}
+                <div class="player-placeholder">👤</div>
+              {% endif %}
+              <h4>{{ candidate.player.name }}</h4>
+              <p>{{ candidate.club.name|default:"No club" }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No candidates from {{ country_name }} this year.</p>
+    {% endif %}
+  </div>
+
+  <div class="actions">
+    <a href="{% url 'home' %}" class="btn outline-btn">← Back to Home</a>
+  </div>
+</div>
+{% endblock %}

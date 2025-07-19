@@ -44,6 +44,46 @@ class NationalTeamAdmin(admin.ModelAdmin):
 
 @admin.register(Candidate)
 class CandidateAdmin(admin.ModelAdmin):
-    list_display = ("player", "year")
-    list_filter = ("year",)
-    search_fields = ("player__name",)
+    list_display = (
+        "player",
+        "year",
+        "club",
+        "goals",
+        "assists",
+        "appearances",
+        "avg_match_rating",
+    )
+    list_filter = ("year", "club")
+    search_fields = ("player__name", "slug")
+    prepopulated_fields = {"slug": ("player",)}
+
+    fieldsets = (
+        (
+            "Basic Information",
+            {
+                "fields": ("player", "year", "club", "slug", "image"),
+                "classes": ("wide",),
+            },
+        ),
+        (
+            "Season Statistics",
+            {
+                "fields": ("appearances", "goals", "assists", "avg_match_rating"),
+                "classes": ("wide",),
+            },
+        ),
+        (
+            "Additional Information",
+            {
+                "fields": ("trophies_won", "why_contender"),
+                "classes": ("collapse",),
+            },
+        ),
+    )
+
+    # Show calculated stats in admin
+    readonly_fields = []
+
+    def get_readonly_fields(self, request, obj=None):
+        # You could add calculated fields here if needed
+        return self.readonly_fields

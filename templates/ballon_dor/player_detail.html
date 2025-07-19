@@ -1,0 +1,50 @@
+{% extends "ballon_dor/base.html" %}
+{% load static %}
+{% block title %}{{ player.name }}{% endblock %}
+
+{% block content %}
+<div class="player-detail-container">
+  <div class="player-header">
+    {% if player.profile_pic %}
+      <img src="{{ player.profile_pic.url }}" alt="{{ player.name }}" class="player-image">
+    {% else %}
+      <div class="player-image-placeholder">👤</div>
+    {% endif %}
+    
+    <div class="player-info">
+      <h1 class="player-name">{{ player.name }}</h1>
+      <p class="player-country">🌍 {{ player.country|default:"Country not specified" }}</p>
+      {% if current_club %}
+        <p class="player-club">⚽ {{ current_club.name }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="voting-stats">
+    <h3>2025 Voting Statistics</h3>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number">{{ voting_stats.first_votes }}</span>
+        <span class="stat-label">1st Place Votes</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">{{ voting_stats.second_votes }}</span>
+        <span class="stat-label">2nd Place Votes</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">{{ voting_stats.third_votes }}</span>
+        <span class="stat-label">3rd Place Votes</span>
+      </div>
+      <div class="stat-item highlight">
+        <span class="stat-number">{{ voting_stats.total_points }}</span>
+        <span class="stat-label">Total Points</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <a href="{% url 'home' %}" class="btn outline-btn">← Back to Home</a>
+    <a href="{% url 'vote' %}" class="btn gold-btn">Vote for {{ player.name }}</a>
+  </div>
+</div>
+{% endblock %}

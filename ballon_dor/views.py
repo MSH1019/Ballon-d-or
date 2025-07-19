@@ -1,16 +1,16 @@
 from django.views.generic.edit import CreateView
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DetailView, ListView
 from django.http import HttpResponse
 from django.urls import reverse_lazy, reverse
-from django.shortcuts import redirect
-from .models import BallonDorResult, Candidate, Vote
-from .forms import VoteForm
+from django.shortcuts import redirect, get_object_or_404
 from django.utils import timezone
-from .utils import get_active_year, get_voting_deadline
-import uuid
 from django.core.mail import EmailMessage
 from django.conf import settings
-from django.views.generic import ListView
+from django.db.models import Count, Q
+import uuid
+from .models import BallonDorResult, Candidate, Vote, Player, Club
+from .forms import VoteForm
+from .utils import get_active_year, get_voting_deadline
 
 
 class VoteCreateView(CreateView):
@@ -41,7 +41,7 @@ class VoteCreateView(CreateView):
             email=email, year=active_year, is_verified=False
         ).first()
         if existing_vote:
-            existing_vote.delete()  # Delete the old unverified vote
+            existing_vote.delete()
 
         # Now create the new vote
         vote = form.save(commit=False)
@@ -53,7 +53,6 @@ class VoteCreateView(CreateView):
             reverse("verify", args=[vote.token])
         )
 
-        # Rest of your email code stays the same...
         html_body = f"""
         <html>
         <body>
@@ -106,34 +105,27 @@ class LiveResultsView(TemplateView):
         # Get all verified votes for this year
         verified_votes = Vote.objects.filter(year=active_year, is_verified=True)
 
-        for vote in Vote.objects.filter(year=active_year, is_verified=True):
+        for vote in verified_votes:
             for field, points in points_map.items():
-                player = getattr(
-                    vote, field
-                )  # This is a Python trick: getattr(vote, "player_1st") is the same as vote.player_1st - So this grabs the actual Player object for that field.
-                tally[player] = (
-                    tally.get(player, 0) + points
-                )  # If player is already in tally, add points to their total. If player isn’t in tally yet, start at 0 and add points.
+                player = getattr(vote, field)
+                tally[player] = tally.get(player, 0) + points
+
+        # Sort and get top 30
+        sorted_results = sorted(tally.items(), key=lambda x: x[1], reverse=True)[:30]
 
         # Handle ties - assign proper ranks
-        ranked_results = []  # Empty list to store our final results
-        current_rank = 1  # Start at rank 1
-
-        # Sort and get top 20
-        sorted_results = sorted(tally.items(), key=lambda x: x[1], reverse=True)[
-            :30
-        ]  # This gives us: [(PlayerA, 8), (PlayerB, 5), (PlayerC, 5), (PlayerD, 3)]
+        ranked_results = []
+        current_rank = 1
 
         for i, (player, points) in enumerate(sorted_results):
-            if i > 0 and points < sorted_results[i - 1][1]:  # Only change rank if:
-                # - We're not on the first player (i > 0)
-                # - AND current points are less than previous player's points
-                # If points are different from previous, update rank
+            if i > 0 and points < sorted_results[i - 1][1]:
                 current_rank = i + 1
             ranked_results.append((current_rank, player, points))
 
         context["results"] = ranked_results
         context["total_votes"] = verified_votes.count()
+        context["last_updated"] = timezone.now()
+
         return context
 
 
@@ -142,11 +134,19 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
+        # Use the same get_active_year() function from your other views
+        active_year = get_active_year()
+
         context["contenders"] = (
-            Candidate.objects.filter(year=2025)
+            Candidate.objects.filter(year=active_year)
             .select_related("player", "club")
             .order_by("?")
-        )  # All, randomized for variety
+        )
+
+        # Optional: Pass the year to template for display
+        context["active_year"] = active_year
+
         return context
 
 
@@ -183,4 +183,82 @@ class HistoryView(ListView):
     model = BallonDorResult
     template_name = "ballon_dor/history.html"
     context_object_name = "results"
-    ordering = ["-year"]  # Newest first
+    ordering = ["-year"]
+
+
+# NEW: Candidate Detail View (year-specific)
+class CandidateDetailView(DetailView):
+    model = Candidate
+    template_name = "ballon_dor/candidate_detail.html"
+    context_object_name = "candidate"
+
+    def get_object(self):
+        return get_object_or_404(
+            Candidate, year=self.kwargs["year"], slug=self.kwargs["slug"]
+        )
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        candidate = self.get_object()
+        player = candidate.player
+        year = candidate.year
+
+        # Get voting stats for this player in this year
+        first_votes = Vote.objects.filter(
+            player_1st=player, year=year, is_verified=True
+        ).count()
+        second_votes = Vote.objects.filter(
+            player_2nd=player, year=year, is_verified=True
+        ).count()
+        third_votes = Vote.objects.filter(
+            player_3rd=player, year=year, is_verified=True
+        ).count()
+
+        total_points = (first_votes * 5) + (second_votes * 3) + (third_votes * 1)
+
+        # Calculate current ranking
+        points_map = {
+            "player_1st": 5,
+            "player_2nd": 3,
+            "player_3rd": 1,
+        }
+        tally = {}
+
+        # Get all verified votes for this year
+        verified_votes = Vote.objects.filter(year=year, is_verified=True)
+
+        for vote in verified_votes:
+            for field, points in points_map.items():
+                vote_player = getattr(vote, field)
+                tally[vote_player] = tally.get(vote_player, 0) + points
+
+        # Sort and find current player's rank
+        sorted_results = sorted(tally.items(), key=lambda x: x[1], reverse=True)
+
+        current_rank = None
+        for i, (ranked_player, points) in enumerate(sorted_results):
+            if ranked_player.id == player.id:
+                current_rank = i + 1
+                break
+
+        # If player hasn't received votes yet, they're not ranked
+        if current_rank is None:
+            current_rank = "Unranked"
+
+        context["voting_stats"] = {
+            "first_votes": first_votes,
+            "second_votes": second_votes,
+            "third_votes": third_votes,
+            "total_points": total_points,
+            "current_rank": current_rank,
+        }
+
+        # Get other candidates from same year for comparison
+        context["other_candidates"] = (
+            Candidate.objects.filter(year=year)
+            .exclude(pk=candidate.pk)
+            .select_related("player", "club")
+            .order_by("?")[:5]  # Add random ordering!
+        )
+
+        return context

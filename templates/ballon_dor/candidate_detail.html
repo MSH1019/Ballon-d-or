@@ -1,0 +1,164 @@
+{% extends 'ballon_dor/base.html' %}
+{% load static %}
+
+{% block title %}{{ candidate.player.name }} - {{ candidate.year }}Candidate{% endblock %}
+
+{% block content %}
+<div class="candidate-detail-container">
+    <!-- Main Header Section -->
+    <div class="candidate-header">
+        <div class="candidate-image-section">
+            {% if candidate.image %}
+                <img src="{{ candidate.image.url }}" class="candidate-image" alt="{{ candidate.player.name }}">
+            {% elif candidate.player.profile_pic %}
+                <img src="{{ candidate.player.profile_pic.url }}" class="candidate-image" alt="{{ candidate.player.name }}">
+            {% endif %}
+        </div>
+        
+        <div class="candidate-info">
+            <h1 class="candidate-name">{{ candidate.player.name }}</h1>
+            <h2 class="candidate-year">{{ candidate.year }} Fan Award Candidate</h2>
+            
+            <div class="candidate-details">
+                {% if candidate.club %}
+                <div class="detail-item">
+                    {% if candidate.club.logo %}
+                        <img src="{{ candidate.club.logo.url }}" class="detail-icon club-logo" alt="{{ candidate.club.name }} logo">
+                    {% endif %}
+                    <span class="detail-text">{{ candidate.club.name }}</span>
+                </div>
+                {% endif %}
+            </div>
+                        
+            <div class="candidate-actions">
+                <a href="{% url 'vote' %}" class="btn gold-btn">
+                    Vote for {{ candidate.player.name }}
+                </a>
+                <a href="{% url 'live_results' %}" class="btn outline-btn">
+                    See Live Results
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Season Statistics -->
+    <div class="stats-section">
+        <h3>{{ candidate.year }} Season Statistics</h3>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number">{{ candidate.appearances }}</span>
+                <span class="stat-label">Appearances</span>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-number">{{ candidate.goals }}</span>
+                <span class="stat-label">Goals</span>
+                <span class="stat-extra">{{ candidate.goals_per_game }}/game</span>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-number">{{ candidate.assists }}</span>
+                <span class="stat-label">Assists</span>
+                <span class="stat-extra">{{ candidate.assists_per_game }}/game</span>
+            </div>
+
+            <div class="stat-card highlight">
+                <span class="stat-number">{{ candidate.goal_contribution }}</span>
+                <span class="stat-label">G+A</span>
+                <span class="stat-extra">Total contribution</span>
+            </div>
+    
+            <div class="stat-card highlight">
+                <span class="stat-number">{{ candidate.avg_match_rating }}</span>
+                <span class="stat-label">Avg Rating</span>
+            </div>
+
+            
+        </div>
+    </div>
+
+    <!-- Voting Results -->
+    <!-- Replace the voting-section in your candidate_detail.html -->
+    <div class="voting-section">
+        <h3>Current Fan Votes</h3>
+        <div class="voting-grid">
+            <div class="vote-card first">
+                <span class="vote-number">{{ voting_stats.first_votes }}</span>
+                <span class="vote-label">1st Place</span>
+                <span class="vote-points">{{ voting_stats.first_votes }} × 5pts</span>
+            </div>
+            <div class="vote-card second">
+                <span class="vote-number">{{ voting_stats.second_votes }}</span>
+                <span class="vote-label">2nd Place</span>
+                <span class="vote-points">{{ voting_stats.second_votes }} × 3pts</span>
+            </div>
+            <div class="vote-card third">
+                <span class="vote-number">{{ voting_stats.third_votes }}</span>
+                <span class="vote-label">3rd Place</span>
+                <span class="vote-points">{{ voting_stats.third_votes }} × 1pt</span>
+            </div>
+            <div class="vote-card total">
+                <span class="vote-number">
+                    {% if voting_stats.current_rank == "Unranked" %}
+                        -
+                    {% else %}
+                        #{{ voting_stats.current_rank }}
+                    {% endif %}
+                </span>
+                <span class="vote-label">Current Ranking</span>
+                <span class="vote-points">
+                    {% if voting_stats.current_rank == "Unranked" %}
+                        No votes yet
+                    {% else %}
+                        {{ voting_stats.total_points }} points
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Information -->
+    <div class="info-sections">
+        {% if candidate.trophies_won %}
+        <div class="info-card">
+            <h4>🏆 Major Trophies Won</h4>
+            <p>{{ candidate.trophies_won|linebreaks }}</p>
+        </div>
+        {% endif %}
+
+        {% if candidate.why_contender %}
+        <div class="info-card">
+            <h4>⭐ Why {{ candidate.player.name }} Deserves the Ballon d'Or</h4>
+            <p>{{ candidate.why_contender|linebreaks }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Other Top Candidates -->
+    {% if other_candidates %}
+    <div class="other-candidates-section">
+        <h3>Other Top {{ candidate.year }} Candidates</h3>
+        <div class="candidates-grid">
+            {% for other in other_candidates %}
+            <div class="candidate-card">
+                <a href="{% url 'candidate_detail' other.year other.slug %}">
+                    {% if other.image %}
+                        <img src="{{ other.image.url }}" alt="{{ other.player.name }}">
+                    {% else %}
+                        <div class="candidate-placeholder">👤</div>
+                    {% endif %}
+                    <h5>{{ other.player.name }}</h5>
+                    <p>{{ other.club.name }}</p>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Navigation -->
+    <div class="navigation-section">
+        <a href="{% url 'home' %}" class="btn outline-btn">← Back to All Candidates</a>
+    </div>
+</div>
+{% endblock %}

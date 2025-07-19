@@ -1,0 +1,46 @@
+{% extends "ballon_dor/base.html" %}
+{% load static %}
+{% block title %}{{ club.name }}{% endblock %}
+
+{% block content %}
+<div class="club-detail-container">
+  <div class="club-header">
+    {% if club.logo %}
+      <img src="{{ club.logo.url }}" alt="{{ club.name }}" class="club-logo">
+    {% else %}
+      <div class="club-logo-placeholder">🏆</div>
+    {% endif %}
+    
+    <div class="club-info">
+      <h1 class="club-name">{{ club.name }}</h1>
+    </div>
+  </div>
+
+  <div class="club-players">
+    <h3>2025 Ballon d'Or Candidates</h3>
+    {% if club_players %}
+      <div class="players-grid">
+        {% for candidate in club_players %}
+          <div class="player-card">
+            <a href="{% url 'player_detail' candidate.player.id %}">
+              {% if candidate.image %}
+                <img src="{{ candidate.image.url }}" alt="{{ candidate.player.name }}">
+              {% else %}
+                <div class="player-placeholder">👤</div>
+              {% endif %}
+              <h4>{{ candidate.player.name }}</h4>
+              <p>{{ candidate.player.country }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No candidates from {{ club.name }} this year.</p>
+    {% endif %}
+  </div>
+
+  <div class="actions">
+    <a href="{% url 'home' %}" class="btn outline-btn">← Back to Home</a>
+  </div>
+</div>
+{% endblock %}
