@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>{% block title %}Ballon d'Or Voting{% endblock %}</title>
@@ -11,101 +12,103 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
 
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="{% url 'home' %}">
-          <img src="{% static 'images/trophy.png' %}" alt="Trophy Icon" width="24" height="24">
-          TheFanAward
-        </a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="{% url 'home' %}">
+        <img src="{% static 'images/trophy.png' %}" alt="Trophy Icon" width="24" height="24">
+        TheFanAward
+      </a>
 
-        <div class="navbar-nav">
-          <a class="nav-link" href="{% url 'vote' %}">Vote</a>
-          <a class="nav-link" href="{% url 'live_results' %}">Live Results</a>
-        </div>
+      <div class="navbar-nav">
+        <a class="nav-link" href="{% url 'vote' %}">Vote</a>
+        <a class="nav-link" href="{% url 'live_results' %}">Live Results</a>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-  
+
   <div class="container">
     {% block content %}{% endblock %}
   </div>
   <!-- Choices.js JS -->
-<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-<script>
-// Wait for the page to fully load before running our code
-document.addEventListener('DOMContentLoaded', function () {
-  
-  // Function to remove accents/special characters from text for better searching
-  // Example: "Désiré" becomes "desire", "José" becomes "jose"
-  function normalizeText(text) {
-    return text.normalize('NFD')              // Split accented characters into base + accent
-                .replace(/[\u0300-\u036f]/g, '') // Remove the accent marks
-                .toLowerCase();                   // Convert to lowercase for consistent searching
-  }
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+  <script>
+    // Wait for the page to fully load before running our code
+    document.addEventListener('DOMContentLoaded', function () {
 
-  // Create a shared configuration object that all dropdowns will use
-  // This prevents us from repeating the same settings 4 times
-  const searchConfig = {
-    searchEnabled: true,        // Enable the search functionality
-    shouldSort: true,          // Sort the results alphabetically
-    removeItemButton: false,   // Don't show 'X' button to remove selections
-    searchResultLimit: 5,      // Only show 5 search results at a time
-    searchFloor: 2,           // Start searching after user types 2 characters
-    
-    // Advanced search options using Fuse.js (the search engine Choices.js uses)
-    fuseOptions: {
-      threshold: 0.3,         // How "fuzzy" the search is (0 = exact match, 1 = very loose)
-      distance: 100,          // How far apart characters can be in a match
-      
-      // Custom function that tells the search engine how to get text from each option
-      getFn: function(obj, path) {
-        const value = obj[path] || '';           // Get the original text (like "Désiré Doué")
-        return normalizeText(value.toString());  // Convert it to "desire doue" for searching
+      // Function to remove accents/special characters from text for better searching
+      // Example: "Désiré" becomes "desire", "José" becomes "jose"
+      function normalizeText(text) {
+        return text.normalize('NFD')              // Split accented characters into base + accent
+          .replace(/[\u0300-\u036f]/g, '') // Remove the accent marks
+          .toLowerCase();                   // Convert to lowercase for consistent searching
       }
-    },
-    
-    // Custom search filter function - this is where the magic happens
-    searchFilter: function(value, search) {
-      // value = the player/country name from the dropdown (like "Désiré Doué")
-      // search = what the user typed (like "desire")
-      
-      const normalizedValue = normalizeText(value);   // "desire doue"
-      const normalizedSearch = normalizeText(search); // "desire"
-      
-      // Check if the normalized search term appears anywhere in the normalized name
-      return normalizedValue.includes(normalizedSearch);
-    }
-  };
 
-  // Apply our search configuration to each dropdown
-  // The ...searchConfig spreads all the settings we defined above
-  
-  // First player dropdown
-  new Choices('#id_player_1st', {
-    ...searchConfig,                              // Use all the settings from above
-    placeholderValue: 'Select 1st place player...' // Custom placeholder for this dropdown
-  });
+      // Create a shared configuration object that all dropdowns will use
+      // This prevents us from repeating the same settings 4 times
+      const searchConfig = {
+        searchEnabled: true,        // Enable the search functionality
+        shouldSort: true,          // Sort the results alphabetically
+        removeItemButton: false,   // Don't show 'X' button to remove selections
+        searchResultLimit: 5,      // Only show 5 search results at a time
+        searchFloor: 2,           // Start searching after user types 2 characters
 
-  // Second player dropdown
-  new Choices('#id_player_2nd', {
-    ...searchConfig,                              // Same settings
-    placeholderValue: 'Select 2nd place player...' // Different placeholder
-  });
+        // Advanced search options using Fuse.js (the search engine Choices.js uses)
+        fuseOptions: {
+          threshold: 0.3,         // How "fuzzy" the search is (0 = exact match, 1 = very loose)
+          distance: 100,          // How far apart characters can be in a match
 
-  // Third player dropdown
-  new Choices('#id_player_3rd', {
-    ...searchConfig,                              // Same settings
-    placeholderValue: 'Select 3rd place player...' // Different placeholder
-  });
-  
-  // Country dropdown
-  new Choices('#id_voter_country', {
-    ...searchConfig,                           // Same search settings work for countries too
-    placeholderValue: 'Select your country...'  // Country-specific placeholder
-  });
-});
-</script>
+          // Custom function that tells the search engine how to get text from each option
+          getFn: function (obj, path) {
+            const value = obj[path] || '';           // Get the original text (like "Désiré Doué")
+            return normalizeText(value.toString());  // Convert it to "desire doue" for searching
+          }
+        },
+
+        // Custom search filter function - this is where the magic happens
+        searchFilter: function (value, search) {
+          // value = the player/country name from the dropdown (like "Désiré Doué")
+          // search = what the user typed (like "desire")
+
+          const normalizedValue = normalizeText(value);   // "desire doue"
+          const normalizedSearch = normalizeText(search); // "desire"
+
+          // Check if the normalized search term appears anywhere in the normalized name
+          return normalizedValue.includes(normalizedSearch);
+        }
+      };
+
+      // Apply our search configuration to each dropdown
+      // The ...searchConfig spreads all the settings we defined above
+
+      // First player dropdown
+      new Choices('#id_player_1st', {
+        ...searchConfig,                              // Use all the settings from above
+        placeholderValue: 'Select 1st place player...' // Custom placeholder for this dropdown
+      });
+
+      // Second player dropdown
+      new Choices('#id_player_2nd', {
+        ...searchConfig,                              // Same settings
+        placeholderValue: 'Select 2nd place player...' // Different placeholder
+      });
+
+      // Third player dropdown
+      new Choices('#id_player_3rd', {
+        ...searchConfig,                              // Same settings
+        placeholderValue: 'Select 3rd place player...' // Different placeholder
+      });
+
+      // Country dropdown
+      new Choices('#id_voter_country', {
+        ...searchConfig,                           // Same search settings work for countries too
+        placeholderValue: 'Select your country...'  // Country-specific placeholder
+      });
+    });
+  </script>
 
 </body>
+
 </html>

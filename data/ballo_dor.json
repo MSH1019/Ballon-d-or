@@ -1,0 +1,5080 @@
+[
+  {
+    "model": "ballon_dor.player",
+    "pk": 1,
+    "fields": {
+      "name": "Ousmane Dembélé",
+      "country": "France",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 2,
+    "fields": {
+      "name": "Lamine Yamal",
+      "country": "Spain",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 3,
+    "fields": {
+      "name": "Raphinha",
+      "country": "Brazil",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 4,
+    "fields": {
+      "name": "Mohamed Salah",
+      "country": "Egypt",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 5,
+    "fields": {
+      "name": "Kylian Mbappé",
+      "country": "France",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 6,
+    "fields": {
+      "name": "Vitinha",
+      "country": "Portugal",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 7,
+    "fields": {
+      "name": "Nuno Mendes",
+      "country": "Portugal",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 8,
+    "fields": {
+      "name": "Désiré Doué",
+      "country": "France",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 9,
+    "fields": {
+      "name": "Khvicha Kvaratskhelia",
+      "country": "Georgia",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 10,
+    "fields": {
+      "name": "Achraf Hakimi",
+      "country": "Morocco",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 11,
+    "fields": {
+      "name": "Pedri",
+      "country": "Spain",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 12,
+    "fields": {
+      "name": "Harry Kane",
+      "country": "England",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 13,
+    "fields": {
+      "name": "Robert Lewandowski",
+      "country": "Poland",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 14,
+    "fields": {
+      "name": "Gianluigi Donnarumma",
+      "country": "Italy",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 15,
+    "fields": {
+      "name": "João Neves",
+      "country": "Portugal",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 16,
+    "fields": {
+      "name": "Viktor Gyökeres",
+      "country": "Sweden",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 17,
+    "fields": {
+      "name": "Vinícius Júnior",
+      "country": "Brazil",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 18,
+    "fields": {
+      "name": "Jude Bellingham",
+      "country": "England",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 19,
+    "fields": {
+      "name": "Marquinhos",
+      "country": "Brazil",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 20,
+    "fields": {
+      "name": "Declan Rice",
+      "country": "England",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 21,
+    "fields": {
+      "name": "Florian Wirtz",
+      "country": "Germany",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 22,
+    "fields": {
+      "name": "Erling Haaland",
+      "country": "Norway",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 24,
+    "fields": {
+      "name": "Jamal Musiala",
+      "country": "Germany",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 25,
+    "fields": {
+      "name": "Lautaro Martínez",
+      "country": "Argentina",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 26,
+    "fields": {
+      "name": "Alessandro Bastoni",
+      "country": "Italy",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 27,
+    "fields": {
+      "name": "Alisson Becker",
+      "country": "Brazil",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 28,
+    "fields": {
+      "name": "Virgil van Dijk",
+      "country": "Netherlands",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 29,
+    "fields": {
+      "name": "Pau Cubarsí",
+      "country": "Spain",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 30,
+    "fields": {
+      "name": "Willian Pacho",
+      "country": "Colombia",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 31,
+    "fields": {
+      "name": "Michael Olise",
+      "country": "France",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 32,
+    "fields": {
+      "name": "Stanley Matthews",
+      "country": "England",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 33,
+    "fields": {
+      "name": "Alfredo Di Stéfano",
+      "country": "Argentina",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 34,
+    "fields": {
+      "name": "Raymond Kopa",
+      "country": "France",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 35,
+    "fields": {
+      "name": "Billy Wright",
+      "country": "England",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 36,
+    "fields": {
+      "name": "Duncan Edwards",
+      "country": "England",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 37,
+    "fields": {
+      "name": "Helmut Rahn",
+      "country": "Germany",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 38,
+    "fields": {
+      "name": "Just Fontaine",
+      "country": "France",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 39,
+    "fields": {
+      "name": "John Charles",
+      "country": "Wales",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 40,
+    "fields": {
+      "name": "Luis Suárez",
+      "country": "Uruguay",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 41,
+    "fields": {
+      "name": "Ferenc Puskás",
+      "country": "Hungary",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 42,
+    "fields": {
+      "name": "Uwe Seeler",
+      "country": "Germany",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 43,
+    "fields": {
+      "name": "Omar Sívori",
+      "country": "Italy",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 44,
+    "fields": {
+      "name": "Johnny Haynes",
+      "country": "England",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 45,
+    "fields": {
+      "name": "Josef Masopust",
+      "country": "Czechoslovakia",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 46,
+    "fields": {
+      "name": "Eusébio",
+      "country": "Portugal",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 47,
+    "fields": {
+      "name": "Karl-Heinz Schnellinger",
+      "country": "Germany",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 48,
+    "fields": {
+      "name": "Lev Yashin",
+      "country": "Russia",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 49,
+    "fields": {
+      "name": "Gianni Rivera",
+      "country": "Italy",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 50,
+    "fields": {
+      "name": "Jimmy Greaves",
+      "country": "England",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 51,
+    "fields": {
+      "name": "Denis Law",
+      "country": "Scotland",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 52,
+    "fields": {
+      "name": "Amancio",
+      "country": "Spain",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 53,
+    "fields": {
+      "name": "Giacinto Facchetti",
+      "country": "Italy",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 54,
+    "fields": {
+      "name": "Bobby Charlton",
+      "country": "England",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 55,
+    "fields": {
+      "name": "Franz Beckenbauer",
+      "country": "Germany",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 56,
+    "fields": {
+      "name": "Flórián Albert",
+      "country": "Hungary",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 57,
+    "fields": {
+      "name": "Jimmy Johnstone",
+      "country": "Scotland",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 58,
+    "fields": {
+      "name": "George Best",
+      "country": "Northern Ireland",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 59,
+    "fields": {
+      "name": "Dragan Džajić",
+      "country": "Yugoslavia",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 60,
+    "fields": {
+      "name": "Luigi Riva",
+      "country": "Italy",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 61,
+    "fields": {
+      "name": "Gerd Müller",
+      "country": "Germany",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 62,
+    "fields": {
+      "name": "Bobby Moore",
+      "country": "England",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 63,
+    "fields": {
+      "name": "Johan Cruyff",
+      "country": "Netherlands",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 64,
+    "fields": {
+      "name": "Sandro Mazzola",
+      "country": "Italy",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 65,
+    "fields": {
+      "name": "Günter Netzer",
+      "country": "Germany",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 66,
+    "fields": {
+      "name": "Dino Zoff",
+      "country": "Italy",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 67,
+    "fields": {
+      "name": "Kazimierz Deyna",
+      "country": "Poland",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 68,
+    "fields": {
+      "name": "Oleg Blokhin",
+      "country": "Russia",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 69,
+    "fields": {
+      "name": "Rob Rensenbrink",
+      "country": "Netherlands",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 70,
+    "fields": {
+      "name": "Ivo Viktor",
+      "country": "Czechoslovakia",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 71,
+    "fields": {
+      "name": "Allan Simonsen",
+      "country": "Denmark",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 72,
+    "fields": {
+      "name": "Kevin Keegan",
+      "country": "England",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 73,
+    "fields": {
+      "name": "Michel Platini",
+      "country": "France",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 74,
+    "fields": {
+      "name": "Hans Krankl",
+      "country": "Austria",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 75,
+    "fields": {
+      "name": "Karl-Heinz Rummenigge",
+      "country": "Germany",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 76,
+    "fields": {
+      "name": "Ruud Krol",
+      "country": "Netherlands",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 77,
+    "fields": {
+      "name": "Bernd Schuster",
+      "country": "Germany",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 78,
+    "fields": {
+      "name": "Paul Breitner",
+      "country": "Germany",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 79,
+    "fields": {
+      "name": "Paolo Rossi",
+      "country": "Italy",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 80,
+    "fields": {
+      "name": "Alain Giresse",
+      "country": "France",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 81,
+    "fields": {
+      "name": "Zbigniew Boniek",
+      "country": "Poland",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 82,
+    "fields": {
+      "name": "Kenny Dalglish",
+      "country": "Scotland",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 83,
+    "fields": {
+      "name": "Jean Tigana",
+      "country": "France",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 84,
+    "fields": {
+      "name": "Preben Elkjær",
+      "country": "Denmark",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 85,
+    "fields": {
+      "name": "Igor Belanov",
+      "country": "Russia",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 86,
+    "fields": {
+      "name": "Gary Lineker",
+      "country": "England",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 87,
+    "fields": {
+      "name": "Emilio Butragueño",
+      "country": "Spain",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 88,
+    "fields": {
+      "name": "Ruud Gullit",
+      "country": "Netherlands",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 89,
+    "fields": {
+      "name": "Paulo Futre",
+      "country": "Portugal",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 90,
+    "fields": {
+      "name": "Marco van Basten",
+      "country": "Netherlands",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 91,
+    "fields": {
+      "name": "Frank Rijkaard",
+      "country": "Netherlands",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 92,
+    "fields": {
+      "name": "Franco Baresi",
+      "country": "Italy",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 93,
+    "fields": {
+      "name": "Lothar Matthäus",
+      "country": "Germany",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 94,
+    "fields": {
+      "name": "Salvatore Schillaci",
+      "country": "Italy",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 95,
+    "fields": {
+      "name": "Andreas Brehme",
+      "country": "Germany",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 96,
+    "fields": {
+      "name": "Jean-Pierre Papin",
+      "country": "France",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 97,
+    "fields": {
+      "name": "Dejan Savićević",
+      "country": "Yugoslavia",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 98,
+    "fields": {
+      "name": "Darko Pančev",
+      "country": "Yugoslavia",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 99,
+    "fields": {
+      "name": "Hristo Stoichkov",
+      "country": "Bulgaria",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 100,
+    "fields": {
+      "name": "Dennis Bergkamp",
+      "country": "Netherlands",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 101,
+    "fields": {
+      "name": "Roberto Baggio",
+      "country": "Italy",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 102,
+    "fields": {
+      "name": "Eric Cantona",
+      "country": "France",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 103,
+    "fields": {
+      "name": "Paolo Maldini",
+      "country": "Italy",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 104,
+    "fields": {
+      "name": "George Weah",
+      "country": "Liberia",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 105,
+    "fields": {
+      "name": "Jürgen Klinsmann",
+      "country": "Germany",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 106,
+    "fields": {
+      "name": "Jari Litmanen",
+      "country": "Finland",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 107,
+    "fields": {
+      "name": "Matthias Sammer",
+      "country": "Germany",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 108,
+    "fields": {
+      "name": "Ronaldo",
+      "country": "Brazil",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 109,
+    "fields": {
+      "name": "Alan Shearer",
+      "country": "England",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 110,
+    "fields": {
+      "name": "Predrag Mijatović",
+      "country": "Yugoslavia",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 111,
+    "fields": {
+      "name": "Zinedine Zidane",
+      "country": "France",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 112,
+    "fields": {
+      "name": "Davor Šuker",
+      "country": "Croatia",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 113,
+    "fields": {
+      "name": "Rivaldo",
+      "country": "Brazil",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 114,
+    "fields": {
+      "name": "David Beckham",
+      "country": "England",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 115,
+    "fields": {
+      "name": "Andriy Shevchenko",
+      "country": "Ukraine",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 116,
+    "fields": {
+      "name": "Luís Figo",
+      "country": "Portugal",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 117,
+    "fields": {
+      "name": "Michael Owen",
+      "country": "England",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 118,
+    "fields": {
+      "name": "Raúl",
+      "country": "Spain",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 119,
+    "fields": {
+      "name": "Oliver Kahn",
+      "country": "Germany",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 120,
+    "fields": {
+      "name": "Roberto Carlos",
+      "country": "Brazil",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 121,
+    "fields": {
+      "name": "Pavel Nedvěd",
+      "country": "Czech Republic",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 122,
+    "fields": {
+      "name": "Thierry Henry",
+      "country": "France",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 123,
+    "fields": {
+      "name": "Deco",
+      "country": "Portugal",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 124,
+    "fields": {
+      "name": "Ronaldinho",
+      "country": "Brazil",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 125,
+    "fields": {
+      "name": "Frank Lampard",
+      "country": "England",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 126,
+    "fields": {
+      "name": "Steven Gerrard",
+      "country": "England",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 127,
+    "fields": {
+      "name": "Fabio Cannavaro",
+      "country": "Italy",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 128,
+    "fields": {
+      "name": "Gianluigi Buffon",
+      "country": "Italy",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 129,
+    "fields": {
+      "name": "Kaká",
+      "country": "Brazil",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 130,
+    "fields": {
+      "name": "Cristiano Ronaldo",
+      "country": "Portugal",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 131,
+    "fields": {
+      "name": "Lionel Messi",
+      "country": "Argentina",
+      "profile_pic": "players/gettyimages-1754429776.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 132,
+    "fields": {
+      "name": "Fernando Torres",
+      "country": "Spain",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 133,
+    "fields": {
+      "name": "Xavi",
+      "country": "Spain",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 134,
+    "fields": {
+      "name": "Andrés Iniesta",
+      "country": "Spain",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 135,
+    "fields": {
+      "name": "Franck Ribéry",
+      "country": "France",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 136,
+    "fields": {
+      "name": "Manuel Neuer",
+      "country": "Germany",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 137,
+    "fields": {
+      "name": "Neymar",
+      "country": "Brazil",
+      "profile_pic": "players/142105.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 138,
+    "fields": {
+      "name": "Antoine Griezmann",
+      "country": "France",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 139,
+    "fields": {
+      "name": "Luka Modrić",
+      "country": "Croatia",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 140,
+    "fields": {
+      "name": "Jorginho",
+      "country": "Italy",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 141,
+    "fields": {
+      "name": "Karim Benzema",
+      "country": "France",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 142,
+    "fields": {
+      "name": "Sadio Mané",
+      "country": "Senegal",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 143,
+    "fields": {
+      "name": "Kevin De Bruyne",
+      "country": "Belgium",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 144,
+    "fields": {
+      "name": "Kylian Mbappé",
+      "country": "France",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 145,
+    "fields": {
+      "name": "Rodri",
+      "country": "Spain",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 146,
+    "fields": {
+      "name": "Vinicius Jr",
+      "country": "Brazil",
+      "profile_pic": ""
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 147,
+    "fields": {
+      "name": "Cole Palmer",
+      "country": "England",
+      "profile_pic": "players/cole.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 148,
+    "fields": {
+      "name": "Alexander Isak",
+      "country": "Sweden",
+      "profile_pic": "players/isak.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 149,
+    "fields": {
+      "name": "Scott McTominay",
+      "country": "Scotland",
+      "profile_pic": "players/McTominay.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 150,
+    "fields": {
+      "name": "Inigo Martinez",
+      "country": "Spain",
+      "profile_pic": "players/Inigo.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.player",
+    "pk": 151,
+    "fields": {
+      "name": "Fabián Ruiz",
+      "country": "Spain",
+      "profile_pic": "players/fabian.jpeg"
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 1,
+    "fields": {
+      "name": "Barcelona",
+      "logo": "logos/barcelona.png"
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 2,
+    "fields": {
+      "name": "Paris Saint-Germain",
+      "logo": "logos/PSG.png"
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 3,
+    "fields": {
+      "name": "Manchester City",
+      "logo": "logos/manchester-city-fc-seeklogo.png"
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 4,
+    "fields": {
+      "name": "Real Madrid",
+      "logo": "logos/real_madrid.png"
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 5,
+    "fields": {
+      "name": "Bayern München",
+      "logo": "logos/bayern_munich_clean.png"
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 6,
+    "fields": {
+      "name": "Bayer Leverkusen",
+      "logo": "logos/Bayer_Leverkusen.png"
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 7,
+    "fields": {
+      "name": "Liverpool",
+      "logo": "logos/Liverpool.png"
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 8,
+    "fields": {
+      "name": "Internazionale",
+      "logo": "logos/inter-milan-new-2021-seeklogo.png"
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 9,
+    "fields": {
+      "name": "Arsenal",
+      "logo": "logos/arsenal.png"
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 10,
+    "fields": {
+      "name": "Sporting CP",
+      "logo": "logos/sporting-clube-de-portugal-seeklogo.png"
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 11,
+    "fields": {
+      "name": "Blackpool",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 12,
+    "fields": {
+      "name": "Wolverhampton Wanderers",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 13,
+    "fields": {
+      "name": "Manchester United",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 14,
+    "fields": {
+      "name": "Rot-Weiss Essen",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 15,
+    "fields": {
+      "name": "Stade de Reims",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 16,
+    "fields": {
+      "name": "Juventus",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 17,
+    "fields": {
+      "name": "Hamburg",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 18,
+    "fields": {
+      "name": "Fulham",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 19,
+    "fields": {
+      "name": "Dukla Prague",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 20,
+    "fields": {
+      "name": "Benfica",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 21,
+    "fields": {
+      "name": "Köln",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 22,
+    "fields": {
+      "name": "Dynamo Moscow",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 23,
+    "fields": {
+      "name": "Milan",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 24,
+    "fields": {
+      "name": "Tottenham Hotspur",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 25,
+    "fields": {
+      "name": "Bayern Munich",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 26,
+    "fields": {
+      "name": "Ferencváros",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 27,
+    "fields": {
+      "name": "Celtic",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 28,
+    "fields": {
+      "name": "Red Star Belgrade",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 29,
+    "fields": {
+      "name": "Cagliari",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 30,
+    "fields": {
+      "name": "West Ham United",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 31,
+    "fields": {
+      "name": "Ajax",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 32,
+    "fields": {
+      "name": "Borussia Mönchengladbach",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 33,
+    "fields": {
+      "name": "Legia Warsaw",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 34,
+    "fields": {
+      "name": "Dynamo Kyiv",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 35,
+    "fields": {
+      "name": "Anderlecht",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 36,
+    "fields": {
+      "name": "Nancy",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 37,
+    "fields": {
+      "name": "Saint-Étienne",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 38,
+    "fields": {
+      "name": "Bordeaux",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 39,
+    "fields": {
+      "name": "Vejle",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 40,
+    "fields": {
+      "name": "Hellas Verona",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 41,
+    "fields": {
+      "name": "Atlético Madrid",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 42,
+    "fields": {
+      "name": "Marseille",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 43,
+    "fields": {
+      "name": "Borussia Dortmund",
+      "logo": ""
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 44,
+    "fields": {
+      "name": "Newcastle United",
+      "logo": "logos/newcastle.png"
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 45,
+    "fields": {
+      "name": "Chelsea",
+      "logo": "logos/chelsea.png"
+    }
+  },
+  {
+    "model": "ballon_dor.club",
+    "pk": 46,
+    "fields": {
+      "name": "Napoli",
+      "logo": "logos/napoli.png"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 1,
+    "fields": {
+      "name": "Argentina",
+      "flag": "flags/2000px-flag-of-argentina-svg-wallpaper-preview.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 2,
+    "fields": {
+      "name": "Brazil",
+      "flag": "flags/illustration-brazil-flag_53876-27017.jpg.avif"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 3,
+    "fields": {
+      "name": "Colombia",
+      "flag": "flags/2000px-flag-of-colombia-svg-wallpaper-preview.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 4,
+    "fields": {
+      "name": "France",
+      "flag": "flags/france-162295_640.png"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 5,
+    "fields": {
+      "name": "England",
+      "flag": "flags/360_F_109053341_8oihOcZM46x5ripNifu6EI0eUaViYvLX.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 6,
+    "fields": {
+      "name": "Morocco",
+      "flag": "flags/istockphoto-1334705699-612x612.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 7,
+    "fields": {
+      "name": "Sweden",
+      "flag": "flags/sweden-flag-uhd-4k-wallpaper.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 8,
+    "fields": {
+      "name": "Spain",
+      "flag": "flags/istockphoto-479224872-612x612.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 9,
+    "fields": {
+      "name": "Germany",
+      "flag": "flags/Germany-Flag.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 10,
+    "fields": {
+      "name": "Norway",
+      "flag": "flags/norway-flag-flag-norway-norwegian-flag-norway-flag-hd-wallpaper-preview.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 11,
+    "fields": {
+      "name": "Egypt",
+      "flag": "flags/illustration-egypt-flag_53876-27140.jpg.avif"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 12,
+    "fields": {
+      "name": "Italy",
+      "flag": "flags/360_F_103974757_2597ILW3SY8gmitAAb8g3M8Oyo8HJYhC.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 13,
+    "fields": {
+      "name": "Poland",
+      "flag": "flags/istockphoto-657672856-612x612.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 14,
+    "fields": {
+      "name": "Portugal",
+      "flag": "flags/2000px-flag-portugal-svg-wallpaper-preview.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 15,
+    "fields": {
+      "name": "Georgia",
+      "flag": "flags/flags-flag-of-georgia-wallpaper-preview.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 16,
+    "fields": {
+      "name": "Netherlands",
+      "flag": "flags/holland-netherlands-flag-dutch-flag-flag-of-the-netherlands-hd-wallpaper-preview.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 18,
+    "fields": {
+      "name": "Bulgaria",
+      "flag": "flags/wp4205555.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 19,
+    "fields": {
+      "name": "Uruguay",
+      "flag": "flags/istockphoto-652754092-612x612.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 20,
+    "fields": {
+      "name": "Russia",
+      "flag": "flags/russia-162400_640.png"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 21,
+    "fields": {
+      "name": "Scotland",
+      "flag": "flags/360_F_109139157_S5tILHWZSUVW8eMw3iJd1qnVtCoWoFA6.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 22,
+    "fields": {
+      "name": "Denmark",
+      "flag": "flags/flags-flag-of-denmark-danish-flag-flag-hd-wallpaper-preview.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 23,
+    "fields": {
+      "name": "Liberia",
+      "flag": "flags/istockphoto-1422217859-612x612.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 24,
+    "fields": {
+      "name": "Finland",
+      "flag": "flags/360_F_105004986_75ZeThXka0rwttrJFtMggzhDtV6z0E9x.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 25,
+    "fields": {
+      "name": "Yugoslavia",
+      "flag": "flags/istockphoto-1366932582-612x612.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 26,
+    "fields": {
+      "name": "Croatia",
+      "flag": ""
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 27,
+    "fields": {
+      "name": "Ukraine",
+      "flag": "flags/istockphoto-1372304054-612x612.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 28,
+    "fields": {
+      "name": "Czech Republic",
+      "flag": "flags/2000px-flag-czech-republic-svg-wallpaper-preview_O2JjHmH.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 29,
+    "fields": {
+      "name": "Senegal",
+      "flag": "flags/360_F_757750997_YC2LKj6gI7V1prucitQOp5tmbq6T7ejN.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 30,
+    "fields": {
+      "name": "Belgium",
+      "flag": "flags/360_F_97427678_CYxycl5qYtIlQ2angqVD1z2JsCiAt7Ew.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 31,
+    "fields": {
+      "name": "Wales",
+      "flag": "flags/flags-flag-of-wales-wallpaper-preview.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 32,
+    "fields": {
+      "name": "Hungary",
+      "flag": "flags/360_F_140332858_vmM2xkDRr0FaqBmxVcO7fVt9OOOlx9Cj.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 33,
+    "fields": {
+      "name": "Czechoslovakia",
+      "flag": "flags/2000px-flag-czech-republic-svg-wallpaper-preview.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 34,
+    "fields": {
+      "name": "Northern Ireland",
+      "flag": "flags/istockphoto-1063901808-612x612.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.nationalteam",
+    "pk": 35,
+    "fields": {
+      "name": "Austria",
+      "flag": "flags/austria.jpg"
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 1,
+    "fields": {
+      "player": 1,
+      "year": 2025,
+      "image": "players/dembele.jpg",
+      "club": 2,
+      "slug": "ousmane-dembele",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 2,
+    "fields": {
+      "player": 2,
+      "year": 2025,
+      "image": "players/Lamine_Yamal.jpg",
+      "club": 1,
+      "slug": "lamine-yamal",
+      "goals": 21,
+      "assists": 25,
+      "appearances": 62,
+      "avg_match_rating": "8.1",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 3,
+    "fields": {
+      "player": 3,
+      "year": 2025,
+      "image": "players/Raphinha.jpg",
+      "club": 1,
+      "slug": "raphinha",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 4,
+    "fields": {
+      "player": 4,
+      "year": 2025,
+      "image": "players/Mohamed_Salah.jpg",
+      "club": 7,
+      "slug": "mohamed-salah",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 6,
+    "fields": {
+      "player": 5,
+      "year": 2025,
+      "image": "players/Kylian_Mbappé.jpg",
+      "club": 4,
+      "slug": "kylian-mbappe",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 7,
+    "fields": {
+      "player": 6,
+      "year": 2025,
+      "image": "players/Vitinha.jpg",
+      "club": 2,
+      "slug": "vitinha",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 8,
+    "fields": {
+      "player": 7,
+      "year": 2025,
+      "image": "players/Nuno_Mendes.jpg",
+      "club": 2,
+      "slug": "nuno-mendes",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 9,
+    "fields": {
+      "player": 8,
+      "year": 2025,
+      "image": "players/Désiré_Doué.jpg",
+      "club": 2,
+      "slug": "desire-doue",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 10,
+    "fields": {
+      "player": 9,
+      "year": 2025,
+      "image": "players/Khvicha_Kvaratskhelia.jpg",
+      "club": 2,
+      "slug": "khvicha-kvaratskhelia",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 11,
+    "fields": {
+      "player": 10,
+      "year": 2025,
+      "image": "players/Achraf_Hakimi.jpg",
+      "club": 2,
+      "slug": "achraf-hakimi",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 12,
+    "fields": {
+      "player": 11,
+      "year": 2025,
+      "image": "players/pedri_HnealMH.jpg",
+      "club": 1,
+      "slug": "pedri",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 14,
+    "fields": {
+      "player": 12,
+      "year": 2025,
+      "image": "players/Harry_Kane.jpg",
+      "club": 5,
+      "slug": "harry-kane",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 15,
+    "fields": {
+      "player": 13,
+      "year": 2025,
+      "image": "players/Robert_Lewandowski.jpg",
+      "club": 1,
+      "slug": "robert-lewandowski",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 16,
+    "fields": {
+      "player": 14,
+      "year": 2025,
+      "image": "players/Gianluigi_Donnarumma.jpg",
+      "club": 2,
+      "slug": "gianluigi-donnarumma",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 17,
+    "fields": {
+      "player": 15,
+      "year": 2025,
+      "image": "players/João_Neves.jpg",
+      "club": 2,
+      "slug": "joao-neves",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 18,
+    "fields": {
+      "player": 16,
+      "year": 2025,
+      "image": "players/Viktor_Gyökeres.jpg",
+      "club": 10,
+      "slug": "viktor-gyokeres",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 19,
+    "fields": {
+      "player": 17,
+      "year": 2025,
+      "image": "players/Vinícius_Júnior.jpg",
+      "club": 4,
+      "slug": "vinicius-junior",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 20,
+    "fields": {
+      "player": 18,
+      "year": 2025,
+      "image": "players/Jude_Bellingham.jpg",
+      "club": 4,
+      "slug": "jude-bellingham",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 21,
+    "fields": {
+      "player": 19,
+      "year": 2025,
+      "image": "players/Marquinhos.jpg",
+      "club": 2,
+      "slug": "marquinhos",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 22,
+    "fields": {
+      "player": 20,
+      "year": 2025,
+      "image": "players/Declan_Rice.jpg",
+      "club": 9,
+      "slug": "declan-rice",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 23,
+    "fields": {
+      "player": 21,
+      "year": 2025,
+      "image": "players/Florian_Wirtz.jpg",
+      "club": 6,
+      "slug": "florian-wirtz",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 24,
+    "fields": {
+      "player": 22,
+      "year": 2025,
+      "image": "players/haaland.jpg",
+      "club": 3,
+      "slug": "erling-haaland",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 25,
+    "fields": {
+      "player": 24,
+      "year": 2025,
+      "image": "players/Jamal_Musiala.jpg",
+      "club": 5,
+      "slug": "jamal-musiala",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 26,
+    "fields": {
+      "player": 25,
+      "year": 2025,
+      "image": "players/Lautaro.jpg",
+      "club": 8,
+      "slug": "lautaro-martinez",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 27,
+    "fields": {
+      "player": 26,
+      "year": 2025,
+      "image": "players/Bastoni.jpg",
+      "club": 8,
+      "slug": "alessandro-bastoni",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 28,
+    "fields": {
+      "player": 27,
+      "year": 2025,
+      "image": "players/allison.jpg",
+      "club": 7,
+      "slug": "alisson-becker",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 29,
+    "fields": {
+      "player": 28,
+      "year": 2025,
+      "image": "players/Van-Dijk.jpg",
+      "club": 7,
+      "slug": "virgil-van-dijk",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 30,
+    "fields": {
+      "player": 29,
+      "year": 2025,
+      "image": "players/Pau-Cubarsi.jpg",
+      "club": 1,
+      "slug": "pau-cubarsi",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 31,
+    "fields": {
+      "player": 30,
+      "year": 2025,
+      "image": "players/pacho.jpg",
+      "club": 2,
+      "slug": "willian-pacho",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 32,
+    "fields": {
+      "player": 31,
+      "year": 2025,
+      "image": "players/Olise.jpg",
+      "club": 5,
+      "slug": "michael-olise",
+      "goals": 20,
+      "assists": 20,
+      "appearances": 50,
+      "avg_match_rating": "7.8",
+      "trophies_won": "Bundisliga",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 33,
+    "fields": {
+      "player": 147,
+      "year": 2025,
+      "image": "players/cole_Hebdm68.jpg",
+      "club": 45,
+      "slug": "147",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 34,
+    "fields": {
+      "player": 148,
+      "year": 2025,
+      "image": "players/isak_xI6bkzD.jpg",
+      "club": 44,
+      "slug": "148",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 35,
+    "fields": {
+      "player": 149,
+      "year": 2025,
+      "image": "players/McTominay_Xooonkl.jpg",
+      "club": 46,
+      "slug": "149",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 36,
+    "fields": {
+      "player": 150,
+      "year": 2025,
+      "image": "players/Inigo_p6SYDrP.jpg",
+      "club": 1,
+      "slug": "150",
+      "goals": 0,
+      "assists": 4,
+      "appearances": 28,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.candidate",
+    "pk": 37,
+    "fields": {
+      "player": 151,
+      "year": 2025,
+      "image": "players/fabian_h0ko9o0.jpeg",
+      "club": 2,
+      "slug": "151",
+      "goals": 0,
+      "assists": 0,
+      "appearances": 0,
+      "avg_match_rating": "0.0",
+      "trophies_won": "",
+      "why_contender": ""
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 1,
+    "fields": {
+      "year": 1956,
+      "rank": "1",
+      "player": 32,
+      "club_at_award": 11,
+      "nationality_at_award": 5,
+      "points": 47
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 2,
+    "fields": {
+      "year": 1956,
+      "rank": "2",
+      "player": 33,
+      "club_at_award": 4,
+      "nationality_at_award": 1,
+      "points": 44
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 3,
+    "fields": {
+      "year": 1956,
+      "rank": "3",
+      "player": 34,
+      "club_at_award": 4,
+      "nationality_at_award": 4,
+      "points": 33
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 4,
+    "fields": {
+      "year": 1957,
+      "rank": "1",
+      "player": 33,
+      "club_at_award": 4,
+      "nationality_at_award": 1,
+      "points": 72
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 5,
+    "fields": {
+      "year": 1957,
+      "rank": "2",
+      "player": 35,
+      "club_at_award": 12,
+      "nationality_at_award": 5,
+      "points": 19
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 6,
+    "fields": {
+      "year": 1957,
+      "rank": "3",
+      "player": 34,
+      "club_at_award": 4,
+      "nationality_at_award": 4,
+      "points": 16
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 7,
+    "fields": {
+      "year": 1958,
+      "rank": "1",
+      "player": 34,
+      "club_at_award": 4,
+      "nationality_at_award": 4,
+      "points": 71
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 8,
+    "fields": {
+      "year": 1958,
+      "rank": "2",
+      "player": 37,
+      "club_at_award": 14,
+      "nationality_at_award": 9,
+      "points": 40
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 9,
+    "fields": {
+      "year": 1958,
+      "rank": "3",
+      "player": 38,
+      "club_at_award": 15,
+      "nationality_at_award": 4,
+      "points": 23
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 10,
+    "fields": {
+      "year": 1959,
+      "rank": "1",
+      "player": 33,
+      "club_at_award": 4,
+      "nationality_at_award": 1,
+      "points": 80
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 11,
+    "fields": {
+      "year": 1959,
+      "rank": "2",
+      "player": 34,
+      "club_at_award": 15,
+      "nationality_at_award": 4,
+      "points": 42
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 12,
+    "fields": {
+      "year": 1959,
+      "rank": "3",
+      "player": 39,
+      "club_at_award": 16,
+      "nationality_at_award": 31,
+      "points": 24
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 13,
+    "fields": {
+      "year": 1960,
+      "rank": "1",
+      "player": 40,
+      "club_at_award": 1,
+      "nationality_at_award": 19,
+      "points": 54
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 14,
+    "fields": {
+      "year": 1960,
+      "rank": "2",
+      "player": 41,
+      "club_at_award": 4,
+      "nationality_at_award": 32,
+      "points": 37
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 15,
+    "fields": {
+      "year": 1960,
+      "rank": "3",
+      "player": 42,
+      "club_at_award": 17,
+      "nationality_at_award": 9,
+      "points": 33
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 16,
+    "fields": {
+      "year": 1961,
+      "rank": "1",
+      "player": 43,
+      "club_at_award": 16,
+      "nationality_at_award": 12,
+      "points": 46
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 17,
+    "fields": {
+      "year": 1961,
+      "rank": "2",
+      "player": 40,
+      "club_at_award": 8,
+      "nationality_at_award": 19,
+      "points": 40
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 18,
+    "fields": {
+      "year": 1961,
+      "rank": "3",
+      "player": 44,
+      "club_at_award": 18,
+      "nationality_at_award": 5,
+      "points": 22
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 19,
+    "fields": {
+      "year": 1962,
+      "rank": "1",
+      "player": 45,
+      "club_at_award": 19,
+      "nationality_at_award": 33,
+      "points": 65
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 20,
+    "fields": {
+      "year": 1962,
+      "rank": "2",
+      "player": 46,
+      "club_at_award": 20,
+      "nationality_at_award": 14,
+      "points": 53
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 21,
+    "fields": {
+      "year": 1962,
+      "rank": "3",
+      "player": 47,
+      "club_at_award": 21,
+      "nationality_at_award": 9,
+      "points": 33
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 22,
+    "fields": {
+      "year": 1963,
+      "rank": "1",
+      "player": 48,
+      "club_at_award": 22,
+      "nationality_at_award": 20,
+      "points": 73
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 23,
+    "fields": {
+      "year": 1963,
+      "rank": "2",
+      "player": 49,
+      "club_at_award": 23,
+      "nationality_at_award": 12,
+      "points": 55
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 24,
+    "fields": {
+      "year": 1963,
+      "rank": "3",
+      "player": 50,
+      "club_at_award": 24,
+      "nationality_at_award": 5,
+      "points": 50
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 25,
+    "fields": {
+      "year": 1964,
+      "rank": "1",
+      "player": 51,
+      "club_at_award": 13,
+      "nationality_at_award": 21,
+      "points": 61
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 26,
+    "fields": {
+      "year": 1964,
+      "rank": "2",
+      "player": 40,
+      "club_at_award": 8,
+      "nationality_at_award": 19,
+      "points": 43
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 27,
+    "fields": {
+      "year": 1964,
+      "rank": "3",
+      "player": 52,
+      "club_at_award": 4,
+      "nationality_at_award": 8,
+      "points": 38
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 28,
+    "fields": {
+      "year": 1965,
+      "rank": "1",
+      "player": 46,
+      "club_at_award": 20,
+      "nationality_at_award": 14,
+      "points": 67
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 29,
+    "fields": {
+      "year": 1965,
+      "rank": "2",
+      "player": 53,
+      "club_at_award": 8,
+      "nationality_at_award": 12,
+      "points": 59
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 30,
+    "fields": {
+      "year": 1965,
+      "rank": "3",
+      "player": 40,
+      "club_at_award": 8,
+      "nationality_at_award": 19,
+      "points": 45
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 31,
+    "fields": {
+      "year": 1966,
+      "rank": "1",
+      "player": 54,
+      "club_at_award": 13,
+      "nationality_at_award": 5,
+      "points": 81
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 32,
+    "fields": {
+      "year": 1966,
+      "rank": "2",
+      "player": 46,
+      "club_at_award": 20,
+      "nationality_at_award": 14,
+      "points": 80
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 33,
+    "fields": {
+      "year": 1966,
+      "rank": "3",
+      "player": 55,
+      "club_at_award": 25,
+      "nationality_at_award": 9,
+      "points": 59
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 34,
+    "fields": {
+      "year": 1967,
+      "rank": "1",
+      "player": 56,
+      "club_at_award": 26,
+      "nationality_at_award": 32,
+      "points": 68
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 35,
+    "fields": {
+      "year": 1967,
+      "rank": "2",
+      "player": 54,
+      "club_at_award": 13,
+      "nationality_at_award": 5,
+      "points": 40
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 36,
+    "fields": {
+      "year": 1967,
+      "rank": "3",
+      "player": 57,
+      "club_at_award": 27,
+      "nationality_at_award": 21,
+      "points": 39
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 37,
+    "fields": {
+      "year": 1968,
+      "rank": "1",
+      "player": 58,
+      "club_at_award": 13,
+      "nationality_at_award": 34,
+      "points": 61
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 38,
+    "fields": {
+      "year": 1968,
+      "rank": "2",
+      "player": 54,
+      "club_at_award": 13,
+      "nationality_at_award": 5,
+      "points": 53
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 39,
+    "fields": {
+      "year": 1968,
+      "rank": "3",
+      "player": 59,
+      "club_at_award": 28,
+      "nationality_at_award": 25,
+      "points": 46
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 40,
+    "fields": {
+      "year": 1969,
+      "rank": "1",
+      "player": 49,
+      "club_at_award": 23,
+      "nationality_at_award": 12,
+      "points": 83
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 41,
+    "fields": {
+      "year": 1969,
+      "rank": "2",
+      "player": 60,
+      "club_at_award": 29,
+      "nationality_at_award": 12,
+      "points": 79
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 42,
+    "fields": {
+      "year": 1969,
+      "rank": "3",
+      "player": 61,
+      "club_at_award": 25,
+      "nationality_at_award": 9,
+      "points": 38
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 43,
+    "fields": {
+      "year": 1970,
+      "rank": "1",
+      "player": 61,
+      "club_at_award": 25,
+      "nationality_at_award": 9,
+      "points": 77
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 44,
+    "fields": {
+      "year": 1970,
+      "rank": "2",
+      "player": 62,
+      "club_at_award": 30,
+      "nationality_at_award": 5,
+      "points": 70
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 45,
+    "fields": {
+      "year": 1970,
+      "rank": "3",
+      "player": 60,
+      "club_at_award": 29,
+      "nationality_at_award": 12,
+      "points": 65
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 46,
+    "fields": {
+      "year": 1971,
+      "rank": "1",
+      "player": 63,
+      "club_at_award": 31,
+      "nationality_at_award": 16,
+      "points": 116
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 47,
+    "fields": {
+      "year": 1971,
+      "rank": "2",
+      "player": 64,
+      "club_at_award": 8,
+      "nationality_at_award": 12,
+      "points": 57
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 48,
+    "fields": {
+      "year": 1971,
+      "rank": "3",
+      "player": 58,
+      "club_at_award": 13,
+      "nationality_at_award": 34,
+      "points": 56
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 49,
+    "fields": {
+      "year": 1972,
+      "rank": "1",
+      "player": 55,
+      "club_at_award": 25,
+      "nationality_at_award": 9,
+      "points": 81
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 50,
+    "fields": {
+      "year": 1972,
+      "rank": "2",
+      "player": 65,
+      "club_at_award": 32,
+      "nationality_at_award": 9,
+      "points": 79
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 51,
+    "fields": {
+      "year": 1973,
+      "rank": "1",
+      "player": 63,
+      "club_at_award": 1,
+      "nationality_at_award": 16,
+      "points": 96
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 52,
+    "fields": {
+      "year": 1973,
+      "rank": "2",
+      "player": 66,
+      "club_at_award": 16,
+      "nationality_at_award": 12,
+      "points": 47
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 53,
+    "fields": {
+      "year": 1973,
+      "rank": "3",
+      "player": 61,
+      "club_at_award": 25,
+      "nationality_at_award": 9,
+      "points": 44
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 54,
+    "fields": {
+      "year": 1974,
+      "rank": "1",
+      "player": 63,
+      "club_at_award": 1,
+      "nationality_at_award": 16,
+      "points": 116
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 55,
+    "fields": {
+      "year": 1974,
+      "rank": "2",
+      "player": 55,
+      "club_at_award": 25,
+      "nationality_at_award": 9,
+      "points": 105
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 56,
+    "fields": {
+      "year": 1974,
+      "rank": "3",
+      "player": 67,
+      "club_at_award": 33,
+      "nationality_at_award": 13,
+      "points": 35
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 57,
+    "fields": {
+      "year": 1975,
+      "rank": "1",
+      "player": 68,
+      "club_at_award": 34,
+      "nationality_at_award": 20,
+      "points": 122
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 58,
+    "fields": {
+      "year": 1975,
+      "rank": "2",
+      "player": 55,
+      "club_at_award": 25,
+      "nationality_at_award": 9,
+      "points": 42
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 59,
+    "fields": {
+      "year": 1975,
+      "rank": "3",
+      "player": 63,
+      "club_at_award": 1,
+      "nationality_at_award": 16,
+      "points": 27
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 60,
+    "fields": {
+      "year": 1976,
+      "rank": "1",
+      "player": 55,
+      "club_at_award": 25,
+      "nationality_at_award": 9,
+      "points": 91
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 61,
+    "fields": {
+      "year": 1976,
+      "rank": "2",
+      "player": 69,
+      "club_at_award": 35,
+      "nationality_at_award": 16,
+      "points": 75
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 62,
+    "fields": {
+      "year": 1976,
+      "rank": "3",
+      "player": 70,
+      "club_at_award": 19,
+      "nationality_at_award": 33,
+      "points": 52
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 63,
+    "fields": {
+      "year": 1977,
+      "rank": "1",
+      "player": 71,
+      "club_at_award": 32,
+      "nationality_at_award": 22,
+      "points": 74
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 64,
+    "fields": {
+      "year": 1977,
+      "rank": "2",
+      "player": 72,
+      "club_at_award": 17,
+      "nationality_at_award": 5,
+      "points": 71
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 65,
+    "fields": {
+      "year": 1977,
+      "rank": "3",
+      "player": 73,
+      "club_at_award": 36,
+      "nationality_at_award": 4,
+      "points": 70
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 66,
+    "fields": {
+      "year": 1978,
+      "rank": "1",
+      "player": 72,
+      "club_at_award": 17,
+      "nationality_at_award": 5,
+      "points": 87
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 67,
+    "fields": {
+      "year": 1978,
+      "rank": "2",
+      "player": 74,
+      "club_at_award": 1,
+      "nationality_at_award": 35,
+      "points": 81
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 68,
+    "fields": {
+      "year": 1978,
+      "rank": "3",
+      "player": 69,
+      "club_at_award": 35,
+      "nationality_at_award": 16,
+      "points": 50
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 69,
+    "fields": {
+      "year": 1979,
+      "rank": "1",
+      "player": 72,
+      "club_at_award": 17,
+      "nationality_at_award": 5,
+      "points": 118
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 70,
+    "fields": {
+      "year": 1979,
+      "rank": "2",
+      "player": 75,
+      "club_at_award": 25,
+      "nationality_at_award": 9,
+      "points": 52
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 71,
+    "fields": {
+      "year": 1979,
+      "rank": "3",
+      "player": 76,
+      "club_at_award": 31,
+      "nationality_at_award": 16,
+      "points": 41
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 72,
+    "fields": {
+      "year": 1980,
+      "rank": "1",
+      "player": 75,
+      "club_at_award": 25,
+      "nationality_at_award": 9,
+      "points": 122
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 73,
+    "fields": {
+      "year": 1980,
+      "rank": "2",
+      "player": 77,
+      "club_at_award": 1,
+      "nationality_at_award": 9,
+      "points": 34
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 74,
+    "fields": {
+      "year": 1980,
+      "rank": "3",
+      "player": 73,
+      "club_at_award": 37,
+      "nationality_at_award": 4,
+      "points": 33
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 75,
+    "fields": {
+      "year": 1981,
+      "rank": "1",
+      "player": 75,
+      "club_at_award": 25,
+      "nationality_at_award": 9,
+      "points": 106
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 76,
+    "fields": {
+      "year": 1981,
+      "rank": "2",
+      "player": 78,
+      "club_at_award": 25,
+      "nationality_at_award": 9,
+      "points": 64
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 77,
+    "fields": {
+      "year": 1981,
+      "rank": "3",
+      "player": 77,
+      "club_at_award": 1,
+      "nationality_at_award": 9,
+      "points": 39
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 78,
+    "fields": {
+      "year": 1982,
+      "rank": "1",
+      "player": 79,
+      "club_at_award": 16,
+      "nationality_at_award": 12,
+      "points": 115
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 79,
+    "fields": {
+      "year": 1982,
+      "rank": "2",
+      "player": 80,
+      "club_at_award": 38,
+      "nationality_at_award": 4,
+      "points": 64
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 80,
+    "fields": {
+      "year": 1982,
+      "rank": "3",
+      "player": 81,
+      "club_at_award": 16,
+      "nationality_at_award": 13,
+      "points": 39
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 81,
+    "fields": {
+      "year": 1983,
+      "rank": "1",
+      "player": 73,
+      "club_at_award": 16,
+      "nationality_at_award": 4,
+      "points": 110
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 82,
+    "fields": {
+      "year": 1983,
+      "rank": "2",
+      "player": 82,
+      "club_at_award": 7,
+      "nationality_at_award": 21,
+      "points": 26
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 83,
+    "fields": {
+      "year": 1983,
+      "rank": "3",
+      "player": 71,
+      "club_at_award": 39,
+      "nationality_at_award": 22,
+      "points": 25
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 84,
+    "fields": {
+      "year": 1984,
+      "rank": "1",
+      "player": 73,
+      "club_at_award": 16,
+      "nationality_at_award": 4,
+      "points": 110
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 85,
+    "fields": {
+      "year": 1984,
+      "rank": "2",
+      "player": 83,
+      "club_at_award": 38,
+      "nationality_at_award": 4,
+      "points": 57
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 86,
+    "fields": {
+      "year": 1984,
+      "rank": "3",
+      "player": 84,
+      "club_at_award": 40,
+      "nationality_at_award": 22,
+      "points": 48
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 87,
+    "fields": {
+      "year": 1985,
+      "rank": "1",
+      "player": 73,
+      "club_at_award": 16,
+      "nationality_at_award": 4,
+      "points": 127
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 88,
+    "fields": {
+      "year": 1985,
+      "rank": "2",
+      "player": 84,
+      "club_at_award": 40,
+      "nationality_at_award": 22,
+      "points": 71
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 89,
+    "fields": {
+      "year": 1985,
+      "rank": "3",
+      "player": 77,
+      "club_at_award": 1,
+      "nationality_at_award": 9,
+      "points": 46
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 90,
+    "fields": {
+      "year": 1986,
+      "rank": "1",
+      "player": 85,
+      "club_at_award": 34,
+      "nationality_at_award": 20,
+      "points": 84
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 91,
+    "fields": {
+      "year": 1986,
+      "rank": "2",
+      "player": 86,
+      "club_at_award": 1,
+      "nationality_at_award": 5,
+      "points": 62
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 92,
+    "fields": {
+      "year": 1986,
+      "rank": "3",
+      "player": 87,
+      "club_at_award": 4,
+      "nationality_at_award": 8,
+      "points": 59
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 93,
+    "fields": {
+      "year": 1987,
+      "rank": "1",
+      "player": 88,
+      "club_at_award": 23,
+      "nationality_at_award": 16,
+      "points": 106
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 94,
+    "fields": {
+      "year": 1987,
+      "rank": "2",
+      "player": 89,
+      "club_at_award": 41,
+      "nationality_at_award": 14,
+      "points": 91
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 95,
+    "fields": {
+      "year": 1987,
+      "rank": "3",
+      "player": 87,
+      "club_at_award": 4,
+      "nationality_at_award": 8,
+      "points": 61
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 96,
+    "fields": {
+      "year": 1988,
+      "rank": "1",
+      "player": 90,
+      "club_at_award": 23,
+      "nationality_at_award": 16,
+      "points": 129
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 97,
+    "fields": {
+      "year": 1988,
+      "rank": "2",
+      "player": 88,
+      "club_at_award": 23,
+      "nationality_at_award": 16,
+      "points": 88
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 98,
+    "fields": {
+      "year": 1988,
+      "rank": "3",
+      "player": 91,
+      "club_at_award": 23,
+      "nationality_at_award": 16,
+      "points": 45
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 99,
+    "fields": {
+      "year": 1989,
+      "rank": "1",
+      "player": 90,
+      "club_at_award": 23,
+      "nationality_at_award": 16,
+      "points": 129
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 100,
+    "fields": {
+      "year": 1989,
+      "rank": "2",
+      "player": 92,
+      "club_at_award": 23,
+      "nationality_at_award": 12,
+      "points": 80
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 101,
+    "fields": {
+      "year": 1989,
+      "rank": "3",
+      "player": 91,
+      "club_at_award": 23,
+      "nationality_at_award": 16,
+      "points": 43
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 102,
+    "fields": {
+      "year": 1990,
+      "rank": "1",
+      "player": 93,
+      "club_at_award": 8,
+      "nationality_at_award": 9,
+      "points": 137
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 103,
+    "fields": {
+      "year": 1990,
+      "rank": "2",
+      "player": 94,
+      "club_at_award": 16,
+      "nationality_at_award": 12,
+      "points": 84
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 104,
+    "fields": {
+      "year": 1990,
+      "rank": "3",
+      "player": 95,
+      "club_at_award": 8,
+      "nationality_at_award": 9,
+      "points": 68
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 105,
+    "fields": {
+      "year": 1991,
+      "rank": "1",
+      "player": 96,
+      "club_at_award": 42,
+      "nationality_at_award": 4,
+      "points": 141
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 106,
+    "fields": {
+      "year": 1991,
+      "rank": "2",
+      "player": 93,
+      "club_at_award": 8,
+      "nationality_at_award": 9,
+      "points": 42
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 107,
+    "fields": {
+      "year": 1992,
+      "rank": "1",
+      "player": 90,
+      "club_at_award": 23,
+      "nationality_at_award": 16,
+      "points": 98
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 108,
+    "fields": {
+      "year": 1992,
+      "rank": "2",
+      "player": 99,
+      "club_at_award": 1,
+      "nationality_at_award": 18,
+      "points": 80
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 109,
+    "fields": {
+      "year": 1992,
+      "rank": "3",
+      "player": 100,
+      "club_at_award": 31,
+      "nationality_at_award": 16,
+      "points": 53
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 110,
+    "fields": {
+      "year": 1993,
+      "rank": "1",
+      "player": 101,
+      "club_at_award": 16,
+      "nationality_at_award": 12,
+      "points": 142
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 111,
+    "fields": {
+      "year": 1993,
+      "rank": "2",
+      "player": 100,
+      "club_at_award": 8,
+      "nationality_at_award": 16,
+      "points": 83
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 112,
+    "fields": {
+      "year": 1993,
+      "rank": "3",
+      "player": 102,
+      "club_at_award": 13,
+      "nationality_at_award": 4,
+      "points": 34
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 113,
+    "fields": {
+      "year": 1994,
+      "rank": "1",
+      "player": 99,
+      "club_at_award": 1,
+      "nationality_at_award": 18,
+      "points": 210
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 114,
+    "fields": {
+      "year": 1994,
+      "rank": "2",
+      "player": 101,
+      "club_at_award": 16,
+      "nationality_at_award": 12,
+      "points": 136
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 115,
+    "fields": {
+      "year": 1994,
+      "rank": "3",
+      "player": 103,
+      "club_at_award": 23,
+      "nationality_at_award": 12,
+      "points": 109
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 116,
+    "fields": {
+      "year": 1995,
+      "rank": "1",
+      "player": 104,
+      "club_at_award": 23,
+      "nationality_at_award": 23,
+      "points": 144
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 117,
+    "fields": {
+      "year": 1995,
+      "rank": "2",
+      "player": 105,
+      "club_at_award": 25,
+      "nationality_at_award": 9,
+      "points": 108
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 118,
+    "fields": {
+      "year": 1995,
+      "rank": "3",
+      "player": 106,
+      "club_at_award": 31,
+      "nationality_at_award": 24,
+      "points": 67
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 119,
+    "fields": {
+      "year": 1996,
+      "rank": "1",
+      "player": 107,
+      "club_at_award": 43,
+      "nationality_at_award": 9,
+      "points": 144
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 120,
+    "fields": {
+      "year": 1996,
+      "rank": "2",
+      "player": 108,
+      "club_at_award": 1,
+      "nationality_at_award": 2,
+      "points": 143
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 121,
+    "fields": {
+      "year": 1996,
+      "rank": "3",
+      "player": 109,
+      "club_at_award": 44,
+      "nationality_at_award": 5,
+      "points": 107
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 122,
+    "fields": {
+      "year": 1997,
+      "rank": "1",
+      "player": 108,
+      "club_at_award": 8,
+      "nationality_at_award": 2,
+      "points": 222
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 123,
+    "fields": {
+      "year": 1997,
+      "rank": "2",
+      "player": 110,
+      "club_at_award": 4,
+      "nationality_at_award": 25,
+      "points": 68
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 124,
+    "fields": {
+      "year": 1997,
+      "rank": "3",
+      "player": 111,
+      "club_at_award": 16,
+      "nationality_at_award": 4,
+      "points": 63
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 125,
+    "fields": {
+      "year": 1998,
+      "rank": "1",
+      "player": 111,
+      "club_at_award": 16,
+      "nationality_at_award": 4,
+      "points": 244
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 126,
+    "fields": {
+      "year": 1998,
+      "rank": "2",
+      "player": 112,
+      "club_at_award": 4,
+      "nationality_at_award": 26,
+      "points": 68
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 127,
+    "fields": {
+      "year": 1998,
+      "rank": "3",
+      "player": 108,
+      "club_at_award": 8,
+      "nationality_at_award": 2,
+      "points": 66
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 128,
+    "fields": {
+      "year": 1999,
+      "rank": "1",
+      "player": 113,
+      "club_at_award": 1,
+      "nationality_at_award": 2,
+      "points": 219
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 129,
+    "fields": {
+      "year": 1999,
+      "rank": "2",
+      "player": 114,
+      "club_at_award": 13,
+      "nationality_at_award": 5,
+      "points": 154
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 130,
+    "fields": {
+      "year": 1999,
+      "rank": "3",
+      "player": 115,
+      "club_at_award": 23,
+      "nationality_at_award": 27,
+      "points": 64
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 131,
+    "fields": {
+      "year": 2000,
+      "rank": "1",
+      "player": 116,
+      "club_at_award": 4,
+      "nationality_at_award": 14,
+      "points": 197
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 132,
+    "fields": {
+      "year": 2000,
+      "rank": "2",
+      "player": 111,
+      "club_at_award": 16,
+      "nationality_at_award": 4,
+      "points": 181
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 133,
+    "fields": {
+      "year": 2000,
+      "rank": "3",
+      "player": 115,
+      "club_at_award": 23,
+      "nationality_at_award": 27,
+      "points": 85
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 134,
+    "fields": {
+      "year": 2001,
+      "rank": "1",
+      "player": 117,
+      "club_at_award": 7,
+      "nationality_at_award": 5,
+      "points": 176
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 135,
+    "fields": {
+      "year": 2001,
+      "rank": "2",
+      "player": 118,
+      "club_at_award": 4,
+      "nationality_at_award": 8,
+      "points": 140
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 136,
+    "fields": {
+      "year": 2001,
+      "rank": "3",
+      "player": 119,
+      "club_at_award": 25,
+      "nationality_at_award": 9,
+      "points": 114
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 137,
+    "fields": {
+      "year": 2002,
+      "rank": "1",
+      "player": 108,
+      "club_at_award": 4,
+      "nationality_at_award": 2,
+      "points": 169
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 138,
+    "fields": {
+      "year": 2002,
+      "rank": "2",
+      "player": 120,
+      "club_at_award": 4,
+      "nationality_at_award": 2,
+      "points": 145
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 139,
+    "fields": {
+      "year": 2002,
+      "rank": "3",
+      "player": 119,
+      "club_at_award": 25,
+      "nationality_at_award": 9,
+      "points": 110
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 140,
+    "fields": {
+      "year": 2003,
+      "rank": "1",
+      "player": 121,
+      "club_at_award": 16,
+      "nationality_at_award": 28,
+      "points": 190
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 141,
+    "fields": {
+      "year": 2003,
+      "rank": "2",
+      "player": 122,
+      "club_at_award": 9,
+      "nationality_at_award": 4,
+      "points": 128
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 142,
+    "fields": {
+      "year": 2003,
+      "rank": "3",
+      "player": 103,
+      "club_at_award": 23,
+      "nationality_at_award": 12,
+      "points": 123
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 143,
+    "fields": {
+      "year": 2004,
+      "rank": "1",
+      "player": 115,
+      "club_at_award": 23,
+      "nationality_at_award": 27,
+      "points": 175
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 144,
+    "fields": {
+      "year": 2004,
+      "rank": "2",
+      "player": 123,
+      "club_at_award": 1,
+      "nationality_at_award": 14,
+      "points": 139
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 145,
+    "fields": {
+      "year": 2004,
+      "rank": "3",
+      "player": 124,
+      "club_at_award": 1,
+      "nationality_at_award": 2,
+      "points": 133
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 146,
+    "fields": {
+      "year": 2005,
+      "rank": "1",
+      "player": 124,
+      "club_at_award": 1,
+      "nationality_at_award": 2,
+      "points": 225
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 147,
+    "fields": {
+      "year": 2005,
+      "rank": "2",
+      "player": 125,
+      "club_at_award": 45,
+      "nationality_at_award": 5,
+      "points": 148
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 148,
+    "fields": {
+      "year": 2005,
+      "rank": "3",
+      "player": 126,
+      "club_at_award": 7,
+      "nationality_at_award": 5,
+      "points": 142
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 149,
+    "fields": {
+      "year": 2006,
+      "rank": "1",
+      "player": 127,
+      "club_at_award": 4,
+      "nationality_at_award": 12,
+      "points": 173
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 150,
+    "fields": {
+      "year": 2006,
+      "rank": "2",
+      "player": 128,
+      "club_at_award": 16,
+      "nationality_at_award": 12,
+      "points": 124
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 151,
+    "fields": {
+      "year": 2006,
+      "rank": "3",
+      "player": 122,
+      "club_at_award": 9,
+      "nationality_at_award": 4,
+      "points": 121
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 152,
+    "fields": {
+      "year": 2007,
+      "rank": "1",
+      "player": 129,
+      "club_at_award": 23,
+      "nationality_at_award": 2,
+      "points": 444
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 153,
+    "fields": {
+      "year": 2007,
+      "rank": "2",
+      "player": 130,
+      "club_at_award": 13,
+      "nationality_at_award": 14,
+      "points": 277
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 154,
+    "fields": {
+      "year": 2007,
+      "rank": "3",
+      "player": 131,
+      "club_at_award": 1,
+      "nationality_at_award": 1,
+      "points": 255
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 155,
+    "fields": {
+      "year": 2008,
+      "rank": "1",
+      "player": 130,
+      "club_at_award": 13,
+      "nationality_at_award": 14,
+      "points": 446
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 156,
+    "fields": {
+      "year": 2008,
+      "rank": "2",
+      "player": 131,
+      "club_at_award": 1,
+      "nationality_at_award": 1,
+      "points": 281
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 157,
+    "fields": {
+      "year": 2008,
+      "rank": "3",
+      "player": 132,
+      "club_at_award": 7,
+      "nationality_at_award": 8,
+      "points": 179
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 158,
+    "fields": {
+      "year": 2009,
+      "rank": "1",
+      "player": 131,
+      "club_at_award": 1,
+      "nationality_at_award": 1,
+      "points": 473
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 159,
+    "fields": {
+      "year": 2009,
+      "rank": "2",
+      "player": 130,
+      "club_at_award": 4,
+      "nationality_at_award": 14,
+      "points": 233
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 160,
+    "fields": {
+      "year": 2009,
+      "rank": "3",
+      "player": 133,
+      "club_at_award": 1,
+      "nationality_at_award": 8,
+      "points": 170
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 161,
+    "fields": {
+      "year": 2010,
+      "rank": "1",
+      "player": 131,
+      "club_at_award": 1,
+      "nationality_at_award": 1,
+      "points": 0
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 162,
+    "fields": {
+      "year": 2010,
+      "rank": "2",
+      "player": 134,
+      "club_at_award": 1,
+      "nationality_at_award": 8,
+      "points": 0
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 163,
+    "fields": {
+      "year": 2010,
+      "rank": "3",
+      "player": 133,
+      "club_at_award": 1,
+      "nationality_at_award": 8,
+      "points": 0
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 164,
+    "fields": {
+      "year": 2011,
+      "rank": "1",
+      "player": 131,
+      "club_at_award": 1,
+      "nationality_at_award": 1,
+      "points": 0
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 165,
+    "fields": {
+      "year": 2011,
+      "rank": "2",
+      "player": 130,
+      "club_at_award": 4,
+      "nationality_at_award": 14,
+      "points": 0
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 166,
+    "fields": {
+      "year": 2011,
+      "rank": "3",
+      "player": 133,
+      "club_at_award": 1,
+      "nationality_at_award": 8,
+      "points": 0
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 167,
+    "fields": {
+      "year": 2012,
+      "rank": "1",
+      "player": 131,
+      "club_at_award": 1,
+      "nationality_at_award": 1,
+      "points": 0
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 168,
+    "fields": {
+      "year": 2012,
+      "rank": "2",
+      "player": 130,
+      "club_at_award": 4,
+      "nationality_at_award": 14,
+      "points": 0
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 169,
+    "fields": {
+      "year": 2012,
+      "rank": "3",
+      "player": 134,
+      "club_at_award": 1,
+      "nationality_at_award": 8,
+      "points": 0
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 170,
+    "fields": {
+      "year": 2013,
+      "rank": "1",
+      "player": 130,
+      "club_at_award": 4,
+      "nationality_at_award": 14,
+      "points": 0
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 171,
+    "fields": {
+      "year": 2013,
+      "rank": "2",
+      "player": 131,
+      "club_at_award": 1,
+      "nationality_at_award": 1,
+      "points": 0
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 172,
+    "fields": {
+      "year": 2013,
+      "rank": "3",
+      "player": 135,
+      "club_at_award": 25,
+      "nationality_at_award": 4,
+      "points": 0
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 173,
+    "fields": {
+      "year": 2014,
+      "rank": "1",
+      "player": 130,
+      "club_at_award": 4,
+      "nationality_at_award": 14,
+      "points": 0
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 174,
+    "fields": {
+      "year": 2014,
+      "rank": "2",
+      "player": 131,
+      "club_at_award": 1,
+      "nationality_at_award": 1,
+      "points": 0
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 175,
+    "fields": {
+      "year": 2014,
+      "rank": "3",
+      "player": 136,
+      "club_at_award": 25,
+      "nationality_at_award": 9,
+      "points": 0
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 176,
+    "fields": {
+      "year": 2015,
+      "rank": "1",
+      "player": 131,
+      "club_at_award": 1,
+      "nationality_at_award": 1,
+      "points": 0
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 177,
+    "fields": {
+      "year": 2015,
+      "rank": "2",
+      "player": 130,
+      "club_at_award": 4,
+      "nationality_at_award": 14,
+      "points": 0
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 178,
+    "fields": {
+      "year": 2015,
+      "rank": "3",
+      "player": 137,
+      "club_at_award": 1,
+      "nationality_at_award": 2,
+      "points": 0
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 179,
+    "fields": {
+      "year": 2016,
+      "rank": "1",
+      "player": 130,
+      "club_at_award": 4,
+      "nationality_at_award": 14,
+      "points": 745
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 180,
+    "fields": {
+      "year": 2016,
+      "rank": "2",
+      "player": 131,
+      "club_at_award": 1,
+      "nationality_at_award": 1,
+      "points": 316
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 181,
+    "fields": {
+      "year": 2016,
+      "rank": "3",
+      "player": 138,
+      "club_at_award": 41,
+      "nationality_at_award": 4,
+      "points": 198
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 182,
+    "fields": {
+      "year": 2017,
+      "rank": "1",
+      "player": 130,
+      "club_at_award": 4,
+      "nationality_at_award": 14,
+      "points": 946
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 183,
+    "fields": {
+      "year": 2017,
+      "rank": "2",
+      "player": 131,
+      "club_at_award": 1,
+      "nationality_at_award": 1,
+      "points": 670
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 184,
+    "fields": {
+      "year": 2017,
+      "rank": "3",
+      "player": 137,
+      "club_at_award": 2,
+      "nationality_at_award": 2,
+      "points": 361
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 185,
+    "fields": {
+      "year": 2018,
+      "rank": "1",
+      "player": 139,
+      "club_at_award": 4,
+      "nationality_at_award": 26,
+      "points": 753
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 186,
+    "fields": {
+      "year": 2018,
+      "rank": "2",
+      "player": 130,
+      "club_at_award": 16,
+      "nationality_at_award": 14,
+      "points": 476
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 187,
+    "fields": {
+      "year": 2018,
+      "rank": "3",
+      "player": 138,
+      "club_at_award": 41,
+      "nationality_at_award": 4,
+      "points": 414
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 188,
+    "fields": {
+      "year": 2019,
+      "rank": "1",
+      "player": 131,
+      "club_at_award": 1,
+      "nationality_at_award": 1,
+      "points": 686
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 189,
+    "fields": {
+      "year": 2019,
+      "rank": "2",
+      "player": 28,
+      "club_at_award": 7,
+      "nationality_at_award": 16,
+      "points": 679
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 190,
+    "fields": {
+      "year": 2019,
+      "rank": "3",
+      "player": 130,
+      "club_at_award": 16,
+      "nationality_at_award": 14,
+      "points": 476
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 191,
+    "fields": {
+      "year": 2021,
+      "rank": "1",
+      "player": 131,
+      "club_at_award": 1,
+      "nationality_at_award": 1,
+      "points": 476
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 192,
+    "fields": {
+      "year": 2021,
+      "rank": "2",
+      "player": 13,
+      "club_at_award": 25,
+      "nationality_at_award": 13,
+      "points": 580
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 193,
+    "fields": {
+      "year": 2021,
+      "rank": "3",
+      "player": 140,
+      "club_at_award": 45,
+      "nationality_at_award": 12,
+      "points": 480
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 194,
+    "fields": {
+      "year": 2022,
+      "rank": "1",
+      "player": 141,
+      "club_at_award": 4,
+      "nationality_at_award": 4,
+      "points": 549
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 195,
+    "fields": {
+      "year": 2022,
+      "rank": "2",
+      "player": 142,
+      "club_at_award": 7,
+      "nationality_at_award": 29,
+      "points": 193
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 196,
+    "fields": {
+      "year": 2022,
+      "rank": "3",
+      "player": 143,
+      "club_at_award": 3,
+      "nationality_at_award": 30,
+      "points": 175
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 197,
+    "fields": {
+      "year": 2023,
+      "rank": "1",
+      "player": 131,
+      "club_at_award": 2,
+      "nationality_at_award": 1,
+      "points": 462
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 198,
+    "fields": {
+      "year": 2023,
+      "rank": "2",
+      "player": 22,
+      "club_at_award": 3,
+      "nationality_at_award": 10,
+      "points": 357
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 199,
+    "fields": {
+      "year": 2023,
+      "rank": "3",
+      "player": 144,
+      "club_at_award": 2,
+      "nationality_at_award": 4,
+      "points": 270
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 200,
+    "fields": {
+      "year": 2024,
+      "rank": "1",
+      "player": 145,
+      "club_at_award": 3,
+      "nationality_at_award": 8,
+      "points": 1170
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 201,
+    "fields": {
+      "year": 2024,
+      "rank": "2",
+      "player": 146,
+      "club_at_award": 4,
+      "nationality_at_award": 2,
+      "points": 1129
+    }
+  },
+  {
+    "model": "ballon_dor.ballondorresult",
+    "pk": 202,
+    "fields": {
+      "year": 2024,
+      "rank": "3",
+      "player": 18,
+      "club_at_award": 4,
+      "nationality_at_award": 5,
+      "points": 917
+    }
+  },
+  {
+    "model": "ballon_dor.vote",
+    "pk": 25,
+    "fields": {
+      "player_1st": 2,
+      "player_2nd": 8,
+      "player_3rd": 14,
+      "created_at": "2025-07-17T17:20:21.683Z",
+      "voter_name": "",
+      "voter_country": "",
+      "ip_address": null,
+      "year": 2025,
+      "email": "fddfjjkj@gmail.com",
+      "is_verified": true,
+      "token": ""
+    }
+  },
+  {
+    "model": "ballon_dor.vote",
+    "pk": 26,
+    "fields": {
+      "player_1st": 2,
+      "player_2nd": 15,
+      "player_3rd": 17,
+      "created_at": "2025-07-17T17:20:52.045Z",
+      "voter_name": "",
+      "voter_country": "",
+      "ip_address": null,
+      "year": 2025,
+      "email": "shabah.m@yahoo.com",
+      "is_verified": true,
+      "token": ""
+    }
+  },
+  {
+    "model": "ballon_dor.vote",
+    "pk": 28,
+    "fields": {
+      "player_1st": 8,
+      "player_2nd": 4,
+      "player_3rd": 1,
+      "created_at": "2025-07-17T17:42:14.729Z",
+      "voter_name": "",
+      "voter_country": "",
+      "ip_address": null,
+      "year": 2025,
+      "email": "2833753s@student.gla.ac.uk",
+      "is_verified": true,
+      "token": ""
+    }
+  },
+  {
+    "model": "accounts.customuser",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$TOx46CePaBdtrMJEB5fkrn$Ut4nZZ0fvKCLSia4cdIXXrPLSVAFEsED60Bm1Cpx6sY=",
+      "last_login": "2025-07-09T19:28:14.643Z",
+      "is_superuser": true,
+      "username": "tel",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2025-07-09T17:45:29.316Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]

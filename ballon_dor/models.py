@@ -127,7 +127,6 @@ class BallonDorResult(models.Model):
     points = models.IntegerField()
 
     class Meta:
-        # COMMENT: Better way of implementing it in django
         constraints = [
             models.UniqueConstraint(
                 fields=["year", "rank"], name="unique_rank_per_year"
@@ -154,6 +153,7 @@ class Vote(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     voter_name = models.CharField(max_length=100, blank=True)
     voter_country = models.CharField(max_length=2, blank=True)
+    # TODO: remove the ip_address
     ip_address = models.GenericIPAddressField(blank=True, null=True)
     year = models.PositiveIntegerField()
     email = models.EmailField(blank=True)
