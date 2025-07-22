@@ -18,53 +18,95 @@
   </div>
 </div>
 
+<!-- Contenders Section -->
 <div class="contenders">
-  <h2>Top 2025 Contenders</h2>
-  <div class="card-grid">
-    {% for contender in contenders %}
-    <div class="card {% if forloop.counter > 5 %}hidden{% endif %}">
-      <a href="{% url 'candidate_detail' contender.year contender.slug %}"
-        style="text-decoration: none; color: inherit;">
-        {% if contender.image %}
-        <img src="{{ contender.image.url }}" alt="{{ contender.player.name }}">
-        {% else %}
-        <img src="{% static 'players/default.jpg' %}" alt="{{ contender.player.name }}">
-        {% endif %}
-        <h3>{{ contender.player.name }}</h3>
-        <p>{{ contender.club.name|default:'N/A' }} ({{ contender.player.country }})</p>
-      </a>
+  <h2>Top {{ active_year }} Contenders</h2>
+
+  <div class="filters-section-compact">
+    <div class="filters-container-compact">
+      <form method="GET" action="{% url 'home' %}" class="filters-form">
+        <div class="filters-header-compact">
+          <span class="filters-title-compact">
+            Filter Candidates
+          </span>
+          <a href="{% url 'home' %}" class="clear-filters-compact">Clear All</a>
+        </div>
+        
+        <div class="filters-grid-compact">
+          <div class="filter-group-compact">
+            <select class="filter-select-compact" name="club" onchange="this.form.submit()">
+              <option value="">All Clubs</option>
+              {% for club in clubs %}
+                <option value="{{ club }}" {% if club == current_club %}selected{% endif %}>
+                  {{ club }}
+                </option>
+              {% endfor %}
+            </select>
+          </div>
+          
+          <div class="filter-group-compact">
+            <select class="filter-select-compact" name="country" onchange="this.form.submit()">
+              <option value="">All Countries</option>
+              {% for country in countries %}
+                <option value="{{ country }}" {% if country == current_country %}selected{% endif %}>
+                  {{ country }}
+                </option>
+              {% endfor %}
+            </select>
+          </div>
+          
+          <div class="filter-group-compact">
+            <div class="search-wrapper-compact">
+              <input type="text" 
+                     class="filter-search-compact" 
+                     name="search" 
+                     value="{{ current_search }}"
+                     placeholder="Search player name...">
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
-    {% endfor %}
+    
+    <div class="results-counter-compact">
+      Showing <span class="results-count">{{ results_count }}</span> candidate{{ results_count|pluralize }}
+      {% if current_club or current_country or current_search %}
+
+      {% endif %}
+    </div>
   </div>
-  {% if contenders|length > 5 %}
-  <button id="see-more" class="btn gold-btn">See More</button>
+  
+  {% if contenders %}
+    <div class="card-grid">
+      {% for contender in contenders %}
+      <div class="card">
+        <a href="{% url 'candidate_detail' contender.year contender.slug %}"
+          style="text-decoration: none; color: inherit;">
+          {% if contender.image %}
+          <img src="{{ contender.image.url }}" alt="{{ contender.player.name }}">
+          {% else %}
+          <img src="{% static 'players/default.jpg' %}" alt="{{ contender.player.name }}">
+          {% endif %}
+          <h3>{{ contender.player.name }}</h3>
+          <p>{{ contender.club.name|default:'N/A' }} ({{ contender.player.country }})</p>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <!-- No results message -->
+    <div class="no-results">
+      <h3>No candidates found</h3>
+      <p>Try adjusting your filters or search terms</p>
+      <a href="{% url 'home' %}" class="btn outline-btn" style="margin-top: 1rem;">Clear Filters</a>
+    </div>
   {% endif %}
 </div>
-
-
 
 <footer class="footer">
   <p>This is an educational portfolio project. Not affiliated with France Football, FIFA, or the official Ballon d'Or
     award.</p>
   <p>Player images and names used for demonstration purposes only.</p>
 </footer>
-
-<script>
-  const cards = document.querySelectorAll('.card.hidden');
-  let visibleCount = 5;
-  const batchSize = 5;
-
-  document.getElementById('see-more')?.addEventListener('click', () => {
-    for (let i = 0; i < batchSize; i++) {
-      if (cards[visibleCount - 5 + i]) {
-        cards[visibleCount - 5 + i].classList.remove('hidden');
-      }
-    }
-    visibleCount += batchSize;
-    if (visibleCount >= cards.length + 5) {
-      document.getElementById('see-more').style.display = 'none';
-    }
-  });
-</script>
 
 {% endblock %}
