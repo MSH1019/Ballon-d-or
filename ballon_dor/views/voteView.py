@@ -55,7 +55,7 @@ class VoteCreateView(CreateView):
         html_body = f"""
         <html>
         <body>
-        <h2>Confirm Your Ballon D'or Vote</h2>
+        <h2>Confirm Your Vote</h2>
         <p>Thanks for voting! Click the button below to verify:</p>
         <a href="{verify_url}" style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none;">Verify Vote</a>
         <p>If the button doesn't work, copy this link: {verify_url}</p>
