@@ -26,7 +26,15 @@ SECRET_KEY = "***REMOVED***"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = [
+#   "75c1087beef3.ngrok-free.app", # NOTE: Change this according to your session
+#   "localhost",
+#   "127.0.0.1",
+# ]
+
+ALLOWED_HOSTS = [
+    "*",
+]
 
 
 # Application definition
