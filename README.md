@@ -3,9 +3,12 @@
 This is a Django project that manages Ballon d'Or historical data, player profiles, clubs, national teams, and a public voting system.
 
 ## Todo: 
-- [] TODO: make an if condition to the landing_page player, that if the candidate isn't there, we should use the player img.
+- [ ] TODO: make an if condition to the landing_page player, that if the candidate isn't there, we should use the player img.
 - [ ] Search about postgresql
 - [ ] Add Pagination to the Landing Page
+- [ ] Make the Uploaded images categorized by the Year (2025 --> imgs)
+- [ ] Separate all the css sections to an isolated files.
+- [ ] Separate all the models classes to an isolated folders (like the views) 
 
 ### ⚠ Database note
 The `db.sqlite3` file is **not tracked in Git** (on purpose — it's excluded via `.gitignore`).  
