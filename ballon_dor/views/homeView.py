@@ -4,6 +4,22 @@ from ballon_dor.utils import get_active_year
 
 
 class HomePageView(TemplateView):
+    """
+    Display the homepage with a list of candidates for the active voting year.
+
+    This view fetches all candidates for the currently active year, optimizing
+    database queries by selecting related player and club data in advance
+    (using select_related). It then filters the candidates to show only those
+    marked as contenders and passes them to the template for rendering.
+
+    Context:
+        contenders (QuerySet): A queryset of Candidate objects that are marked
+                            as contenders for the active year.
+
+    Template:
+        home.html
+    """
+
     template_name = "ballon_dor/home.html"
 
     def get_context_data(self, **kwargs):
@@ -16,16 +32,12 @@ class HomePageView(TemplateView):
         country_filter = self.request.GET.get("country", "")
         search_filter = self.request.GET.get("search", "")
 
-        print(
-            f"Filters: club={club_filter}, country={country_filter}, search={search_filter}"
-        )
+        # Base query (reused)
+        base_queryset = Candidate.objects.filter(year=active_year).select_related("player", "club")
 
-        # Start with all candidates
-        contenders = Candidate.objects.filter(year=active_year).select_related(
-            "player", "club"
-        )
+        # Apply filters to base query
+        contenders = base_queryset
 
-        # Apply filters
         if club_filter:
             contenders = contenders.filter(club__name=club_filter)
 
@@ -38,17 +50,14 @@ class HomePageView(TemplateView):
         # Randomize order
         contenders = contenders.order_by("?")
 
-        # Get all unique clubs and countries for filter dropdowns
-        all_candidates = Candidate.objects.filter(year=active_year).select_related(
-            "player", "club"
-        )
+        # Reuse base queryset to get clubs and countries (don't filter)
         clubs = (
-            all_candidates.values_list("club__name", flat=True)
+            base_queryset.values_list("club__name", flat=True)
             .distinct()
             .order_by("club__name")
         )
         countries = (
-            all_candidates.values_list("player__country", flat=True)
+            base_queryset.values_list("player__country", flat=True)
             .distinct()
             .order_by("player__country")
         )
@@ -57,26 +66,16 @@ class HomePageView(TemplateView):
         clubs_list = [club for club in clubs if club]
         countries_list = [country for country in countries if country]
 
-        # basically means:
-        # clubs_list = []
-        #   for club in clubs:
-        #   if club:
-        #       clubs_list.append(club)
-
-        print(f"Found {len(clubs_list)} clubs and {len(countries_list)} countries")
-        print(f"Results: {contenders.count()} candidates")
-
-        context.update(
-            {
-                "contenders": contenders,
-                "active_year": active_year,
-                "clubs": clubs_list,
-                "countries": countries_list,
-                "current_club": club_filter,
-                "current_country": country_filter,
-                "current_search": search_filter,
-                "results_count": contenders.count(),
-            }
-        )
+        context_data = {
+            "contenders": contenders,
+            "active_year": active_year,
+            "clubs": clubs_list,
+            "countries": countries_list,
+            "current_club": club_filter,
+            "current_country": country_filter,
+            "current_search": search_filter,
+            "results_count": contenders.count(),
+        }
+        context.update(context_data)
 
         return context
