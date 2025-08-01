@@ -325,25 +325,86 @@
   display: none;
 }
 
-/* See More Button */
-#see-more {
-  background: linear-gradient(90deg, #ffd700, #e6c200);
-  color: #181d2a;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.16);
-  transition: filter 0.12s;
-  width: 200px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  cursor: pointer;
-  margin: 1rem auto;
+
+/* pagination */
+.pagination {
+    margin: 2.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-#see-more:hover {
-  filter: brightness(1.08);
+.pagination .step-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pagination a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 0.8rem;
+    background: rgba(255, 215, 0, 0.1);
+    color: #ffd700;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pagination a:hover {
+    background: linear-gradient(90deg, rgba(255, 215, 0, 0.3), rgba(230, 194, 0, 0.3));
+    border-color: #ffd700;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2);
+}
+
+.pagination .current {
+    color: #ffd700;
+    font-weight: 700;
+    padding: 0 1rem;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 215, 0, 0.05);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+/* First/Last page buttons */
+.pagination a:first-child,
+.pagination a:last-child {
+    padding: 0 1rem;
+    background: rgba(255, 215, 0, 0.15);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .pagination {
+        flex-wrap: wrap;
+        gap: 0.3rem;
+    }
+    
+    .pagination a {
+        min-width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+        padding: 0 0.6rem;
+    }
+    
+    .pagination .current {
+        height: 32px;
+    }
+    
+    .pagination a:first-child,
+    .pagination a:last-child {
+        display: none; /* Hide first/last on mobile */
+    }
 }

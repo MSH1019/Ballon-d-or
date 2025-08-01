@@ -68,17 +68,10 @@
       </form>
     </div>
     
-    <div class="results-counter-compact">
-      Showing <span class="results-count">{{ results_count }}</span> candidate{{ results_count|pluralize }}
-      {% if current_club or current_country or current_search %}
-
-      {% endif %}
-    </div>
-  </div>
   
-  {% if contenders %}
+  {% if page_obj %}
     <div class="card-grid">
-      {% for contender in contenders %}
+      {% for contender in page_obj %}
       <div class="card">
         <a href="{% url 'candidate_detail' contender.year contender.slug %}"
           style="text-decoration: none; color: inherit;">
@@ -101,6 +94,25 @@
       <a href="{% url 'home' %}" class="btn outline-btn" style="margin-top: 1rem;">Clear Filters</a>
     </div>
   {% endif %}
+
+  <!-- After card-grid -->
+  <div class="pagination">
+      <span class="step-links">
+          {% if page_obj.has_previous %}
+              <a href="?page=1">&laquo; first</a>
+              <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+          {% endif %}
+
+          <span class="current">
+              Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+          </span>
+
+          {% if page_obj.has_next %}
+              <a href="?page={{ page_obj.next_page_number }}">next</a>
+              <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+          {% endif %}
+      </span>
+  </div>
 </div>
 
 <footer class="footer">
