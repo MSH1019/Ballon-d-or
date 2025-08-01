@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView
 from ballon_dor.models import Candidate
 from ballon_dor.utils import get_active_year
+from django.core.paginator import Paginator
 
 
 class HomePageView(TemplateView):
@@ -33,7 +34,9 @@ class HomePageView(TemplateView):
         search_filter = self.request.GET.get("search", "")
 
         # Base query (reused)
-        base_queryset = Candidate.objects.filter(year=active_year).select_related("player", "club")
+        base_queryset = Candidate.objects.filter(year=active_year).select_related(
+            "player", "club"
+        )
 
         # Apply filters to base query
         contenders = base_queryset
@@ -49,6 +52,10 @@ class HomePageView(TemplateView):
 
         # Randomize order
         contenders = contenders.order_by("?")
+
+        paginator = Paginator(contenders, 15)  # Show 12 candidates per page
+        page_number = self.request.GET.get("page")
+        page_obj = paginator.get_page(page_number)
 
         # Reuse base queryset to get clubs and countries (don't filter)
         clubs = (
@@ -75,6 +82,8 @@ class HomePageView(TemplateView):
             "current_country": country_filter,
             "current_search": search_filter,
             "results_count": contenders.count(),
+            "page_obj": page_obj,
+            "paginator": paginator,
         }
         context.update(context_data)
 
