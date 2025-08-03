@@ -1,0 +1,38 @@
+{% extends "ballon_dor/base.html" %}
+{% load static %}
+
+{% block title %}Voting Closed{% endblock %}
+
+{% block content %}
+<div class="voting-closed-container">
+  <div class="voting-closed-card">
+    <div class="voting-closed-icon">
+      <img src="{% static 'images/main.jpg' %}" alt="TheFanAward Logo" class="voting-closed-logo">
+    </div>
+    
+    <h1 class="voting-closed-title">Voting Has Closed</h1>
+    
+    <p class="voting-closed-subtitle">
+      Thank you for your interest in the {{ active_year }} Fans Award!
+    </p>
+    
+    <div class="voting-closed-info">
+      <p>Check out the final results to see how the fans voted!</p>
+      <p><strong>Come back next year to vote for your favorite players in the {{ active_year|add:1 }} edition!</strong></p>
+    </div>
+    
+    <div class="voting-closed-actions">
+      <a href="{% url 'live_results' %}" class="btn gold-btn">
+        See Final Results
+      </a>
+      <a href="{% url 'home' %}" class="btn outline-btn">
+        ← Back to Home
+      </a>
+    </div>
+    
+    <div class="next-year-message">
+      <p>📅 Don't miss out on next year's voting!</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

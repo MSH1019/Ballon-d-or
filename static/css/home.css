@@ -408,3 +408,149 @@
         display: none; /* Hide first/last on mobile */
     }
 }
+
+/* Winner Card Styles */
+.winner-card {
+  max-width: 500px;
+  margin: auto;
+  background: linear-gradient(145deg, #191919 80%, #1e1e10 100%);
+  border: 2px solid #ffd700 !important;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 
+    0 8px 30px rgba(255, 215, 0, 0.3),
+    0 0 0 1px rgba(255, 215, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Golden glow animation */
+.winner-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #ffd700, #e6c200, #ffd700);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.7;
+  animation: golden-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes golden-glow {
+  0% { opacity: 0.7; }
+  100% { opacity: 0.9; transform: scale(1.01); }
+}
+
+/* Hover effects */
+.winner-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 
+    0 12px 40px rgba(255, 215, 0, 0.4),
+    0 0 0 2px rgba(255, 215, 0, 0.3);
+}
+
+.winner-card:hover .winner-img {
+  transform: scale(1.05);
+}
+
+/* Image and text styling */
+.winner-card .winner-img {
+  height: 220px;
+  object-fit: contain;
+  background: linear-gradient(135deg, #191919, #1e1e10);
+  border-radius: 0;
+  margin-bottom: 0;
+  transition: transform 0.3s ease;
+}
+
+.winner-card .winner-text-area {
+  background: linear-gradient(145deg, #191919 80%, #1e1e10 100%);
+  padding: 1.5rem 1rem;
+}
+
+.winner-card h3 {
+  color: #ffd700 !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 0.5rem 0 !important;
+  text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+}
+
+.winner-card p {
+  color: #d4d6dd !important;
+  font-size: 1.1rem !important;
+  margin: 0 !important;
+  font-weight: 500;
+}
+
+/* Override card hover styles */
+.winner-card.card:hover {
+  background: linear-gradient(145deg, #1f1f1f 80%, #242418 100%) !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .winner-card { max-width: 90%; }
+  .winner-card .winner-img { height: 180px; }
+  .winner-card h3 { font-size: 1.3rem !important; }
+  .winner-card p { font-size: 1rem !important; }
+}
+
+@media (max-width: 480px) {
+  .winner-card .winner-img { height: 160px; }
+  .winner-card h3 { font-size: 1.2rem !important; }
+  .winner-card p { font-size: 0.95rem !important; }
+}
+
+/* Simple button fix */
+.outline-btn {
+  border: 2px solid #ffd700 !important;
+  color: #ffd700 !important;
+  background: transparent !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.outline-btn:hover {
+  background: #ffd700 !important;
+  color: #181d2a !important;
+  text-decoration: none !important;
+}
+
+/* Winner stats text styling */
+.winner-stats-text {
+  color: #fff !important;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.winner-stats-text strong {
+  color: #ffd700 !important;
+  font-weight: 700;
+}
+
+/* If you're using specific classes, use these: */
+.mb-1, .mb-4 {
+  color: #fff !important;
+}
+
+.mb-1 strong, .mb-4 strong {
+  color: #ffd700 !important;
+}
+
+/* Golden winner title - more specific selectors */
+.hero .hero-title,
+.hero h1,
+h1.hero-title {
+  color: #ffd700 !important;
+  text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3) !important;
+}
+
+/* If it's using Bootstrap classes */
+.mb-4.hero-title {
+  color: #ffd700 !important;
+}

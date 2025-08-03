@@ -7,8 +7,8 @@
 
 <div class="hero">
   <h1 class="hero-title">
-    <img src="{% static 'images/main.jpg' %}" alt="Ballon d'Or Trophy" class="hero-icon">
-    People's Fan Award
+    <img src="{% static 'images/main.jpg' %}" alt="Trophy" class="hero-icon">
+    People's Fans Award
   </h1>
 
   <p class="hero-subtitle">Pick your top 3 players and see how the world is voting!</p>
@@ -17,6 +17,40 @@
     <a href="{% url 'live_results' %}" class="btn outline-btn">See Live Results</a>
   </div>
 </div>
+{% if voting_closed and winner %}
+  <div class="hero mt-5 text-center" style="max-width: 800px; margin: auto;">
+    <h1 class="hero-title mb-4">🏆 People's {{ active_year }} Winner</h1>
+
+    {% comment %}
+    Find the winner's candidate data from the contenders queryset
+    {% endcomment %}
+    {% for candidate in contenders %}
+      {% if candidate.player == winner %}
+        <div class="card winner-card" style="margin: auto; max-width: 500px;">
+          <a href="{% url 'candidate_detail' candidate.year candidate.slug %}"
+             style="text-decoration: none; color: inherit;">
+            {% if candidate.image %}
+              <img src="{{ candidate.image.url }}" alt="{{ candidate.player.name }}" class="winner-img">
+            {% else %}
+              <img src="{% static 'players/default.jpg' %}" alt="{{ candidate.player.name }}" class="winner-img">
+            {% endif %}
+            <div class="winner-text-area">
+              <h3>{{ winner.name }}</h3>
+              {% if candidate.club %}
+                <p>{{ candidate.club.name }} ({{ winner.country }})</p>
+              {% endif %}
+            </div>
+          </a>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    <p class="mb-1 mt-3">Total Points: <strong>{{ total_points }}</strong></p>
+    <p class="mb-4">{{ vote_stats.total_votes }} vote{{ vote_stats.total_votes|pluralize }} from {{ vote_stats.countries }} countr{{ vote_stats.countries|pluralize:"y,ies" }}</p>
+
+    <a href="{% url 'live_results' %}" class="btn outline-btn">See Full Rankings</a>
+  </div>
+{% endif %}
 
 <!-- Contenders Section -->
 <div class="contenders">
