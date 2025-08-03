@@ -22,7 +22,7 @@ class VoteCreateView(CreateView):
         active_year = get_active_year()
         deadline = get_voting_deadline(active_year)
         if timezone.now() > deadline:
-            return HttpResponse("Voting has closed. Thank you for your interest!")
+            return redirect("voting_closed")
         return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
@@ -54,12 +54,26 @@ class VoteCreateView(CreateView):
 
         html_body = f"""
         <html>
-        <body>
-        <h2>Confirm Your Vote</h2>
-        <p>Thanks for voting! Click the button below to verify:</p>
-        <a href="{verify_url}" style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none;">Verify Vote</a>
-        <p>If the button doesn't work, copy this link: {verify_url}</p>
-        <p>Best,</p>
+        <body style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;">
+            <div style="max-width: 600px; margin: auto; background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
+            <h2 style="color: #333;">Confirm Your Vote</h2>
+            <p style="font-size: 16px; color: #444;">
+                Thank you for submitting your vote for the <strong>{active_year} vote</strong>.
+                To confirm your vote, please click the button below:
+            </p>
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="{verify_url}" style="background-color: #1d4ed8; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">✅ Verify Your Vote</a>
+            </div>
+            <p style="font-size: 14px; color: #555;">
+                Or copy and paste this link into your browser:<br>
+                <a href="{verify_url}" style="color: #1d4ed8;">{verify_url}</a>
+            </p>
+            <hr style="border: none; border-top: 1px solid #eee; margin: 40px 0;">
+            <p style="font-size: 12px; color: #888;">
+                If you didn't request this, you can ignore this email.<br>
+                — FansAward Team
+            </p>
+            </div>
         </body>
         </html>
         """
@@ -68,7 +82,7 @@ class VoteCreateView(CreateView):
             msg = EmailMessage(
                 "Confirm Your Vote",
                 html_body,
-                f"Ballon D'or App <{settings.EMAIL_HOST_USER}>",
+                f"FansAward App <{settings.EMAIL_HOST_USER}>",
                 [email],
             )
             msg.content_subtype = "html"
@@ -115,3 +129,12 @@ class VerifyView(TemplateView):
             vote.save()
             return redirect("live_results")
         return HttpResponse("Invalid or already verified link.")
+
+
+class VotingClosedView(TemplateView):
+    template_name = "ballon_dor/voting_closed.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["active_year"] = get_active_year()
+        return context
