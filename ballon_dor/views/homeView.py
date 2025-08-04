@@ -114,6 +114,7 @@ class HomePageView(TemplateView):
             "winner": winner,
             "total_points": total_points,
             "vote_stats": vote_stats,
+            "deadline": deadline,
         }
         context.update(context_data)
 
