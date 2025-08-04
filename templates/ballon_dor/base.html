@@ -17,6 +17,7 @@
 </head>
 
 <body>
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="{% url 'home' %}">
@@ -24,7 +25,12 @@
         TheFanAward
       </a>
 
-      <div class="navbar-nav">
+      <div class="navbar-nav d-flex align-items-center gap-3">
+        {% if not voting_closed %}
+          <span class="navbar-deadline">
+            Voting ends: {{ deadline|date:"n / j / Y" }}
+          </span>
+        {% endif %}
         <a class="nav-link" href="{% url 'vote' %}">Vote</a>
         <a class="nav-link" href="{% url 'live_results' %}">Live Results</a>
       </div>
