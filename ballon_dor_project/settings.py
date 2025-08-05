@@ -86,6 +86,11 @@ TEMPLATES = [
 WSGI_APPLICATION = "ballon_dor_project.wsgi.application"
 
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://ballon-d-or-production.up.railway.app",
+]
+
+
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
