@@ -17,6 +17,8 @@ class VoteCreateView(CreateView):
     form_class = VoteForm
     template_name = "ballon_dor/vote.html"
     success_url = reverse_lazy("live_results")
+    active_year = get_active_year()
+    voting_deadline = get_voting_deadline(active_year)
 
     def dispatch(self, request, *args, **kwargs):
         active_year = get_active_year()
@@ -24,6 +26,19 @@ class VoteCreateView(CreateView):
         if timezone.now() > deadline:
             return redirect("voting_closed")
         return super().dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        active_year = get_active_year()
+        deadline = get_voting_deadline(active_year)
+
+        context.update(
+            {
+                "active_year": active_year,
+                "deadline": deadline,
+            }
+        )
+        return context
 
     def form_valid(self, form):
         active_year = get_active_year()
@@ -107,7 +122,16 @@ class VotePendingView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["message"] = "Please check your email to confirm your vote!"
+        active_year = get_active_year()
+        deadline = get_voting_deadline(active_year)
+
+        context.update(
+            {
+                "message": "Please check your email to confirm your vote!",
+                "active_year": active_year,
+                "deadline": deadline,
+            }
+        )
         return context
 
 
@@ -116,7 +140,16 @@ class AlreadyVotedView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["message"] = "You have already voted. Thank you!"
+        active_year = get_active_year()
+        deadline = get_voting_deadline(active_year)
+
+        context.update(
+            {
+                "message": "You have already voted. Thank you!",
+                "active_year": active_year,
+                "deadline": deadline,
+            }
+        )
         return context
 
 
@@ -136,5 +169,13 @@ class VotingClosedView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["active_year"] = get_active_year()
+        active_year = get_active_year()
+        deadline = get_voting_deadline(active_year)
+
+        context.update(
+            {
+                "active_year": active_year,
+                "deadline": deadline,
+            }
+        )
         return context
