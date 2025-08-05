@@ -32,7 +32,7 @@ class Candidate(models.Model):
     # Basic Information
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
     year = models.PositiveIntegerField()
-    image = models.ImageField(upload_to="candidate/", blank=True, max_length=500)
+    image = models.ImageField(upload_to="ballondor_2025/", blank=True, max_length=500)
     club = models.ForeignKey(Club, on_delete=models.SET_NULL, null=True, blank=True)
     slug = models.SlugField(max_length=100, blank=True)
 
