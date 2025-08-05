@@ -4,6 +4,7 @@ click==8.2.1
 dj-database-url==3.0.1
 Django==5.2.4
 django-countries==7.6.1
+gunicorn==23.0.0
 mypy_extensions==1.1.0
 numpy==2.3.1
 packaging==25.0
@@ -18,3 +19,4 @@ six==1.17.0
 sqlparse==0.5.3
 typing_extensions==4.14.1
 tzdata==2025.2
+whitenoise==6.9.0
