@@ -14,8 +14,8 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "fansawar_fansaward_db",  # Your Libyan Spider database name
-        "USER": "fansawar_Mohamed",  # Your Libyan Spider database user
-        "PASSWORD": "!*RCc!lj#b",  # Replace with your Libyan Spider database password
+        "USER": "fansawar_Mohamed",  # Your Libyan Spider database user name
+        "PASSWORD": "!*RCc!lj#b",  # your Libyan Spider database password
         "HOST": "localhost",
         "PORT": "5432",
     }
@@ -47,3 +47,11 @@ DEFAULT_FROM_EMAIL = "FansAward <contact@fansaward.com>"
 
 # Generate a new secret key for production (optional but recommended)
 SECRET_KEY = "django-insecure-f%!^-35g_pm56jspzy#a4=7h&o5)r=3e2mq6wau7u93eod5z8z"
+
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": os.getenv("CLOUDINARY_CLOUD_NAME"),
+    "API_KEY": os.getenv("CLOUDINARY_API_KEY"),
+    "API_SECRET": os.getenv("CLOUDINARY_API_SECRET"),
+}

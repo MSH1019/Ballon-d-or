@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "ballon_dor",
     "accounts",
+    "cloudinary",
+    "cloudinary_storage",
 ]
 
 MIDDLEWARE = [
@@ -90,6 +92,13 @@ CSRF_TRUSTED_ORIGINS = [
     "https://ballon-d-or-production.up.railway.app",
 ]
 
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": "dl4v54ymf",
+    "API_KEY": "537322319982918",
+    "API_SECRET": "qvqmjykNW1cImX5YClPvIBBpG6s",
+}
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
