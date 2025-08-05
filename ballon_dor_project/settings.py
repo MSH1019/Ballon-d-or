@@ -96,7 +96,6 @@ CSRF_TRUSTED_ORIGINS = [
     "https://ballon-d-or-production.up.railway.app",
 ]
 
-DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 CLOUDINARY_STORAGE = {
     "CLOUD_NAME": os.environ.get("CLOUDINARY_CLOUD_NAME"),
@@ -107,8 +106,10 @@ cloudinary.config(
     cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
     api_key=os.environ.get("CLOUDINARY_API_KEY"),
     api_secret=os.environ.get("CLOUDINARY_API_SECRET"),
-    secure=True,
+    secure=True,  # Use HTTPS URLs
 )
+
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
