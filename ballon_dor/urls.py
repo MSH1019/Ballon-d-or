@@ -28,5 +28,4 @@ urlpatterns = [
         name="candidate_detail",
     ),
     path("voting-closed/", VotingClosedView.as_view(), name="voting_closed"),
-    path("test-cloudinary/", views.test_cloudinary, name="test_cloudinary"),
 ]
