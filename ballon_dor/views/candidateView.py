@@ -1,6 +1,8 @@
 from django.views.generic import DetailView
 from django.shortcuts import get_object_or_404
-from ballon_dor.models import  Candidate, Vote
+from ballon_dor.models import Candidate, Vote
+from ballon_dor.utils import get_active_year, get_voting_deadline
+
 
 # NEW: Candidate Detail View (year-specific)
 class CandidateDetailView(DetailView):
@@ -18,6 +20,9 @@ class CandidateDetailView(DetailView):
         candidate = self.get_object()
         player = candidate.player
         year = candidate.year
+
+        active_year = get_active_year()
+        deadline = get_voting_deadline(active_year)
 
         # Get voting stats for this player in this year
         first_votes = Vote.objects.filter(
@@ -75,6 +80,13 @@ class CandidateDetailView(DetailView):
             .exclude(pk=candidate.pk)
             .select_related("player", "club")
             .order_by("?")[:5]  # Add random ordering!
+        )
+
+        context.update(
+            {
+                "active_year": active_year,
+                "deadline": deadline,
+            }
         )
 
         return context
