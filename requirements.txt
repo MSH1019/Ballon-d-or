@@ -1,6 +1,7 @@
 asgiref==3.8.1
 black==25.1.0
 click==8.2.1
+dj-database-url==3.0.1
 Django==5.2.4
 django-countries==7.6.1
 mypy_extensions==1.1.0
@@ -10,14 +11,10 @@ pandas==2.3.0
 pathspec==0.12.1
 pillow==11.3.0
 platformdirs==4.3.8
+psycopg2-binary==2.9.10
 python-dateutil==2.9.0.post0
 pytz==2025.2
 six==1.17.0
 sqlparse==0.5.3
 typing_extensions==4.14.1
 tzdata==2025.2
-psycopg2-binary
-psycopg2-binary
-gunicorn==21.2.0
-dj-database-url==2.1.0
-whitenoise==6.6.0
