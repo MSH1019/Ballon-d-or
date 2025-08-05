@@ -1,12 +1,13 @@
 from django.db import models
 from django.utils.text import slugify
 from django.core.validators import MinValueValidator, MaxValueValidator
+from cloudinary.models import CloudinaryField
 
 
 class Player(models.Model):
     name = models.CharField(max_length=100)
     country = models.CharField(max_length=50, blank=True)
-    profile_pic = models.ImageField(upload_to="players/", blank=True, max_length=500)
+    profile_pic = CloudinaryField("image", folder="players/", blank=True)
 
     def __str__(self):
         return self.name
@@ -14,7 +15,7 @@ class Player(models.Model):
 
 class Club(models.Model):
     name = models.CharField(max_length=100)
-    logo = models.ImageField(upload_to="logos/", blank=True, max_length=500)
+    logo = CloudinaryField("image", folder="logos/", blank=True)
 
     def __str__(self):
         return self.name
@@ -22,7 +23,7 @@ class Club(models.Model):
 
 class NationalTeam(models.Model):
     name = models.CharField(max_length=100)
-    flag = models.ImageField(upload_to="flags/", blank=True, max_length=500)
+    flag = CloudinaryField("image", folder="flags/", blank=True)
 
     def __str__(self):
         return self.name
@@ -32,7 +33,7 @@ class Candidate(models.Model):
     # Basic Information
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
     year = models.PositiveIntegerField()
-    image = models.ImageField(upload_to="ballondor_2025/", blank=True, max_length=500)
+    image = CloudinaryField("image", folder="ballondor_2025/", blank=True)
     club = models.ForeignKey(Club, on_delete=models.SET_NULL, null=True, blank=True)
     slug = models.SlugField(max_length=100, blank=True)
 
