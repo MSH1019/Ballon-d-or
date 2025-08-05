@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,10 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-f%!^-35g_pm56jspzy#a4=7h&o5)r=3e2mq6wau7u93eod5z8z"
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "fallback-secret-key")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "False") == "True"
+
 
 # ALLOWED_HOSTS = [
 #   "75c1087beef3.ngrok-free.app", # NOTE: Change this according to your session
@@ -32,9 +35,7 @@ DEBUG = True
 #   "127.0.0.1",
 # ]
 
-ALLOWED_HOSTS = [
-    "*",
-]
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
 
 
 # Application definition
@@ -84,16 +85,8 @@ WSGI_APPLICATION = "ballon_dor_project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "fansaward",
-        "USER": "mohamed",
-        "PASSWORD": "M1h2m3d4",
-        "HOST": "localhost",
-        "PORT": "5432",
-    }
-}
+
+DATABASES = {"default": dj_database_url.config(default=os.environ.get("DATABASE_URL"))}
 
 
 # Password validation
@@ -136,6 +129,7 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -155,3 +149,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "contact@fansaward.com"
 EMAIL_HOST_PASSWORD = "M1h2m3d4!"
 DEFAULT_FROM_EMAIL = "FansAward <contact@fansaward.com>"
+
+
+MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
