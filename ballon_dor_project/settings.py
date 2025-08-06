@@ -179,16 +179,13 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "mail.libyanspider.com"
+EMAIL_HOST = "fansaward.com"
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 EMAIL_USE_TLS = False
 EMAIL_HOST_USER = "contact@fansaward.com"
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = "FansAward <contact@fansaward.com>"
-
-EMAIL_SSL_CERTFILE = None
-EMAIL_SSL_KEYFILE = None
 
 
 MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
