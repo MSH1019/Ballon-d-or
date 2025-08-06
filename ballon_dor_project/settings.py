@@ -183,7 +183,7 @@ EMAIL_HOST = "mail.fansaward.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "contact@fansaward.com"
-EMAIL_HOST_PASSWORD = "***REMOVED***!"
+EMAIL_HOST_PASSWORD = "***REMOVED***"
 DEFAULT_FROM_EMAIL = "FansAward <contact@fansaward.com>"
 
 
