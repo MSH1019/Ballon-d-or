@@ -179,7 +179,7 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "fansaward.com"
+EMAIL_HOST = "ls51.server.ly"
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 EMAIL_USE_TLS = False
