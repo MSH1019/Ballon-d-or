@@ -44,7 +44,17 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 #   "127.0.0.1",
 # ]
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",") + [
+    "fansaward.com",
+    "www.fansaward.com",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://ballon-d-or-production.up.railway.app",
+    "https://fansaward.com",
+    "https://www.fansaward.com",
+    "http://fansaward.com",
+]
 
 # Application definition
 
@@ -90,11 +100,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "ballon_dor_project.wsgi.application"
-
-
-CSRF_TRUSTED_ORIGINS = [
-    "https://ballon-d-or-production.up.railway.app",
-]
 
 
 CLOUDINARY_STORAGE = {
