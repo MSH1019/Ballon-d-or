@@ -63,9 +63,7 @@ class VoteCreateView(CreateView):
         vote.token = str(uuid.uuid4())
         vote.save()
 
-        verify_url = self.request.build_absolute_uri(
-            reverse("verify", args=[vote.token])
-        )
+        verify_url = f"https://fansaward.com{reverse('verify', args=[vote.token])}"
 
         html_body = f"""
         <html>
