@@ -187,6 +187,9 @@ EMAIL_HOST_USER = "contact@fansaward.com"
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = "FansAward <contact@fansaward.com>"
 
+EMAIL_SSL_CERTFILE = None
+EMAIL_SSL_KEYFILE = None
+
 
 MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
