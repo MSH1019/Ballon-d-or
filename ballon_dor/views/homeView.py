@@ -56,7 +56,7 @@ class HomePageView(TemplateView):
             contenders = contenders.filter(player__name__icontains=search_filter)
 
         # Randomize order
-        contenders = contenders.order_by("?")
+        contenders = contenders.order_by("player__name")
 
         paginator = Paginator(contenders, 15)
         page_number = self.request.GET.get("page")
