@@ -61,6 +61,13 @@
       {% endif %}
     {% endfor %}
 
+    <p class="privacy-note">
+      We use your email only to confirm your vote and stop duplicate voting. We
+      never send you anything else or share it, and it is anonymised once voting
+      closes. Your country is optional and only used for the countries count.
+      <a href="{% url 'privacy' %}">Privacy details</a>
+    </p>
+
     <button type="submit" class="submit-btn">Submit Vote</button>
   </form>
 

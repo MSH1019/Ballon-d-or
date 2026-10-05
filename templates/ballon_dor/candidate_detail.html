@@ -45,36 +45,34 @@
     <div class="stats-section">
         <h3>{{ candidate.year }} Season Statistics</h3>
         <div class="stats-grid">
-            <div class="stat-card">
-                <span class="stat-number">{{ candidate.appearances }}</span>
-                <span class="stat-label">Appearances</span>
+            {% for stat in candidate.base_stats %}
+            <div class="stat-card{% if stat.highlight %} highlight{% endif %}">
+                <span class="stat-number">{{ stat.value }}</span>
+                <span class="stat-label">{{ stat.label }}</span>
+                {% if stat.extra %}<span class="stat-extra">{{ stat.extra }}</span>{% endif %}
             </div>
-
-            <div class="stat-card">
-                <span class="stat-number">{{ candidate.goals }}</span>
-                <span class="stat-label">Goals</span>
-                <span class="stat-extra">{{ candidate.goals_per_game }}/game</span>
-            </div>
-
-            <div class="stat-card">
-                <span class="stat-number">{{ candidate.assists }}</span>
-                <span class="stat-label">Assists</span>
-                <span class="stat-extra">{{ candidate.assists_per_game }}/game</span>
-            </div>
-
-            <div class="stat-card highlight">
-                <span class="stat-number">{{ candidate.goal_contribution }}</span>
-                <span class="stat-label">G+A</span>
-                <span class="stat-extra">Total contribution</span>
-            </div>
-    
-            <div class="stat-card highlight">
-                <span class="stat-number">{{ candidate.avg_match_rating }}</span>
-                <span class="stat-label">Avg Rating</span>
-            </div>
-
-            
+            {% endfor %}
         </div>
+
+        {% with extras=candidate.extra_stats %}
+        {% if extras %}
+        <details class="more-stats">
+            <summary>
+                <span class="when-closed">Show more stats</span>
+                <span class="when-open">Show less</span>
+            </summary>
+            <div class="stats-grid">
+                {% for stat in extras %}
+                <div class="stat-card{% if stat.highlight %} highlight{% endif %}">
+                    <span class="stat-number{% if stat.text %} stat-text{% endif %}">{{ stat.value }}</span>
+                    <span class="stat-label">{{ stat.label }}</span>
+                    {% if stat.extra %}<span class="stat-extra">{{ stat.extra }}</span>{% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </details>
+        {% endif %}
+        {% endwith %}
     </div>
 
     <!-- Voting Results -->
@@ -119,10 +117,21 @@
 
     <!-- Key Information -->
     <div class="info-sections">
-        {% if candidate.trophies_won %}
+        {% if candidate.trophy_list %}
         <div class="info-card">
-            <h4>🏆 Major Trophies Won</h4>
-            <p>{{ candidate.trophies_won|linebreaks }}</p>
+            <h4>🏆 Trophies</h4>
+            <ul class="honours-list">
+                {% for item in candidate.trophy_list %}<li>{{ item }}</li>{% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if candidate.award_list %}
+        <div class="info-card">
+            <h4>🥇 Individual Awards</h4>
+            <ul class="honours-list">
+                {% for item in candidate.award_list %}<li>{{ item }}</li>{% endfor %}
+            </ul>
         </div>
         {% endif %}
 

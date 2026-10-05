@@ -1,4 +1,5 @@
 from django.urls import path
+from django.views.generic import TemplateView
 
 from ballon_dor.views.voteView import VotingClosedView
 from . import views
@@ -28,4 +29,9 @@ urlpatterns = [
         name="candidate_detail",
     ),
     path("voting-closed/", VotingClosedView.as_view(), name="voting_closed"),
+    path(
+        "privacy/",
+        TemplateView.as_view(template_name="ballon_dor/privacy.html"),
+        name="privacy",
+    ),
 ]

@@ -17,8 +17,6 @@ class VoteCreateView(CreateView):
     form_class = VoteForm
     template_name = "ballon_dor/vote.html"
     success_url = reverse_lazy("live_results")
-    active_year = get_active_year()
-    voting_deadline = get_voting_deadline(active_year)
 
     def dispatch(self, request, *args, **kwargs):
         active_year = get_active_year()
@@ -95,7 +93,7 @@ class VoteCreateView(CreateView):
             msg = EmailMessage(
                 "Confirm Your Vote",
                 html_body,
-                f"FansAward App <{settings.EMAIL_HOST_USER}>",
+                settings.DEFAULT_FROM_EMAIL,
                 [email],
             )
             msg.content_subtype = "html"

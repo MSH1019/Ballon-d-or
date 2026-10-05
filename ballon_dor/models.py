@@ -30,6 +30,13 @@ class NationalTeam(models.Model):
 
 
 class Candidate(models.Model):
+    POSITION_CHOICES = [
+        ("FWD", "Forward"),
+        ("CAM", "Attacking Midfielder"),
+        ("MID", "Midfielder"),
+        ("DEF", "Defender"),
+    ]
+
     # Basic Information
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
     year = models.PositiveIntegerField()
@@ -51,10 +58,51 @@ class Candidate(models.Model):
         help_text="Average match rating (0.0-10.0)",
     )
 
+    # Position decides which stat cards the profile page shows
+    position = models.CharField(
+        max_length=3,
+        choices=POSITION_CHOICES,
+        default="FWD",
+        help_text="Controls which stats show on the profile page",
+    )
+
+    # Position-specific stats (leave at 0 when they do not apply)
+    chances_created = models.PositiveIntegerField(
+        default=0, help_text="Midfielders: chances created this season"
+    )
+    tackles_interceptions = models.PositiveIntegerField(
+        default=0,
+        help_text="Midfielders/defenders: tackles + interceptions combined",
+    )
+    clean_sheets = models.PositiveIntegerField(
+        default=0, help_text="Defenders: clean sheets this season"
+    )
+
+    expected_goals = models.DecimalField(
+        max_digits=5,
+        decimal_places=1,
+        default=0,
+        help_text="Attackers/attacking mids: expected goals (xG) this season",
+    )
+
+    # Optional highlight shown under "Show more stats"
+    signature_label = models.CharField(
+        max_length=60,
+        blank=True,
+        help_text="e.g. World Cup Golden Ball (optional, needs a value too)",
+    )
+    signature_value = models.CharField(
+        max_length=60, blank=True, help_text="e.g. Winner (optional)"
+    )
+
     # Trophies & Recognition
     trophies_won = models.TextField(
         blank=True,
-        help_text="Major trophies won this season (e.g., Champions League, Premier League)",
+        help_text="Trophies won, ONE PER LINE (e.g. Champions League, Premier League)",
+    )
+    awards = models.TextField(
+        blank=True,
+        help_text="Individual awards, ONE PER LINE (e.g. World Cup Golden Ball, Premier League Player of the Season)",
     )
 
     # Optional: Why they deserve it (brief)
@@ -112,6 +160,103 @@ class Candidate(models.Model):
             return round(self.assists / self.appearances, 2)
         return 0.0
 
+    @property
+    def base_stats(self):
+        """Stat cards that are always visible, chosen by position."""
+        appearances = {"value": self.appearances, "label": "Appearances"}
+        rating = {
+            "value": self.avg_match_rating,
+            "label": "Avg Rating",
+            "highlight": True,
+        }
+
+        if self.position == "MID":
+            middle = [
+                {"value": self.chances_created, "label": "Chances Created"},
+                {
+                    "value": self.tackles_interceptions,
+                    "label": "Tackles + Interceptions",
+                },
+            ]
+        elif self.position == "DEF":
+            middle = [
+                {"value": self.clean_sheets, "label": "Clean Sheets"},
+                {
+                    "value": self.tackles_interceptions,
+                    "label": "Tackles + Interceptions",
+                },
+            ]
+        else:  # FWD and CAM lead with goals and assists
+            middle = [
+                {
+                    "value": self.goals,
+                    "label": "Goals",
+                    "extra": f"{self.goals_per_game}/game",
+                },
+                {
+                    "value": self.assists,
+                    "label": "Assists",
+                    "extra": f"{self.assists_per_game}/game",
+                },
+            ]
+
+        return [appearances] + middle + [rating]
+
+    @property
+    def extra_stats(self):
+        """Stat cards hidden behind the 'Show more stats' toggle.
+
+        Optional stats (chances created, xG, tackles...) are skipped when they
+        are 0, so older candidates without that data don't show empty cards.
+        """
+        cards = []
+
+        def add(value, label, **kwargs):
+            if value:
+                cards.append({"value": value, "label": label, **kwargs})
+
+        if self.position in ("FWD", "CAM"):
+            cards.append(
+                {
+                    "value": self.goal_contribution,
+                    "label": "G+A",
+                    "extra": "Total contribution",
+                    "highlight": True,
+                }
+            )
+            add(self.chances_created, "Chances Created")
+            add(self.expected_goals, "Expected Goals (xG)")
+            if self.position == "CAM":
+                add(self.tackles_interceptions, "Tackles + Interceptions")
+        else:
+            # Midfielders and defenders: attacking numbers are the secondary stats
+            cards.append({"value": self.goals, "label": "Goals"})
+            cards.append({"value": self.assists, "label": "Assists"})
+
+        if self.signature_label and self.signature_value:
+            cards.append(
+                {
+                    "value": self.signature_value,
+                    "label": self.signature_label,
+                    "highlight": True,
+                    "text": True,
+                }
+            )
+
+        return cards
+
+    @staticmethod
+    def _lines(text):
+        return [line.strip() for line in (text or "").splitlines() if line.strip()]
+
+    @property
+    def trophy_list(self):
+        return self._lines(self.trophies_won)
+
+    @property
+    def award_list(self):
+        return self._lines(self.awards)
+
 
 class BallonDorResult(models.Model):
     RANK_CHOICES = [
@@ -152,10 +297,7 @@ class Vote(models.Model):
         Player, on_delete=models.CASCADE, related_name="third_votes"
     )
     created_at = models.DateTimeField(auto_now_add=True)
-    voter_name = models.CharField(max_length=100, blank=True)
     voter_country = models.CharField(max_length=2, blank=True)
-    # TODO: remove the ip_address
-    ip_address = models.GenericIPAddressField(blank=True, null=True)
     year = models.PositiveIntegerField()
     email = models.EmailField(blank=True)
     is_verified = models.BooleanField(default=False)

@@ -32,7 +32,7 @@
             {% if candidate.image %}
               <img src="{{ candidate.image.url }}" alt="{{ candidate.player.name }}" class="winner-img">
             {% else %}
-              <img src="{% static 'players/default.jpg' %}" alt="{{ candidate.player.name }}" class="winner-img">
+              <div class="photo-placeholder winner-img" role="img" aria-label="{{ candidate.player.name }}">👤</div>
             {% endif %}
             <div class="winner-text-area">
               <h3>{{ winner.name }}</h3>
@@ -112,7 +112,7 @@
           {% if contender.image %}
             <img src="{{ contender.image.url }}" alt="{{ contender.player.name }}">
           {% else %}
-            <img src="{% static 'players/default.jpg' %}" alt="{{ contender.player.name }}">
+            <div class="photo-placeholder" role="img" aria-label="{{ contender.player.name }}">👤</div>
           {% endif %}
 
 

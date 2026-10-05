@@ -8,3 +8,8 @@ __pycache__/
 *.log
 .venv/
 .env/
+
+# Local database dumps (contain voter emails and admin password hashes)
+new.json
+data/*.json
+*.db

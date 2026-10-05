@@ -10,8 +10,9 @@ class PlayerAdmin(admin.ModelAdmin):
 
 @admin.register(Vote)
 class VoteAdmin(admin.ModelAdmin):
-    list_display = ("voter_name", "voter_country", "created_at", "ip_address")
-    list_filter = ("voter_country", "created_at")
+    list_display = ("voter_country", "year", "is_verified", "created_at")
+    list_filter = ("year", "is_verified", "voter_country", "created_at")
+    search_fields = ("email",)
 
 
 @admin.register(BallonDorResult)
@@ -48,12 +49,31 @@ class CandidateAdmin(admin.ModelAdmin):
         "player",
         "year",
         "club",
+        "position",
+        "appearances",
         "goals",
         "assists",
-        "appearances",
+        "chances_created",
+        "tackles_interceptions",
+        "clean_sheets",
+        "expected_goals",
         "avg_match_rating",
     )
-    list_filter = ("year", "club")
+    # Edit the stats straight from the list page, one save for the whole page
+    list_editable = (
+        "club",
+        "position",
+        "appearances",
+        "goals",
+        "assists",
+        "chances_created",
+        "tackles_interceptions",
+        "clean_sheets",
+        "expected_goals",
+        "avg_match_rating",
+    )
+    list_filter = ("year", "club", "position")
+    list_per_page = 40
     search_fields = ("player__name", "slug")
     prepopulated_fields = {"slug": ("player",)}
 
@@ -68,14 +88,38 @@ class CandidateAdmin(admin.ModelAdmin):
         (
             "Season Statistics",
             {
-                "fields": ("appearances", "goals", "assists", "avg_match_rating"),
+                "fields": (
+                    "position",
+                    "appearances",
+                    "goals",
+                    "assists",
+                    "chances_created",
+                    "tackles_interceptions",
+                    "clean_sheets",
+                    "expected_goals",
+                    "avg_match_rating",
+                ),
+                "classes": ("wide",),
+            },
+        ),
+        (
+            "Highlight (optional)",
+            {
+                "fields": ("signature_label", "signature_value"),
+                "classes": ("wide",),
+            },
+        ),
+        (
+            "Honours (one per line)",
+            {
+                "fields": ("trophies_won", "awards"),
                 "classes": ("wide",),
             },
         ),
         (
             "Additional Information",
             {
-                "fields": ("trophies_won", "why_contender"),
+                "fields": ("why_contender",),
                 "classes": ("collapse",),
             },
         ),

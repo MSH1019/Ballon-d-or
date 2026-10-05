@@ -1,0 +1,44 @@
+{% extends "ballon_dor/base.html" %}
+{% block title %}Privacy{% endblock %}
+
+{% block content %}
+<div class="privacy-page">
+  <h1>Privacy</h1>
+  <p>FansAward is an independent fan project built by one person. This page says exactly what it stores and why.</p>
+
+  <h2>What we collect when you vote</h2>
+  <ul>
+    <li><strong>Your top 3 picks.</strong> That is the vote.</li>
+    <li><strong>Your email address.</strong> Used only to send one confirmation link and to make sure each email votes once. Nothing else is ever sent to it.</li>
+    <li><strong>Your country (optional).</strong> Used only for the "votes from X countries" figure.</li>
+    <li><strong>The time of your vote.</strong></li>
+  </ul>
+
+  <h2>What we do not collect</h2>
+  <ul>
+    <li>No name, no password, no account.</li>
+    <li>The app does not store your IP address.</li>
+  </ul>
+
+  <h2>How long we keep it</h2>
+  <ul>
+    <li>Votes that are never confirmed by email are deleted after 7 days.</li>
+    <li>When voting closes, emails are replaced with an irreversible anonymous code. The vote counts stay, the email does not.</li>
+  </ul>
+
+  <h2>Things outside our control</h2>
+  <ul>
+    <li>Our hosting provider (Railway) may keep standard server logs, which can include IP addresses.</li>
+    <li>This site uses Google Analytics to count visits. It sets cookies in your browser. You can block it with your browser settings or an ad blocker.</li>
+    <li>Player photos are served by Cloudinary.</li>
+  </ul>
+
+  <h2>We never</h2>
+  <ul>
+    <li>sell, share or publish your email,</li>
+    <li>send marketing messages.</li>
+  </ul>
+
+  <p>Questions or want your vote removed? Email <a href="mailto:contact@fansaward.com">contact@fansaward.com</a> from the address you voted with.</p>
+</div>
+{% endblock %}

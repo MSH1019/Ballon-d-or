@@ -13,7 +13,6 @@ class VoteForm(forms.ModelForm):
             "player_1st",
             "player_2nd",
             "player_3rd",
-            "voter_name",
             "voter_country",
             "email",
         ]
@@ -34,7 +33,6 @@ class VoteForm(forms.ModelForm):
         self.fields["player_3rd"].label = "3rd Place"
 
         # to add (optional) to the labels
-        self.fields["voter_name"].label = "Your Name (optional)"
         self.fields["voter_country"].label = "Your Country (optional)"
         self.fields["email"].label = "Your Email"
 
