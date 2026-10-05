@@ -13,3 +13,6 @@ __pycache__/
 new.json
 data/*.json
 *.db
+
+# Generated on every deploy by collectstatic
+staticfiles/
