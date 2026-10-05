@@ -283,12 +283,16 @@
 
 .card-grid { 
   display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); 
   gap: 1rem; 
   justify-items: center; 
 }
 
 .card {
+  /* same width for every card, whatever the length of the name */
+  width: 100%;
+  max-width: 210px;
+  box-sizing: border-box;
   background: linear-gradient(145deg, #191919 80%, #1e1e10 100%);
   color: #eee;
   border: 1.5px solid #27251f;
@@ -298,6 +302,7 @@
   width: 100%; 
   height: 140px; 
   object-fit: cover; 
+  object-position: center 20%; /* keep faces in frame when a photo is cropped */
   border-radius: 7px; 
   margin-bottom: 0.8rem;
   border: none;
